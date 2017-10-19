@@ -16,7 +16,7 @@ class SDM630 extends IPSModule
 
         $this->RegisterPropertyInteger("Interval", 0);
 
-        $this->RegisterTimer("UpdateTimer", 0, "DRS210C_RequestRead(\$_IPS['TARGET']);");
+        $this->RegisterTimer("UpdateTimer", 0, "SDM630_RequestRead(\$_IPS['TARGET']);");
     }
 
     public function ApplyChanges()
