@@ -55,7 +55,7 @@ class DRS210C extends IPSModule
             $this->unlock($IO);
             return false;
         }
-        $Volt = unpack("G", substr($Volt, 2))[1];
+        $Volt = unpack("f", strrev(substr($Volt, 2)))[1];
         $this->SendDebug('Volt', $Volt, 0);
         SetValue($this->GetIDForIdent("Volt"), $Volt);
 
@@ -66,7 +66,7 @@ class DRS210C extends IPSModule
             $this->unlock($IO);
             return false;
         }
-        $Frequenz = unpack("G", substr($Frequenz, 2))[1];
+        $Frequenz = unpack("f", strrev(substr($Frequenz, 2)))[1];
         $this->SendDebug('Frequenz', $Frequenz, 0);
         SetValue($this->GetIDForIdent("Frequenz"), $Frequenz);
 
@@ -77,7 +77,7 @@ class DRS210C extends IPSModule
             $this->unlock($IO);
             return false;
         }
-        $Ampere = unpack("G", substr($Ampere, 2))[1];
+        $Ampere = unpack("f", strrev(substr($Ampere, 2)))[1];
         $this->SendDebug('Ampere', $Ampere, 0);
         SetValue($this->GetIDForIdent("Ampere"), $Ampere);
 
@@ -88,7 +88,7 @@ class DRS210C extends IPSModule
             $this->unlock($IO);
             return false;
         }
-        $Watt = unpack("G", substr($Watt, 2))[1];
+        $Watt = unpack("f", strrev(substr($Watt, 2)))[1];
         $this->SendDebug('Watt', $Watt, 0);
         SetValue($this->GetIDForIdent("Watt"), $Watt);
 
@@ -100,7 +100,7 @@ class DRS210C extends IPSModule
             $this->unlock($IO);
             return false;
         }
-        $Var = unpack("G", substr($Var, 2))[1];
+        $Var = unpack("f", strrev(substr($Var, 2)))[1];
         $this->SendDebug('Var', $Var, 0);
         SetValue($this->GetIDForIdent("Var"), $Var);
 
@@ -112,7 +112,7 @@ class DRS210C extends IPSModule
             $this->unlock($IO);
             return false;
         }
-        $Va = unpack("G", substr($Va, 2))[1];
+        $Va = unpack("f", strrev(substr($Va, 2)))[1];
         $this->SendDebug('Va', $Va, 0);
         SetValue($this->GetIDForIdent("Va"), $Va);
 
@@ -123,7 +123,7 @@ class DRS210C extends IPSModule
             $this->unlock($IO);
             return false;
         }
-        $Total = unpack("G", substr($Total, 2))[1];
+        $Total = unpack("f", strrev(substr($Total, 2)))[1];
         $this->SendDebug('Total', $Total, 0);
         SetValue($this->GetIDForIdent("Total"), $Total);
 

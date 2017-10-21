@@ -78,7 +78,7 @@ class SDM630 extends IPSModule
                 $this->unlock($IO);
                 return false;
             }
-            $Volt = unpack("G", substr($Volt, 2))[1];
+            $Volt = unpack("f", strrev(substr($Volt, 2)))[1];
             $this->SendDebug('Volt L' . ($index + 1), $Volt, 0);
             SetValue($this->GetIDForIdent("VoltL" . ($index + 1)), $Volt);
         }
@@ -91,7 +91,7 @@ class SDM630 extends IPSModule
                 $this->unlock($IO);
                 return false;
             }
-            $Ampere = unpack("G", substr($Ampere, 2))[1];
+            $Ampere = unpack("f", strrev(substr($Ampere, 2)))[1];
             $this->SendDebug('Ampere L' . ($index + 1), $Ampere, 0);
             SetValue($this->GetIDForIdent("AmpereL" . ($index + 1)), $Ampere);
         }
@@ -104,7 +104,7 @@ class SDM630 extends IPSModule
                 $this->unlock($IO);
                 return false;
             }
-            $Watt = unpack("G", substr($Watt, 2))[1];
+            $Watt = unpack("f", strrev(substr($Watt, 2)))[1];
             $this->SendDebug('Watt L' . ($index + 1), $Watt, 0);
             SetValue($this->GetIDForIdent("WattL" . ($index + 1)), $Watt);
         }
@@ -118,7 +118,7 @@ class SDM630 extends IPSModule
                 $this->unlock($IO);
                 return false;
             }
-            $Va = unpack("G", substr($Va, 2))[1];
+            $Va = unpack("f", strrev(substr($Va, 2)))[1];
             $this->SendDebug('VA L' . ($index + 1), $Va, 0);
             SetValue($this->GetIDForIdent("VAL" . ($index + 1)), $Va);
         }
@@ -132,7 +132,7 @@ class SDM630 extends IPSModule
                 $this->unlock($IO);
                 return false;
             }
-            $Var = unpack("G", substr($Var, 2))[1];
+            $Var = unpack("f", strrev(substr($Var, 2)))[1];
             $this->SendDebug('VAr L' . ($index + 1), $Var, 0);
             SetValue($this->GetIDForIdent("VArL" . ($index + 1)), $Var);
         }
@@ -146,7 +146,7 @@ class SDM630 extends IPSModule
                 $this->unlock($IO);
                 return false;
             }
-            $PhaseAngle = unpack("G", substr($PhaseAngle, 2))[1];
+            $PhaseAngle = unpack("f", strrev(substr($PhaseAngle, 2)))[1];
             $this->SendDebug('PhaseAngle L' . ($index + 1), $PhaseAngle, 0);
             SetValue($this->GetIDForIdent("PhaseAngleL" . ($index + 1)), $PhaseAngle);
         }
@@ -157,7 +157,7 @@ class SDM630 extends IPSModule
             $this->unlock($IO);
             return false;
         }
-        $Frequenz = unpack("G", substr($Frequenz, 2))[1];
+        $Frequenz = unpack("f", strrev(substr($Frequenz, 2)))[1];
         $this->SendDebug('Frequenz', $Frequenz, 0);
         SetValue($this->GetIDForIdent("Frequenz"), $Frequenz);
 
@@ -169,7 +169,7 @@ class SDM630 extends IPSModule
                 $this->unlock($IO);
                 return false;
             }
-            $Total = unpack("G", substr($Total, 2))[1];
+            $Total = unpack("f", strrev(substr($Total, 2)))[1];
             $this->SendDebug('Total L' . ($index + 1), $Total, 0);
             SetValue($this->GetIDForIdent("TotalL" . ($index + 1)), $Total);
         }
