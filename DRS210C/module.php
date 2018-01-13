@@ -1,34 +1,60 @@
 <?
 
+/*
+ * @addtogroup bgetech
+ * @{
+ *
+ * @package       BGETech
+ * @file          module.php
+ * @author        Michael Tröger <micha@nall-chan.net>
+ * @copyright     2018 Michael Tröger
+ * @license       https://creativecommons.org/licenses/by-nc-sa/4.0/ CC BY-NC-SA 4.0
+ * @version       1.1
+ *
+ */
+require_once(__DIR__ . "/../libs/BGETechTraits.php");  // diverse Klassen
+
+/**
+ * DRS210C ist die Klasse für die DRS210-C ModBus Energie-Zähler der Firma B+G E-Tech
+ * Erweitert ipsmodule 
+ */
 class DRS210C extends IPSModule
 {
 
-    public function __construct($InstanceID)
-    {
-        parent::__construct($InstanceID);
-    }
+    use Semaphore,
+        VariableProfile;
 
+    /**
+     * Interne Funktion des SDK.
+     *
+     * @access public
+     */
     public function Create()
     {
         parent::Create();
-
         $this->ConnectParent("{A5F663AB-C400-4FE5-B207-4D67CC030564}");
-
         $this->RegisterPropertyInteger("Interval", 0);
-
-        $this->RegisterTimer("UpdateTimer", 0, "DRS210C_RequestRead(\$_IPS['TARGET']);");
+        $this->RegisterTimer("UpdateTimer", 0, 'DRS210C_RequestRead($_IPS["TARGET"]);');
     }
 
+    /**
+     * Interne Funktion des SDK.
+     *
+     * @access public
+     */
     public function ApplyChanges()
     {
         parent::ApplyChanges();
 
+        $this->RegisterProfileFloat('VaR', '', '', ' var', 0, 0, 0, 2);
+        $this->RegisterProfileFloat('VA', '', '', ' VA', 0, 0, 0, 2);
+
         $this->RegisterVariableFloat("Volt", "Volt", "Volt.230", 1);
-        $this->RegisterVariableFloat("Ampere", "Ampere", "Ampere.16", 2);
+        $this->RegisterVariableFloat("Ampere", "Ampere", "Ampere", 2);
         $this->RegisterVariableFloat("Frequenz", "Frequenz", "Hertz.50", 3);
         $this->RegisterVariableFloat("Watt", "Watt", "Watt.14490", 4);
-        $this->RegisterVariableFloat("Var", "Var", "", 5);
-        $this->RegisterVariableFloat("Va", "Va", "", 6);
+        $this->RegisterVariableFloat("Var", "VaR", "VaR", 5);
+        $this->RegisterVariableFloat("Va", "VA", "VA", 6);
         $this->RegisterVariableFloat("Total", "Total kWh", "Electricity", 7);
 
         if ($this->ReadPropertyInteger("Interval") > 0)
@@ -37,6 +63,13 @@ class DRS210C extends IPSModule
             $this->SetTimerInterval("UpdateTimer", 0);
     }
 
+    /**
+     * IPS-Instanz Funktion DRS210C_RequestRead.
+     * Ließt alle Werte aus dem Gerät.
+     *
+     * @access public
+     * @return bool True wenn Befehl erfolgreich ausgeführt wurde, sonst false.
+     */
     public function RequestRead()
     {
 
@@ -130,36 +163,6 @@ class DRS210C extends IPSModule
         IPS_Sleep(333);
         $this->unlock($IO);
         return true;
-    }
-
-    /**
-     * Versucht eine Semaphore zu setzen und wiederholt dies bei Misserfolg bis zu 100 mal.
-     * @param string $ident Ein String der den Lock bezeichnet.
-     * @return boolean TRUE bei Erfolg, FALSE bei Misserfolg.
-     */
-    private function lock($ident)
-    {
-        for ($i = 0; $i < 100; $i++)
-        {
-            if (IPS_SemaphoreEnter('ModBus' . '.' . (string) $ident, 1))
-            {
-                return true;
-            }
-            else
-            {
-                IPS_Sleep(5);
-            }
-        }
-        return false;
-    }
-
-    /**
-     * Löscht eine Semaphore.
-     * @param string $ident Ein String der den Lock bezeichnet.
-     */
-    private function unlock($ident)
-    {
-        IPS_SemaphoreLeave('ModBus' . '.' . (string) $ident);
     }
 
 }

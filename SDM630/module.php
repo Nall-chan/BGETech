@@ -1,51 +1,78 @@
 <?
 
+/*
+ * @addtogroup bgetech
+ * @{
+ *
+ * @package       BGETech
+ * @file          module.php
+ * @author        Michael Tröger <micha@nall-chan.net>
+ * @copyright     2018 Michael Tröger
+ * @license       https://creativecommons.org/licenses/by-nc-sa/4.0/ CC BY-NC-SA 4.0
+ * @version       1.1
+ *
+ */
+require_once(__DIR__ . "/../libs/BGETechTraits.php");  // diverse Klassen
+
+/**
+ * SDM630 ist die Klasse für die SDM630 ModBus Energie-Zähler der Firma B+G E-Tech
+ * Erweitert ipsmodule 
+ */
 class SDM630 extends IPSModule
 {
 
-    public function __construct($InstanceID)
-    {
-        parent::__construct($InstanceID);
-    }
+    use Semaphore,
+        VariableProfile;
 
+    /**
+     * Interne Funktion des SDK.
+     *
+     * @access public
+     */
     public function Create()
     {
         parent::Create();
-
         $this->ConnectParent("{A5F663AB-C400-4FE5-B207-4D67CC030564}");
-
         $this->RegisterPropertyInteger("Interval", 0);
-
-        $this->RegisterTimer("UpdateTimer", 0, "SDM630_RequestRead(\$_IPS['TARGET']);");
+        $this->RegisterTimer("UpdateTimer", 0, 'SDM630_RequestRead($_IPS["TARGET"]);');
     }
 
+    /**
+     * Interne Funktion des SDK.
+     *
+     * @access public
+     */
     public function ApplyChanges()
     {
         parent::ApplyChanges();
+
+        $this->RegisterProfileFloat('VaR', '', '', ' var', 0, 0, 0, 2);
+        $this->RegisterProfileFloat('VA', '', '', ' VA', 0, 0, 0, 2);
+        $this->RegisterProfileFloat('PhaseAngle', '', '', ' °', 0, 0, 0, 2);
 
         $this->RegisterVariableFloat("VoltL1", "Volt L1", "Volt.230", 1);
         $this->RegisterVariableFloat("VoltL2", "Volt L2", "Volt.230", 1);
         $this->RegisterVariableFloat("VoltL3", "Volt L3", "Volt.230", 1);
 
-        $this->RegisterVariableFloat("AmpereL1", "Ampere L1", "Ampere.16", 2);
-        $this->RegisterVariableFloat("AmpereL2", "Ampere L2", "Ampere.16", 2);
-        $this->RegisterVariableFloat("AmpereL3", "Ampere L3", "Ampere.16", 2);
+        $this->RegisterVariableFloat("AmpereL1", "Ampere L1", "Ampere", 2);
+        $this->RegisterVariableFloat("AmpereL2", "Ampere L2", "Ampere", 2);
+        $this->RegisterVariableFloat("AmpereL3", "Ampere L3", "Ampere", 2);
 
         $this->RegisterVariableFloat("WattL1", "Watt L1", "Watt.14490", 4);
         $this->RegisterVariableFloat("WattL2", "Watt L2", "Watt.14490", 4);
         $this->RegisterVariableFloat("WattL3", "Watt L3", "Watt.14490", 4);
 
-        $this->RegisterVariableFloat("VArL1", "VAr L1", "", 5);
-        $this->RegisterVariableFloat("VArL2", "VAr L2", "", 5);
-        $this->RegisterVariableFloat("VArL3", "VAr L3", "", 5);
+        $this->RegisterVariableFloat("VArL1", "VaR L1", "VaR", 5);
+        $this->RegisterVariableFloat("VArL2", "VaR L2", "VaR", 5);
+        $this->RegisterVariableFloat("VArL3", "VaR L3", "VaR", 5);
 
-        $this->RegisterVariableFloat("VAL1", "VA L1", "", 6);
-        $this->RegisterVariableFloat("VAL2", "VA L2", "", 6);
-        $this->RegisterVariableFloat("VAL3", "VA L3", "", 6);
+        $this->RegisterVariableFloat("VAL1", "VA L1", "VA", 6);
+        $this->RegisterVariableFloat("VAL2", "VA L2", "VA", 6);
+        $this->RegisterVariableFloat("VAL3", "VA L3", "VA", 6);
 
-        $this->RegisterVariableFloat("PhaseAngleL1", "Phase angle L1", "", 7);
-        $this->RegisterVariableFloat("PhaseAngleL2", "Phase angle L2", "", 7);
-        $this->RegisterVariableFloat("PhaseAngleL3", "Phase angle L3", "", 7);
+        $this->RegisterVariableFloat("PhaseAngleL1", "Phase angle L1", "PhaseAngle", 7);
+        $this->RegisterVariableFloat("PhaseAngleL2", "Phase angle L2", "PhaseAngle", 7);
+        $this->RegisterVariableFloat("PhaseAngleL3", "Phase angle L3", "PhaseAngle", 7);
 
         $this->RegisterVariableFloat("Frequenz", "Frequenz", "Hertz.50", 3);
         $this->RegisterVariableFloat("TotalL1", "Total L1 kWh", "Electricity", 8);
@@ -58,6 +85,13 @@ class SDM630 extends IPSModule
             $this->SetTimerInterval("UpdateTimer", 0);
     }
 
+    /**
+     * IPS-Instanz Funktion SDM360_RequestRead.
+     * Ließt alle Werte aus dem Gerät.
+     *
+     * @access public
+     * @return bool True wenn Befehl erfolgreich ausgeführt wurde, sonst false.
+     */
     public function RequestRead()
     {
 
@@ -177,36 +211,6 @@ class SDM630 extends IPSModule
         IPS_Sleep(333);
         $this->unlock($IO);
         return true;
-    }
-
-    /**
-     * Versucht eine Semaphore zu setzen und wiederholt dies bei Misserfolg bis zu 100 mal.
-     * @param string $ident Ein String der den Lock bezeichnet.
-     * @return boolean TRUE bei Erfolg, FALSE bei Misserfolg.
-     */
-    private function lock($ident)
-    {
-        for ($i = 0; $i < 100; $i++)
-        {
-            if (IPS_SemaphoreEnter('ModBus' . '.' . (string) $ident, 1))
-            {
-                return true;
-            }
-            else
-            {
-                IPS_Sleep(5);
-            }
-        }
-        return false;
-    }
-
-    /**
-     * Löscht eine Semaphore.
-     * @param string $ident Ein String der den Lock bezeichnet.
-     */
-    private function unlock($ident)
-    {
-        IPS_SemaphoreLeave('ModBus' . '.' . (string) $ident);
     }
 
 }
