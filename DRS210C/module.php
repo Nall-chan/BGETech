@@ -1,4 +1,4 @@
-<?
+<?php
 
 /*
  * @addtogroup bgetech
@@ -16,11 +16,10 @@ require_once(__DIR__ . "/../libs/BGETechTraits.php");  // diverse Klassen
 
 /**
  * DRS210C ist die Klasse für die DRS210-C ModBus Energie-Zähler der Firma B+G E-Tech
- * Erweitert ipsmodule 
+ * Erweitert ipsmodule
  */
 class DRS210C extends IPSModule
 {
-
     use Semaphore,
         VariableProfile;
 
@@ -57,10 +56,11 @@ class DRS210C extends IPSModule
         $this->RegisterVariableFloat("Va", "VA", "VA", 6);
         $this->RegisterVariableFloat("Total", "Total kWh", "Electricity", 7);
 
-        if ($this->ReadPropertyInteger("Interval") > 0)
+        if ($this->ReadPropertyInteger("Interval") > 0) {
             $this->SetTimerInterval("UpdateTimer", $this->ReadPropertyInteger("Interval"));
-        else
+        } else {
             $this->SetTimerInterval("UpdateTimer", 0);
+        }
     }
 
     /**
@@ -72,19 +72,20 @@ class DRS210C extends IPSModule
      */
     public function RequestRead()
     {
-
         $Gateway = IPS_GetInstance($this->InstanceID)['ConnectionID'];
-        if ($Gateway == 0)
+        if ($Gateway == 0) {
             return false;
+        }
         $IO = IPS_GetInstance($Gateway)['ConnectionID'];
-        if ($IO == 0)
+        if ($IO == 0) {
             return false;
-        if (!$this->lock($IO))
+        }
+        if (!$this->lock($IO)) {
             return false;
+        }
 
-        $Volt = $this->SendDataToParent(json_encode(Array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 3, "Address" => 0x2000, "Quantity" => 2, "Data" => "")));
-        if ($Volt === false)
-        {
+        $Volt = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 3, "Address" => 0x2000, "Quantity" => 2, "Data" => "")));
+        if ($Volt === false) {
             $this->unlock($IO);
             return false;
         }
@@ -93,9 +94,8 @@ class DRS210C extends IPSModule
         SetValue($this->GetIDForIdent("Volt"), $Volt);
 
 
-        $Frequenz = $this->SendDataToParent(json_encode(Array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 3, "Address" => 0x2020, "Quantity" => 2, "Data" => "")));
-        if ($Frequenz === false)
-        {
+        $Frequenz = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 3, "Address" => 0x2020, "Quantity" => 2, "Data" => "")));
+        if ($Frequenz === false) {
             $this->unlock($IO);
             return false;
         }
@@ -104,9 +104,8 @@ class DRS210C extends IPSModule
         SetValue($this->GetIDForIdent("Frequenz"), $Frequenz);
 
 
-        $Ampere = $this->SendDataToParent(json_encode(Array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 3, "Address" => 0x2060, "Quantity" => 2, "Data" => "")));
-        if ($Ampere === false)
-        {
+        $Ampere = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 3, "Address" => 0x2060, "Quantity" => 2, "Data" => "")));
+        if ($Ampere === false) {
             $this->unlock($IO);
             return false;
         }
@@ -115,9 +114,8 @@ class DRS210C extends IPSModule
         SetValue($this->GetIDForIdent("Ampere"), $Ampere);
 
 
-        $Watt = $this->SendDataToParent(json_encode(Array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 3, "Address" => 0x2080, "Quantity" => 2, "Data" => "")));
-        if ($Watt === false)
-        {
+        $Watt = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 3, "Address" => 0x2080, "Quantity" => 2, "Data" => "")));
+        if ($Watt === false) {
             $this->unlock($IO);
             return false;
         }
@@ -127,9 +125,8 @@ class DRS210C extends IPSModule
 
 
         // Blindleistung
-        $Var = $this->SendDataToParent(json_encode(Array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 3, "Address" => 0x20A0, "Quantity" => 2, "Data" => "")));
-        if ($Var === false)
-        {
+        $Var = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 3, "Address" => 0x20A0, "Quantity" => 2, "Data" => "")));
+        if ($Var === false) {
             $this->unlock($IO);
             return false;
         }
@@ -138,10 +135,9 @@ class DRS210C extends IPSModule
         SetValue($this->GetIDForIdent("Var"), $Var);
 
 
-        //Scheinleistung 
-        $Va = $this->SendDataToParent(json_encode(Array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 3, "Address" => 0x20C0, "Quantity" => 2, "Data" => "")));
-        if ($Va === false)
-        {
+        //Scheinleistung
+        $Va = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 3, "Address" => 0x20C0, "Quantity" => 2, "Data" => "")));
+        if ($Va === false) {
             $this->unlock($IO);
             return false;
         }
@@ -150,9 +146,8 @@ class DRS210C extends IPSModule
         SetValue($this->GetIDForIdent("Va"), $Va);
 
 
-        $Total = $this->SendDataToParent(json_encode(Array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 3, "Address" => 0x3000, "Quantity" => 2, "Data" => "")));
-        if ($Total === false)
-        {
+        $Total = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 3, "Address" => 0x3000, "Quantity" => 2, "Data" => "")));
+        if ($Total === false) {
             $this->unlock($IO);
             return false;
         }
@@ -164,7 +159,4 @@ class DRS210C extends IPSModule
         $this->unlock($IO);
         return true;
     }
-
 }
-
-?>

@@ -1,4 +1,4 @@
-<?
+<?php
 
 /*
  * @addtogroup bgetech
@@ -16,11 +16,10 @@ require_once(__DIR__ . "/../libs/BGETechTraits.php");  // diverse Klassen
 
 /**
  * SDM630 ist die Klasse für die SDM630 ModBus Energie-Zähler der Firma B+G E-Tech
- * Erweitert ipsmodule 
+ * Erweitert ipsmodule
  */
 class SDM630 extends IPSModule
 {
-
     use Semaphore,
         VariableProfile;
 
@@ -79,10 +78,11 @@ class SDM630 extends IPSModule
         $this->RegisterVariableFloat("TotalL2", "Total L2 kWh", "Electricity", 8);
         $this->RegisterVariableFloat("TotalL3", "Total L3 kWh", "Electricity", 8);
 
-        if ($this->ReadPropertyInteger("Interval") > 0)
+        if ($this->ReadPropertyInteger("Interval") > 0) {
             $this->SetTimerInterval("UpdateTimer", $this->ReadPropertyInteger("Interval"));
-        else
+        } else {
             $this->SetTimerInterval("UpdateTimer", 0);
+        }
     }
 
     /**
@@ -94,21 +94,21 @@ class SDM630 extends IPSModule
      */
     public function RequestRead()
     {
-
         $Gateway = IPS_GetInstance($this->InstanceID)['ConnectionID'];
-        if ($Gateway == 0)
+        if ($Gateway == 0) {
             return false;
+        }
         $IO = IPS_GetInstance($Gateway)['ConnectionID'];
-        if ($IO == 0)
+        if ($IO == 0) {
             return false;
-        if (!$this->lock($IO))
+        }
+        if (!$this->lock($IO)) {
             return false;
+        }
 
-        for ($index = 0; $index < 3; $index++)
-        {
-            $Volt = $this->SendDataToParent(json_encode(Array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => ($index * 2), "Quantity" => 2, "Data" => "")));
-            if ($Volt === false)
-            {
+        for ($index = 0; $index < 3; $index++) {
+            $Volt = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => ($index * 2), "Quantity" => 2, "Data" => "")));
+            if ($Volt === false) {
                 $this->unlock($IO);
                 return false;
             }
@@ -117,11 +117,9 @@ class SDM630 extends IPSModule
             SetValue($this->GetIDForIdent("VoltL" . ($index + 1)), $Volt);
         }
 
-        for ($index = 0; $index < 3; $index++)
-        {
-            $Ampere = $this->SendDataToParent(json_encode(Array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => 6 + ($index * 2), "Quantity" => 2, "Data" => "")));
-            if ($Ampere === false)
-            {
+        for ($index = 0; $index < 3; $index++) {
+            $Ampere = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => 6 + ($index * 2), "Quantity" => 2, "Data" => "")));
+            if ($Ampere === false) {
                 $this->unlock($IO);
                 return false;
             }
@@ -130,11 +128,9 @@ class SDM630 extends IPSModule
             SetValue($this->GetIDForIdent("AmpereL" . ($index + 1)), $Ampere);
         }
 
-        for ($index = 0; $index < 3; $index++)
-        {
-            $Watt = $this->SendDataToParent(json_encode(Array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => 12 + ($index * 2), "Quantity" => 2, "Data" => "")));
-            if ($Watt === false)
-            {
+        for ($index = 0; $index < 3; $index++) {
+            $Watt = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => 12 + ($index * 2), "Quantity" => 2, "Data" => "")));
+            if ($Watt === false) {
                 $this->unlock($IO);
                 return false;
             }
@@ -144,11 +140,9 @@ class SDM630 extends IPSModule
         }
 
         //Scheinleistung
-        for ($index = 0; $index < 3; $index++)
-        {
-            $Va = $this->SendDataToParent(json_encode(Array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => 18 + ($index * 2), "Quantity" => 2, "Data" => "")));
-            if ($Va === false)
-            {
+        for ($index = 0; $index < 3; $index++) {
+            $Va = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => 18 + ($index * 2), "Quantity" => 2, "Data" => "")));
+            if ($Va === false) {
                 $this->unlock($IO);
                 return false;
             }
@@ -158,11 +152,9 @@ class SDM630 extends IPSModule
         }
 
         //Blindleistung
-        for ($index = 0; $index < 3; $index++)
-        {
-            $Var = $this->SendDataToParent(json_encode(Array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => 24 + ($index * 2), "Quantity" => 2, "Data" => "")));
-            if ($Var === false)
-            {
+        for ($index = 0; $index < 3; $index++) {
+            $Var = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => 24 + ($index * 2), "Quantity" => 2, "Data" => "")));
+            if ($Var === false) {
                 $this->unlock($IO);
                 return false;
             }
@@ -172,11 +164,9 @@ class SDM630 extends IPSModule
         }
 
         //PhaseAngle
-        for ($index = 0; $index < 3; $index++)
-        {
-            $PhaseAngle = $this->SendDataToParent(json_encode(Array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => 36 + ($index * 2), "Quantity" => 2, "Data" => "")));
-            if ($PhaseAngle === false)
-            {
+        for ($index = 0; $index < 3; $index++) {
+            $PhaseAngle = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => 36 + ($index * 2), "Quantity" => 2, "Data" => "")));
+            if ($PhaseAngle === false) {
                 $this->unlock($IO);
                 return false;
             }
@@ -185,9 +175,8 @@ class SDM630 extends IPSModule
             SetValue($this->GetIDForIdent("PhaseAngleL" . ($index + 1)), $PhaseAngle);
         }
 
-        $Frequenz = $this->SendDataToParent(json_encode(Array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => 70, "Quantity" => 2, "Data" => "")));
-        if ($Frequenz === false)
-        {
+        $Frequenz = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => 70, "Quantity" => 2, "Data" => "")));
+        if ($Frequenz === false) {
             $this->unlock($IO);
             return false;
         }
@@ -195,11 +184,9 @@ class SDM630 extends IPSModule
         $this->SendDebug('Frequenz', $Frequenz, 0);
         SetValue($this->GetIDForIdent("Frequenz"), $Frequenz);
 
-        for ($index = 0; $index < 3; $index++)
-        {
-            $Total = $this->SendDataToParent(json_encode(Array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => 376 + ($index * 2), "Quantity" => 2, "Data" => "")));
-            if ($Total === false)
-            {
+        for ($index = 0; $index < 3; $index++) {
+            $Total = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => 376 + ($index * 2), "Quantity" => 2, "Data" => "")));
+            if ($Total === false) {
                 $this->unlock($IO);
                 return false;
             }
@@ -212,7 +199,4 @@ class SDM630 extends IPSModule
         $this->unlock($IO);
         return true;
     }
-
 }
-
-?>
