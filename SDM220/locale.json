@@ -8,8 +8,10 @@
             "Apparent power": "Scheinleistung",
             "Reactive power": "Blindleistung",
             "Power factor": "Leistungsfaktor",
+            "Phase angle": "Phasenverschiebungswinkel",
             "Frequency": "Frequenz",
-            "Total active energy": "Gesamte kumulierte Wirkleistung"
+            "Total active energy": "Gesamte kumulierte Wirkleistung",
+            "Total reactive energy": "Gesamte kumulierte Blindleistung"
         }
     }
 }

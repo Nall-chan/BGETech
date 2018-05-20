@@ -83,14 +83,14 @@ class SDM630 extends BGETech
         ['Line 2 to line 3 voltage THD', vtFloat, 'Intensity.F', 0x0150, 4, 2],
         ['Line 3 to line 1 voltage THD', vtFloat, 'Intensity.F', 0x0152, 4, 2],
         ['Average line to line voltage THD', vtFloat, 'Intensity.F', 0x0154, 4, 2],
-        ['Total kwh', vtFloat, 'Electricity', 0x0156, 4, 2],
-        ['Total kvarh', vtFloat, 'kVArh', 0x0158, 4, 2],
-        ['L1 total kwh', vtFloat, 'Electricity', 0x0166, 4, 2],
-        ['L2 total kwh', vtFloat, 'Electricity', 0x0168, 4, 2],
-        ['L3 total kwh', vtFloat, 'Electricity', 0x0168A, 4, 2],
-        ['L1 total kvarh', vtFloat, 'kVArh', 0x0178, 4, 2],
-        ['L2 total kvarh', vtFloat, 'kVArh', 0x017A, 4, 2],
-        ['L3 total kvarh', vtFloat, 'kVArh', 0x017C, 4, 2]
+        ['Total active energy', vtFloat, 'Electricity', 0x0156, 4, 2],
+        ['Total reactive energy', vtFloat, 'kVArh', 0x0158, 4, 2],
+        ['L1 total active energy', vtFloat, 'Electricity', 0x0166, 4, 2],
+        ['L2 total active energy', vtFloat, 'Electricity', 0x0168, 4, 2],
+        ['L3 total active energy', vtFloat, 'Electricity', 0x0168A, 4, 2],
+        ['L1 total reactive energy', vtFloat, 'kVArh', 0x0178, 4, 2],
+        ['L2 total reactive energy', vtFloat, 'kVArh', 0x017A, 4, 2],
+        ['L3 total reactive energy', vtFloat, 'kVArh', 0x017C, 4, 2]
     ];
 
 }

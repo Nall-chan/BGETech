@@ -1,0 +1,21 @@
+{
+    "translations": {
+        "de": {
+            "Read values": "Werte lesen",
+            "Voltage": "Spannung",
+            "Current": "Strom",
+            "Active power": "Wirkleistung",
+            "Apparent power": "Scheinleistung",
+            "Reactive power": "Blindleistung",
+            "Power factor": "Leistungsfaktor",
+            "Phase angle": "Phasenverschiebungswinkel",
+            "Frequency": "Frequenz",
+            "Total system power demand": "Kumulierter Bedarf System Wirkleistung",
+            "Maximum total system power demand": "Maximal kumulierter Bedarf System Wirkleistung",
+            "Current demand": "Strombedarf",
+            "Maximum current demand": "Maximum Strombedarf",
+            "Total active energy": "Gesamte kumulierte Wirkleistung",
+            "Total reactive energy": "Gesamte kumulierte Blindleistung"
+        }
+    }
+}

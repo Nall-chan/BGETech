@@ -1,0 +1,11 @@
+{
+    "id": "{8CA96C98-3014-44E4-8D15-4EC6B524F1F4}",
+    "name": "DRS 458",
+    "aliases": ["DRS 458"],
+    "type": 3,
+    "vendor": "B+G E-Tech",
+    "parentRequirements": ["{E310B701-4AE7-458E-B618-EC13A1A6F6A8}"],
+    "childRequirements": [],
+    "implemented": ["{77B31ABB-18FA-4B91-BB63-E5B2AB5588F4}"],
+    "prefix": "DRS458"
+}

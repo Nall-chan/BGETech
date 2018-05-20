@@ -1,0 +1,9 @@
+{
+    "translations": {
+        "de": {
+            "Read values": "Werte lesen",
+            "Power": "Wirkleistung",
+            "Total active energy": "Gesamte kumulierte Wirkleistung"
+        }
+    }
+}

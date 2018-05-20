@@ -30,7 +30,7 @@ class DRS210C extends BGETech
         ['Reactive power', vtFloat, 'VaR', 0x20A0, 3, 2],
         ['Power factor', vtFloat, '', 0x20E0, 3, 2],
         ['Frequency', vtFloat, 'Hertz.50', 0x2020, 3, 2],
-        ['Total kwh', vtFloat, 'Electricity', 0x3000, 3, 2]
+        ['Total active energy', vtFloat, 'Electricity', 0x3000, 3, 2]
     ];
 
 }

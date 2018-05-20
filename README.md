@@ -76,11 +76,11 @@ Ist direkt in der Dokumentation der jeweiligen Module beschrieben.
 | Modul   | Typ    | Prefix  | GUID                                   |
 | :-----: | :----: | :-----: | :------------------------------------: |
 | DRS210C | Device | DRS210C | {2CA41C9F-355C-4231-90A5-6D83A90B65BD} |
-| DRS458  | Device | DRS458  | |
-| SDM230  | Device | SDM230  |  |
-| SDM72D  | Device | SDM72D  |  |
-| SDM220  | Device | SDM220  |  |
-| SDM230  | Device | SDM230  |  |
+| DRS458  | Device | DRS458  | {8CA96C98-3014-44E4-8D15-4EC6B524F1F4} |
+| SDM72D  | Device | SDM72D  | {08371372-5993-4BAF-A6EC-D70759709CD9} |
+| SDM210C | Device | SDM210C | {32DCCC5C-78D3-475E-885A-652F56DB4D18} |
+| SDM220  | Device | SDM220  | {93668601-F92A-46FC-AE5B-E44451F022EE} |
+| SDM230  | Device | SDM230  | {10D08FCD-D1AC-4CF3-8B19-54B92209DA07} |
 | SDM630  | Device | SDM630  | {BBCA5E14-505E-4394-B653-8CD33AD52037} |
 
 

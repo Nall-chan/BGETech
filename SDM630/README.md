@@ -22,10 +22,8 @@
 
 ## 1. Funktionsumfang
 
-Ermöglich die Einbindung von Energie-Zählern des Typs SDM 630 der Firma B+G E-Tech
-ohne mehrere ModBus-Instanzen in IPS.  
-Zusätzlich können mehrere Zähler auf einem physikalischen RS485-Bus
-betrieben werden.  
+Ermöglich die einfache Einbindung von Energie-Zählern des Typs SDM 630 der Firma B+G E-Tech.  
+Zusätzlich können mehrere Zähler auf einem physikalischen RS485-Bus betrieben werden.  
 
 ## 2. Voraussetzungen
 
@@ -122,14 +120,14 @@ Folgende Statusvariablen werden automatisch angelegt.
 | Line 2 zu Line 3 Klirrfaktor Spannung             | float | Line 2 to line 3 voltage THD               | Intensity.F  |
 | Line 3 zu Line 1 Klirrfaktor Spannung             | float | Line 3 to line 1 voltage THD               | Intensity.F  |
 | Mittelwert Line zu Line Klirrfaktor Spannung      | float | Average line to line voltage THD           | Intensity.F  |
-| Gesamte kumulierte Wirkleistung kWh               | float | Total kwh                                  | Electricity  |
-| Gesamte kumulierte Blindleistung kVArh            | float | Total kvarh                                | kVArh        |
-| L1 Gesamte kumulierte Wirkleistung kWh            | float | L1 total kwh                               | Electricity  |
-| L2 Gesamte kumulierte Wirkleistung kWh            | float | L2 total kwh                               | Electricity  |
-| L3 Gesamte kumulierte Wirkleistung kWh            | float | L3 total kwh                               | Electricity  |
-| L1 Gesamte kumulierte Blindleistung kVArh         | float | L1 total kvarh                             | kVArh        |
-| L2 Gesamte kumulierte Blindleistung kVArh         | float | L2 total kvarh                             | kVArh        |
-| L3 Gesamte kumulierte Blindleistung kVArh         | float | L3 total kvarh                             | kVArh        |
+| Gesamte kumulierte Wirkleistung                   | float | Total active energy                        | Electricity  |
+| Gesamte kumulierte Blindleistung                  | float | Total reactive energy                      | kVArh        |
+| L1 Gesamte kumulierte Wirkleistung                | float | L1 total active energy                     | Electricity  |
+| L2 Gesamte kumulierte Wirkleistung                | float | L2 total active energy                     | Electricity  |
+| L3 Gesamte kumulierte Wirkleistung                | float | L3 total active energy                     | Electricity  |
+| L1 Gesamte kumulierte Blindleistung               | float | L1 total reactive energy                   | kVArh        |
+| L2 Gesamte kumulierte Blindleistung               | float | L2 total reactive energy                   | kVArh        |
+| L3 Gesamte kumulierte Blindleistung               | float | L3 total reactive energy                   | kVArh        |
 
 Folgende Profile werden automatisch angelegt.  
 

@@ -61,14 +61,14 @@
             "Line 2 to line 3 voltage THD": "Line 2 zu Line 3 Klirrfaktor Spannung",
             "Line 3 to line 1 voltage THD": "Line 3 zu Line 1 Klirrfaktor Spannung",
             "Average line to line voltage THD": "Mittelwert Line zu Line Klirrfaktor Spannung",
-            "Total kwh": "Gesamte kumulierte Wirkleistung kWh",
-            "Total kvarh": "Gesamte kumulierte Blindleistung kVArh",
-            "L1 total kwh": "L1 Gesamte kumulierte Wirkleistung kWh",
-            "L2 total kwh": "L2 Gesamte kumulierte Wirkleistung kWh",
-            "L3 total kwh": "L3 Gesamte kumulierte Wirkleistung kWh",
-            "L1 total kvarh": "L1 Gesamte kumulierte Blindleistung kVArh",
-            "L2 total kvarh": "L2 Gesamte kumulierte Blindleistung kVArh",
-            "L3 total kvarh": "L3 Gesamte kumulierte Blindleistung kVArh"
+            "Total active energy": "Gesamte kumulierte Wirkleistung",
+            "Total reactive energy": "Gesamte kumulierte Blindleistung",
+            "L1 total active energy": "L1 Gesamte kumulierte Wirkleistung",
+            "L2 total active energy": "L2 Gesamte kumulierte Wirkleistung",
+            "L3 total active energy": "L3 Gesamte kumulierte Wirkleistung",
+            "L1 total reactive energy": "L1 Gesamte kumulierte Blindleistung",
+            "L2 total reactive energy": "L2 Gesamte kumulierte Blindleistung",
+            "L3 total reactive energy": "L3 Gesamte kumulierte Blindleistung"
         }
     }
 }

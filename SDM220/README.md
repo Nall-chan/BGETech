@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
 [![Version](https://img.shields.io/badge/Symcon%20Version-4.3%20%3E-green.svg)](https://www.symcon.de/forum/threads/30857-IP-Symcon-4-3-%28Stable%29-Changelog)
 
-# DRS 210C
+# SDM 220
 
 ## Dokumentation
 
@@ -22,13 +22,13 @@
 
 ## 1. Funktionsumfang
 
-Ermöglich die einfache Einbindung von Energie-Zählern des Typs DRS 210-C der Firma B+G E-Tech.  
+Ermöglich die einfache Einbindung von Energie-Zählern des Typs SDM 220 der Firma B+G E-Tech. 
 Zusätzlich können mehrere Zähler auf einem physikalischen RS485-Bus betrieben werden.  
 
 ## 2. Voraussetzungen
 
  - IPS 4.3 oder höher  
- - DRS 210-C Zähler mit ModBus-Interface 
+ - SDM 220 Zähler mit 'ModBus-Interface 
  - physikalisches RS485 Interface für die Zähler  
 
 ## 3. Software-Installation
@@ -57,7 +57,7 @@ Details hierzu sind dem Handbuch des Zählers (RS485) und dem eventuell verwende
 ## 5. Statusvariablen und Profile
 
 Folgende Statusvariablen werden automatisch angelegt.  
- 
+
 | Name                                              | Typ   | Ident                                      | Profil       |
 | :-----------------------------------------------: | :---: | :----------------------------------------: | :----------: |
 | Spannung                                          | float | Voltage                                    | Volt.230     |
@@ -66,8 +66,10 @@ Folgende Statusvariablen werden automatisch angelegt.
 | Scheinleistung                                    | float | Apparent power                             | VA           |
 | Blindleistung                                     | float | Reactive power                             | VaR          |
 | Leistungsfaktor                                   | float | Power factor                               |              |
+| Phasenverschiebungswinkel                         | float | Phase angle                                | PhaseAngle   |
 | Frequenz                                          | float | Frequency                                  | Hertz.50     |
 | Gesamte kumulierte Wirkleistung                   | float | Total active energy                        | Electricity  |
+| Gesamte kumulierte Blindleistung                  | float | Total reactive energy                      | kVArh        |
 
 Folgende Profile werden automatisch angelegt.  
 
@@ -79,11 +81,10 @@ Folgende Profile werden automatisch angelegt.
 | Intensity.F | float |
 | kVArh       | float |
 
-
 ## 6. PHP-Befehlsreferenz
 
 ```php
-bool DRS210C_RequestRead(int $InstanzID);
+bool SDM220_RequestRead(int $InstanzID);
 ```
 Ließt alle Werte vom Zähler.  
 Bei Erfolg wird `true` und im Fehlerfall wird `false` zurückgegeben und eine Warnung erzeugt.  

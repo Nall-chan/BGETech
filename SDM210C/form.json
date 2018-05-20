@@ -1,0 +1,18 @@
+{
+    "elements":
+            [
+                {
+                    "name": "Interval",
+                    "type": "IntervalBox",
+                    "caption": "milliseconds"
+                }
+            ],
+    "actions":
+            [
+                {
+                    "type": "Button",
+                    "label": "Read values",
+                    "onClick": "SDM210C_RequestRead($id);"
+                }
+            ]
+}
