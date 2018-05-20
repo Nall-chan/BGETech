@@ -20,7 +20,6 @@ require_once(__DIR__ . "/BGETechTraits.php");  // diverse Klassen
  */
 class BGETech extends IPSModule
 {
-
     use Semaphore,
         VariableProfile;
     /**
@@ -87,7 +86,6 @@ class BGETech extends IPSModule
 
     private function ReadData()
     {
-
         foreach (static::$Variables as $Variable) {
             $ReadValue = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => $Variable[4], "Address" => $Variable[3], "Quantity" => $Variable[5], "Data" => "")));
             if ($ReadValue === false) {
@@ -99,5 +97,4 @@ class BGETech extends IPSModule
         }
         return true;
     }
-
 }

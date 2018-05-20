@@ -22,7 +22,7 @@ class SDM210C extends BGETech
 {
     const PREFIX = 'SDM210C';
 
-    static $Variables = [
+    public static $Variables = [
         ['Voltage', vtFloat, 'Volt.230', 0x0000, 4, 2],
         ['Current', vtFloat, 'Ampere', 0x0006, 4, 2],
         ['Active power', vtFloat, 'Watt.14490', 0x000C, 4, 2],
@@ -32,5 +32,4 @@ class SDM210C extends BGETech
         ['Frequency', vtFloat, 'Hertz.50', 0x0046, 4, 2],
         ['Total active energy', vtFloat, 'Electricity', 0x0156, 4, 2]
     ];
-
 }
