@@ -22,7 +22,7 @@ class DRS210C extends BGETech
 {
     const PREFIX = 'DRS210C';
 
-    static $Variables = [
+    public static $Variables = [
         ['Voltage', vtFloat, 'Volt.230', 0x2000, 3, 2],
         ['Current', vtFloat, 'Ampere', 0x2060, 3, 2],
         ['Active power', vtFloat, 'Watt.14490', 0x2080, 3, 2],
@@ -32,5 +32,4 @@ class DRS210C extends BGETech
         ['Frequency', vtFloat, 'Hertz.50', 0x2020, 3, 2],
         ['Total active energy', vtFloat, 'Electricity', 0x3000, 3, 2]
     ];
-
 }

@@ -22,7 +22,7 @@ class SDM630 extends BGETech
 {
     const PREFIX = 'SDM630';
 
-    static $Variables = [
+    public static $Variables = [
         ['Voltage L1', vtFloat, 'Volt.230', 0x0000, 4, 2],
         ['Voltage L2', vtFloat, 'Volt.230', 0x0002, 4, 2],
         ['Voltage L3', vtFloat, 'Volt.230', 0x0004, 4, 2],
@@ -92,5 +92,4 @@ class SDM630 extends BGETech
         ['L2 total reactive energy', vtFloat, 'kVArh', 0x017A, 4, 2],
         ['L3 total reactive energy', vtFloat, 'kVArh', 0x017C, 4, 2]
     ];
-
 }

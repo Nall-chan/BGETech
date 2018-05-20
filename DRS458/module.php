@@ -22,8 +22,7 @@ class DRS458 extends BGETech
 {
     const PREFIX = 'DRS458';
 
-    static $Variables = [
+    public static $Variables = [
         ['Total active energy', vtFloat, 'Electricity', 0x0000, 3, 2]
     ];
-
 }
