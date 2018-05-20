@@ -9,194 +9,88 @@
  * @author        Michael Tröger <micha@nall-chan.net>
  * @copyright     2018 Michael Tröger
  * @license       https://creativecommons.org/licenses/by-nc-sa/4.0/ CC BY-NC-SA 4.0
- * @version       1.1
+ * @version       2.0
  *
  */
-require_once(__DIR__ . "/../libs/BGETechTraits.php");  // diverse Klassen
+require_once(__DIR__ . "/../libs/BGETechModule.php");  // diverse Klassen
 
 /**
  * SDM630 ist die Klasse für die SDM630 ModBus Energie-Zähler der Firma B+G E-Tech
- * Erweitert ipsmodule
+ * Erweitert BGETech
  */
-class SDM630 extends IPSModule
+class SDM630 extends BGETech
 {
-    use Semaphore,
-        VariableProfile;
+    const PREFIX = 'SDM630';
 
-    /**
-     * Interne Funktion des SDK.
-     *
-     * @access public
-     */
-    public function Create()
-    {
-        parent::Create();
-        $this->ConnectParent("{A5F663AB-C400-4FE5-B207-4D67CC030564}");
-        $this->RegisterPropertyInteger("Interval", 0);
-        $this->RegisterTimer("UpdateTimer", 0, 'SDM630_RequestRead($_IPS["TARGET"]);');
-    }
+    static $Variables = [
+        ['Voltage L1', vtFloat, 'Volt.230', 0x0000, 4, 2],
+        ['Voltage L2', vtFloat, 'Volt.230', 0x0002, 4, 2],
+        ['Voltage L3', vtFloat, 'Volt.230', 0x0004, 4, 2],
+        ['Current L1', vtFloat, 'Ampere', 0x0006, 4, 2],
+        ['Current L2', vtFloat, 'Ampere', 0x0008, 4, 2],
+        ['Current L3', vtFloat, 'Ampere', 0x000A, 4, 2],
+        ['Active power L1', vtFloat, 'Watt.14490', 0x000C, 4, 2],
+        ['Active power L2', vtFloat, 'Watt.14490', 0x000E, 4, 2],
+        ['Active power L3', vtFloat, 'Watt.14490', 0x0010, 4, 2],
+        ['Apparent power L1', vtFloat, 'VA', 0x0012, 4, 2],
+        ['Apparent power L2', vtFloat, 'VA', 0x0014, 4, 2],
+        ['Apparent power L3', vtFloat, 'VA', 0x0016, 4, 2],
+        ['Reactive power L1', vtFloat, 'VaR', 0x0018, 4, 2],
+        ['Reactive power L2', vtFloat, 'VaR', 0x001A, 4, 2],
+        ['Reactive power L3', vtFloat, 'VaR', 0x001C, 4, 2],
+        ['Power factor L1', vtFloat, '', 0x001E, 4, 2],
+        ['Power factor L2', vtFloat, '', 0x0020, 4, 2],
+        ['Power factor L3', vtFloat, '', 0x0022, 4, 2],
+        ['Phase angle L1', vtFloat, 'PhaseAngle', 0x0024, 4, 2],
+        ['Phase angle L2', vtFloat, 'PhaseAngle', 0x0026, 4, 2],
+        ['Phase angle L3', vtFloat, 'PhaseAngle', 0x0028, 4, 2],
+        ['Average line to neutral voltage', vtFloat, 'Volt.230', 0x002A, 4, 2],
+        ['Average line current', vtFloat, 'Ampere', 0x002E, 4, 2],
+        ['Sum of line currents', vtFloat, 'Ampere', 0x0030, 4, 2],
+        ['Total system power', vtFloat, 'Watt.14490', 0x0034, 4, 2],
+        ['Total system apparent power', vtFloat, 'VA', 0x0038, 4, 2],
+        ['Total system reactive power', vtFloat, 'VaR', 0x003C, 4, 2],
+        ['Total system power factor', vtFloat, '', 0x003E, 4, 2],
+        ['Total system phase angle', vtFloat, 'PhaseAngle', 0x0042, 4, 2],
+        ['Frequency', vtFloat, 'Hertz.50', 0x0046, 4, 2],
+        ['Total system power demand', vtFloat, 'Watt.14490', 0x0054, 4, 2],
+        ['Maximum total system power demand', vtFloat, 'Watt.14490', 0x0056, 4, 2],
+        ['Total system apparent power demand', vtFloat, 'VA', 0x0064, 4, 2],
+        ['Maximum total system apparent power demand', vtFloat, 'VA', 0x0066, 4, 2],
+        ['Total neutral current demand', vtFloat, 'Ampere', 0x0068, 4, 2],
+        ['Maximum neutral current demand', vtFloat, 'Ampere', 0x006A, 4, 2],
+        ['Line 1 to Line 2 voltage', vtFloat, 'Volt.230', 0x00C8, 4, 2],
+        ['Line 2 to Line 3 voltage', vtFloat, 'Volt.230', 0x00CA, 4, 2],
+        ['Line 3 to Line 1 voltage', vtFloat, 'Volt.230', 0x00CC, 4, 2],
+        ['Average line to line voltage', vtFloat, 'Volt.230', 0x00CE, 4, 2],
+        ['Neutral current', vtFloat, 'Ampere', 0x00E0, 4, 2],
+        ['Line 1 voltage THD', vtFloat, 'Intensity.F', 0x00EA, 4, 2],
+        ['Line 2 voltage THD', vtFloat, 'Intensity.F', 0x00EC, 4, 2],
+        ['Line 3 voltage THD', vtFloat, 'Intensity.F', 0x00EE, 4, 2],
+        ['Line 1 Current THD', vtFloat, 'Intensity.F', 0x00F0, 4, 2],
+        ['Line 2 Current THD', vtFloat, 'Intensity.F', 0x00F2, 4, 2],
+        ['Line 3 Current THD', vtFloat, 'Intensity.F', 0x00F4, 4, 2],
+        ['Average line to neutral voltage THD', vtFloat, 'Intensity.F', 0x00F8, 4, 2],
+        ['Average line current THD', vtFloat, 'Intensity.F', 0x00FA, 4, 2],
+        ['Total system power factor', vtFloat, 'PhaseAngle', 0x00FE, 4, 2],
+        ['Line 1 current demand', vtFloat, 'Ampere', 0x0102, 4, 2],
+        ['Line 2 current demand', vtFloat, 'Ampere', 0x0104, 4, 2],
+        ['Line 3 current demand', vtFloat, 'Ampere', 0x0106, 4, 2],
+        ['Maximum line 1 current demand', vtFloat, 'Ampere', 0x0108, 4, 2],
+        ['Maximum line 2 current demand', vtFloat, 'Ampere', 0x010A, 4, 2],
+        ['Maximum line 3 current demand', vtFloat, 'Ampere', 0x010C, 4, 2],
+        ['Line 1 to line 2 voltage THD', vtFloat, 'Intensity.F', 0x014E, 4, 2],
+        ['Line 2 to line 3 voltage THD', vtFloat, 'Intensity.F', 0x0150, 4, 2],
+        ['Line 3 to line 1 voltage THD', vtFloat, 'Intensity.F', 0x0152, 4, 2],
+        ['Average line to line voltage THD', vtFloat, 'Intensity.F', 0x0154, 4, 2],
+        ['Total kwh', vtFloat, 'Electricity', 0x0156, 4, 2],
+        ['Total kvarh', vtFloat, 'kVArh', 0x0158, 4, 2],
+        ['L1 total kwh', vtFloat, 'Electricity', 0x0166, 4, 2],
+        ['L2 total kwh', vtFloat, 'Electricity', 0x0168, 4, 2],
+        ['L3 total kwh', vtFloat, 'Electricity', 0x0168A, 4, 2],
+        ['L1 total kvarh', vtFloat, 'kVArh', 0x0178, 4, 2],
+        ['L2 total kvarh', vtFloat, 'kVArh', 0x017A, 4, 2],
+        ['L3 total kvarh', vtFloat, 'kVArh', 0x017C, 4, 2]
+    ];
 
-    /**
-     * Interne Funktion des SDK.
-     *
-     * @access public
-     */
-    public function ApplyChanges()
-    {
-        parent::ApplyChanges();
-
-        $this->RegisterProfileFloat('VaR', '', '', ' var', 0, 0, 0, 2);
-        $this->RegisterProfileFloat('VA', '', '', ' VA', 0, 0, 0, 2);
-        $this->RegisterProfileFloat('PhaseAngle', '', '', ' °', 0, 0, 0, 2);
-
-        $this->RegisterVariableFloat("VoltL1", "Volt L1", "Volt.230", 1);
-        $this->RegisterVariableFloat("VoltL2", "Volt L2", "Volt.230", 1);
-        $this->RegisterVariableFloat("VoltL3", "Volt L3", "Volt.230", 1);
-
-        $this->RegisterVariableFloat("AmpereL1", "Ampere L1", "Ampere", 2);
-        $this->RegisterVariableFloat("AmpereL2", "Ampere L2", "Ampere", 2);
-        $this->RegisterVariableFloat("AmpereL3", "Ampere L3", "Ampere", 2);
-
-        $this->RegisterVariableFloat("WattL1", "Watt L1", "Watt.14490", 4);
-        $this->RegisterVariableFloat("WattL2", "Watt L2", "Watt.14490", 4);
-        $this->RegisterVariableFloat("WattL3", "Watt L3", "Watt.14490", 4);
-
-        $this->RegisterVariableFloat("VArL1", "VaR L1", "VaR", 5);
-        $this->RegisterVariableFloat("VArL2", "VaR L2", "VaR", 5);
-        $this->RegisterVariableFloat("VArL3", "VaR L3", "VaR", 5);
-
-        $this->RegisterVariableFloat("VAL1", "VA L1", "VA", 6);
-        $this->RegisterVariableFloat("VAL2", "VA L2", "VA", 6);
-        $this->RegisterVariableFloat("VAL3", "VA L3", "VA", 6);
-
-        $this->RegisterVariableFloat("PhaseAngleL1", "Phase angle L1", "PhaseAngle", 7);
-        $this->RegisterVariableFloat("PhaseAngleL2", "Phase angle L2", "PhaseAngle", 7);
-        $this->RegisterVariableFloat("PhaseAngleL3", "Phase angle L3", "PhaseAngle", 7);
-
-        $this->RegisterVariableFloat("Frequenz", "Frequenz", "Hertz.50", 3);
-        $this->RegisterVariableFloat("TotalL1", "Total L1 kWh", "Electricity", 8);
-        $this->RegisterVariableFloat("TotalL2", "Total L2 kWh", "Electricity", 8);
-        $this->RegisterVariableFloat("TotalL3", "Total L3 kWh", "Electricity", 8);
-
-        if ($this->ReadPropertyInteger("Interval") > 0) {
-            $this->SetTimerInterval("UpdateTimer", $this->ReadPropertyInteger("Interval"));
-        } else {
-            $this->SetTimerInterval("UpdateTimer", 0);
-        }
-    }
-
-    /**
-     * IPS-Instanz Funktion SDM360_RequestRead.
-     * Ließt alle Werte aus dem Gerät.
-     *
-     * @access public
-     * @return bool True wenn Befehl erfolgreich ausgeführt wurde, sonst false.
-     */
-    public function RequestRead()
-    {
-        $Gateway = IPS_GetInstance($this->InstanceID)['ConnectionID'];
-        if ($Gateway == 0) {
-            return false;
-        }
-        $IO = IPS_GetInstance($Gateway)['ConnectionID'];
-        if ($IO == 0) {
-            return false;
-        }
-        if (!$this->lock($IO)) {
-            return false;
-        }
-
-        for ($index = 0; $index < 3; $index++) {
-            $Volt = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => ($index * 2), "Quantity" => 2, "Data" => "")));
-            if ($Volt === false) {
-                $this->unlock($IO);
-                return false;
-            }
-            $Volt = unpack("f", strrev(substr($Volt, 2)))[1];
-            $this->SendDebug('Volt L' . ($index + 1), $Volt, 0);
-            SetValue($this->GetIDForIdent("VoltL" . ($index + 1)), $Volt);
-        }
-
-        for ($index = 0; $index < 3; $index++) {
-            $Ampere = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => 6 + ($index * 2), "Quantity" => 2, "Data" => "")));
-            if ($Ampere === false) {
-                $this->unlock($IO);
-                return false;
-            }
-            $Ampere = unpack("f", strrev(substr($Ampere, 2)))[1];
-            $this->SendDebug('Ampere L' . ($index + 1), $Ampere, 0);
-            SetValue($this->GetIDForIdent("AmpereL" . ($index + 1)), $Ampere);
-        }
-
-        for ($index = 0; $index < 3; $index++) {
-            $Watt = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => 12 + ($index * 2), "Quantity" => 2, "Data" => "")));
-            if ($Watt === false) {
-                $this->unlock($IO);
-                return false;
-            }
-            $Watt = unpack("f", strrev(substr($Watt, 2)))[1];
-            $this->SendDebug('Watt L' . ($index + 1), $Watt, 0);
-            SetValue($this->GetIDForIdent("WattL" . ($index + 1)), $Watt);
-        }
-
-        //Scheinleistung
-        for ($index = 0; $index < 3; $index++) {
-            $Va = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => 18 + ($index * 2), "Quantity" => 2, "Data" => "")));
-            if ($Va === false) {
-                $this->unlock($IO);
-                return false;
-            }
-            $Va = unpack("f", strrev(substr($Va, 2)))[1];
-            $this->SendDebug('VA L' . ($index + 1), $Va, 0);
-            SetValue($this->GetIDForIdent("VAL" . ($index + 1)), $Va);
-        }
-
-        //Blindleistung
-        for ($index = 0; $index < 3; $index++) {
-            $Var = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => 24 + ($index * 2), "Quantity" => 2, "Data" => "")));
-            if ($Var === false) {
-                $this->unlock($IO);
-                return false;
-            }
-            $Var = unpack("f", strrev(substr($Var, 2)))[1];
-            $this->SendDebug('VAr L' . ($index + 1), $Var, 0);
-            SetValue($this->GetIDForIdent("VArL" . ($index + 1)), $Var);
-        }
-
-        //PhaseAngle
-        for ($index = 0; $index < 3; $index++) {
-            $PhaseAngle = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => 36 + ($index * 2), "Quantity" => 2, "Data" => "")));
-            if ($PhaseAngle === false) {
-                $this->unlock($IO);
-                return false;
-            }
-            $PhaseAngle = unpack("f", strrev(substr($PhaseAngle, 2)))[1];
-            $this->SendDebug('PhaseAngle L' . ($index + 1), $PhaseAngle, 0);
-            SetValue($this->GetIDForIdent("PhaseAngleL" . ($index + 1)), $PhaseAngle);
-        }
-
-        $Frequenz = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => 70, "Quantity" => 2, "Data" => "")));
-        if ($Frequenz === false) {
-            $this->unlock($IO);
-            return false;
-        }
-        $Frequenz = unpack("f", strrev(substr($Frequenz, 2)))[1];
-        $this->SendDebug('Frequenz', $Frequenz, 0);
-        SetValue($this->GetIDForIdent("Frequenz"), $Frequenz);
-
-        for ($index = 0; $index < 3; $index++) {
-            $Total = $this->SendDataToParent(json_encode(array("DataID" => "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}", "Function" => 4, "Address" => 376 + ($index * 2), "Quantity" => 2, "Data" => "")));
-            if ($Total === false) {
-                $this->unlock($IO);
-                return false;
-            }
-            $Total = unpack("f", strrev(substr($Total, 2)))[1];
-            $this->SendDebug('Total L' . ($index + 1), $Total, 0);
-            SetValue($this->GetIDForIdent("TotalL" . ($index + 1)), $Total);
-        }
-
-        IPS_Sleep(333);
-        $this->unlock($IO);
-        return true;
-    }
 }

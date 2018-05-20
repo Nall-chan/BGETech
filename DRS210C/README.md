@@ -1,5 +1,5 @@
 [![Version](https://img.shields.io/badge/Symcon-PHPModul-red.svg)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
-[![Version](https://img.shields.io/badge/Modul%20Version-1.01-blue.svg)]()
+[![Version](https://img.shields.io/badge/Modul%20Version-2.00-blue.svg)]()
 [![Version](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
 [![Version](https://img.shields.io/badge/Symcon%20Version-4.3%20%3E-green.svg)](https://www.symcon.de/forum/threads/30857-IP-Symcon-4-3-%28Stable%29-Changelog)
 
@@ -60,22 +60,27 @@ Details hierzu sind dem Handbuch des Zählers (RS485) und dem eventuell verwende
 
 Folgende Statusvariablen werden automatisch angelegt.  
  
-| Name        | Typ   | Ident      | Profil          |
-| :---------: | :---: | :--------: | :-------------: |
-| Volt        | float | Volt       | ~Volt.230       |
-| Ampere      | float | Ampere     | ~Ampere         |
-| Frequenz    | float | Frequenz   | ~Hertz.50       |
-| Watt        | float | Watt       | ~Watt.14490     |
-| VaR         | float | VAr        | VaR             |
-| VA          | float | VA         | VA              |
-| Total kWh   | float | Total      | ~Electricity    | 
+| Name                                              | Typ   | Ident                                      | Profil       |
+| :-----------------------------------------------: | :---: | :----------------------------------------: | :----------: |
+| Spannung                                          | float | Voltage                                    | Volt.230     |
+| Strom                                             | float | Current                                    | Ampere       |
+| Wirkleistung                                      | float | Active power                               | Watt.14490   |
+| Scheinleistung                                    | float | Apparent power                             | VA           |
+| Blindleistung                                     | float | Reactive power                             | VaR          |
+| Leistungsfaktor                                   | float | Power factor                               |              |
+| Frequenz                                          | float | Frequency                                  | Hertz.50     |
+| Gesamte kumulierte Wirkleistung kWh               | float | Total kwh                                  | Electricity  |
 
 Folgende Profile werden automatisch angelegt.  
 
-| Name       | Typ   |
-| :--------: | :---: |
-| VA         | float |
-| VaR        | float |
+| Name        | Typ   |
+| :---------: | :---: |
+| PhaseAngle  | float |
+| VA          | float |
+| VaR         | float |
+| Intensity.F | float |
+| kVArh       | float |
+
 
 ## 6. PHP-Befehlsreferenz
 
@@ -89,6 +94,14 @@ Bei Erfolg wird `true` und im Fehlerfall wird `false` zurückgegeben und eine Wa
 ## 7. Anhang
 
 ### 1. Changlog
+
+Version 2.0:  
+ - DRS 458 ergänzt  
+ - SDM 72D ergänzt  
+ - SDM 120C ergänzt  
+ - SDM 220 ergänzt  
+ - SDM 230 ergänzt  
+ - SDM 630 fehlende Werte ergänzt und kleiner Bugfixes  
 
 Version 1.1:  
  - Profile ergänzt  

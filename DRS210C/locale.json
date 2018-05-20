@@ -1,0 +1,15 @@
+{
+    "translations": {
+        "de": {
+            "Read values": "Werte lesen",
+            "Voltage": "Spannung",
+            "Current": "Strom",
+            "Active power": "Wirkleistung",
+            "Apparent power": "Scheinleistung",
+            "Reactive power": "Blindleistung",
+            "Power factor": "Leistungsfaktor",
+            "Frequency": "Frequenz",
+            "Total kwh": "Gesamte kumulierte Wirkleistung kWh"
+        }
+    }
+}
