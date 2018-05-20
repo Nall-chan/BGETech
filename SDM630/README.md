@@ -139,6 +139,9 @@ Folgende Profile werden automatisch angelegt.
 | Intensity.F | float |
 | kVArh       | float |
 
+Darstellung in der Console.  
+![Instanz](../imgs/SDM630.png) 
+
 ## 6. PHP-Befehlsreferenz
 
 ```php

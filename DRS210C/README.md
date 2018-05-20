@@ -79,6 +79,8 @@ Folgende Profile werden automatisch angelegt.
 | Intensity.F | float |
 | kVArh       | float |
 
+Darstellung in der Console.  
+![Instanz](../imgs/DRS210C.png) 
 
 ## 6. PHP-Befehlsreferenz
 
