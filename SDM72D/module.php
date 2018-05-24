@@ -23,7 +23,8 @@ class SDM72D extends BGETech
     const PREFIX = 'SDM72D';
 
     public static $Variables = [
-        ['Power', vtFloat, 'Watt.14490', 0x0034, 4, 2],
-        ['Total active energy', vtFloat, 'Electricity', 0x0156, 4, 2]
+        ['Power', vtFloat, 'Watt.14490', 0x0034, 4, 2, true],
+        ['Total active energy', vtFloat, 'Electricity', 0x0156, 4, 2, true]
     ];
+
 }

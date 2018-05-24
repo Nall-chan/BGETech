@@ -1,0 +1,74 @@
+{
+    "elements":
+            [
+                {
+                    "name": "Interval",
+                    "type": "IntervalBox",
+                    "caption": "milliseconds"
+                }
+                , {
+                    "type": "List",
+                    "name": "Variables",
+                    "caption": "",
+                    "add": false,
+                    "delete": false,
+                    "columns": [{
+                            "label": "Ident",
+                            "name": "Ident",
+                            "visible": false,
+                            "save": true
+                        }, {
+                            "label": "Position",
+                            "name": "Pos",
+                            "width": "100px",
+                            "save": true
+                        }, {
+                            "label": "Name",
+                            "name": "Name",
+                            "width": "auto",
+                            "save": true
+                        }, {
+                            "label": "Type",
+                            "name": "VarType",
+                            "visible": false,
+                            "save": true
+                        }, {
+                            "label": "Profile",
+                            "name": "Profile",
+                            "visible": false,
+                            "save": true
+                        }, {
+                            "label": "Address",
+                            "name": "Address",
+                            "visible": false,
+                            "save": true
+                        }, {
+                            "label": "Function",
+                            "name": "Function",
+                            "visible": false,
+                            "save": true
+                        }, {
+                            "label": "Quantity",
+                            "name": "Quantity",
+                            "visible": false,
+                            "save": true
+                        }, {
+                            "label": "Active",
+                            "name": "Keep",
+                            "width": "75px",
+                            "edit": {
+                                "type": "CheckBox"
+                            }
+                        }],
+                    "values": []
+                }
+            ],
+    "actions":
+            [
+                {
+                    "type": "Button",
+                    "label": "Read values",
+                    "onClick": ""
+                }
+            ]
+}
