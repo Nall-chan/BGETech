@@ -2,6 +2,9 @@
     "translations": {
         "de": {
             "Read values": "Werte lesen",
+            "Combination of type and size of value (%s) not supported.": "Kombination von Type und Wert (%s) nicht unterstützt.",
+            "milliseconds": "Millisekunden",
+            "Active": "Aktiv",
             "Total active energy": "Gesamte kumulierte Wirkleistung"
         }
     }

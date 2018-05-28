@@ -16,6 +16,7 @@
                             "label": "Ident",
                             "name": "Ident",
                             "visible": false,
+                            "width": "0px",
                             "save": true
                         }, {
                             "label": "Position",
@@ -31,32 +32,38 @@
                             "label": "Type",
                             "name": "VarType",
                             "visible": false,
+                            "width": "0px",
                             "save": true
                         }, {
                             "label": "Profile",
                             "name": "Profile",
                             "visible": false,
+                            "width": "0px",
                             "save": true
                         }, {
                             "label": "Address",
                             "name": "Address",
                             "visible": false,
+                            "width": "0px",
                             "save": true
                         }, {
                             "label": "Function",
                             "name": "Function",
                             "visible": false,
+                            "width": "0px",
                             "save": true
                         }, {
                             "label": "Quantity",
                             "name": "Quantity",
                             "visible": false,
+                            "width": "0px",
                             "save": true
                         }, {
                             "label": "Active",
                             "name": "Keep",
                             "width": "75px",
                             "edit": {
+                                "caption": "Active",
                                 "type": "CheckBox"
                             }
                         }],

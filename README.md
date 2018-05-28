@@ -86,6 +86,13 @@ Ist direkt in der Dokumentation der jeweiligen Module beschrieben.
 
 ### 2. Changlog
 
+Version 2.2:  
+ - Intern werden jetzt auch Integer, Boolean und String Variablen unterstützt  
+ - Fehlende Übersetzungen ergänzt  
+
+Version 2.1:  
+ - Abzufragende Werte können deaktivert werden  
+
 Version 2.0:  
  - DRS 458 ergänzt  
  - SDM 72D ergänzt  

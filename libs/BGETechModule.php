@@ -117,12 +117,60 @@ class BGETech extends IPSModule
             if ($ReadValue === false) {
                 return false;
             }
-            //TODO more unpack more VarTypes !!
-            $Value = unpack("f", strrev(substr($ReadValue, 2)))[1];
+            $Value = $this->ConvertValue($Variable, strrev($ReadValue));
+            if ($Value === NULL) {
+                $this->LogMessage(sprintf($this->Translate('Combination of type and size of value (%s) not supported.'), $Variable['Name']), KL_ERROR);
+                continue;
+            }
             $this->SendDebug($Variable['Name'], $Value, 0);
             $this->SetValueExt($Variable, $Value, $Pos + 1);
         }
         return true;
+    }
+
+    private function ConvertValue(array $Variable, string $Value)
+    {
+        switch ($Variable['VarType']) {
+            case vtBoolean:
+                if ($Variable['Quantity'] == 1) {
+                    return ord($Value) == 0x01;
+                }
+                break;
+            case vtInteger:
+                switch ($Variable['Quantity']) {
+                    case 1:
+                        return ord($Value);
+                    case 2:
+                        return unpack("n", substr($Value, 2))[1];
+                    case 4:
+                        return unpack("N", substr($Value, 4))[1];
+                    case 8:
+                        return unpack("J", substr($Value, 8))[1];
+                }
+                break;
+            case vtFloat:
+                switch ($Variable['Quantity']) {
+                    case 2:
+                        return unpack("f", substr($Value, 2))[1];
+                    case 4:
+                        return unpack("f", substr($Value, 4))[1];
+                    case 8:
+                        return unpack("f", substr($Value, 8))[1];
+                }
+                break;
+            case vtString:
+                return $Value;
+        }
+        return NULL;
+    }
+
+    protected function LogMessage($Message, $Type)
+    {
+        if (method_exists('IPSModule', 'LogMessage')) {
+            parent::LogMessage($Message, $Type);
+        } else {
+            IPS_LogMessage(IPS_GetName($this->InstanceID), $Message);
+        }
     }
 
     /**
