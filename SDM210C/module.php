@@ -32,5 +32,4 @@ class SDM210C extends BGETech
         ['Frequency', vtFloat, 'Hertz.50', 0x0046, 4, 2, true],
         ['Total active energy', vtFloat, 'Electricity', 0x0156, 4, 2, true]
     ];
-
 }

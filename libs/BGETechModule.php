@@ -20,7 +20,6 @@ require_once(__DIR__ . "/BGETechTraits.php");  // diverse Klassen
  */
 class BGETech extends IPSModule
 {
-
     use Semaphore,
         VariableProfile;
     /**
@@ -129,7 +128,7 @@ class BGETech extends IPSModule
             $this->SendDebug($Variable['Name'] . ' RAW', $ReadValue, 1);
             $Value = $this->ConvertValue($Variable, strrev($ReadValue));
 
-            if ($Value === NULL) {
+            if ($Value === null) {
                 $this->LogMessage(sprintf($this->Translate('Combination of type and size of value (%s) not supported.'), $Variable['Name']), KL_ERROR);
                 continue;
             }
@@ -172,7 +171,7 @@ class BGETech extends IPSModule
             case vtString:
                 return $Value;
         }
-        return NULL;
+        return null;
     }
 
     protected function LogMessage($Message, $Type)
@@ -215,5 +214,4 @@ class BGETech extends IPSModule
         //$this->SendDebug('form', json_encode($Form), 0);
         return json_encode($Form);
     }
-
 }
