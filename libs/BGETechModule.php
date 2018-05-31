@@ -104,7 +104,7 @@ class BGETech extends IPSModule
     private function ReadData()
     {
         $Variables = json_decode($this->ReadPropertyString('Variables'), true);
-        foreach ($Variables as $Pos => $Variable) {
+        foreach ($Variables as $Variable) {
             if (!$Variable['Keep']) {
                 continue;
             }
@@ -113,17 +113,20 @@ class BGETech extends IPSModule
             $SendData['Address'] = $Variable['Address'];
             $SendData['Quantity'] = $Variable['Quantity'];
             $SendData['Data'] = '';
-            $ReadValue = $this->SendDataToParent(json_encode($SendData));
-            if ($ReadValue === false) {
+            $ReadData = $this->SendDataToParent(json_encode($SendData));
+            if ($ReadData === false) {
                 return false;
             }
+            $ReadValue = substr($ReadData, 2);
+            $this->SendDebug($Variable['Name'] . ' RAW', $ReadValue, 1);
             $Value = $this->ConvertValue($Variable, strrev($ReadValue));
+
             if ($Value === NULL) {
                 $this->LogMessage(sprintf($this->Translate('Combination of type and size of value (%s) not supported.'), $Variable['Name']), KL_ERROR);
                 continue;
             }
-            $this->SendDebug($Variable['Name'], $Value, 0);
-            $this->SetValueExt($Variable, $Value, $Pos + 1);
+            $this->SendDebug($Variable['Name'], (int) $Value, 0);
+            $this->SetValueExt($Variable, $Value);
         }
         return true;
     }
@@ -141,21 +144,21 @@ class BGETech extends IPSModule
                     case 1:
                         return ord($Value);
                     case 2:
-                        return unpack("n", substr($Value, 2))[1];
+                        return unpack("n", $Value)[1];
                     case 4:
-                        return unpack("N", substr($Value, 4))[1];
+                        return unpack("N", $Value)[1];
                     case 8:
-                        return unpack("J", substr($Value, 8))[1];
+                        return unpack("J", $Value)[1];
                 }
                 break;
             case vtFloat:
                 switch ($Variable['Quantity']) {
                     case 2:
-                        return unpack("f", substr($Value, 2))[1];
+                        return unpack("f", $Value)[1];
                     case 4:
-                        return unpack("f", substr($Value, 4))[1];
+                        return unpack("f", $Value)[1];
                     case 8:
-                        return unpack("f", substr($Value, 8))[1];
+                        return unpack("f", $Value)[1];
                 }
                 break;
             case vtString:
@@ -179,16 +182,16 @@ class BGETech extends IPSModule
      * @param array $Variable Statusvariable
      * @param mixed  $Value Neuer Wert der Statusvariable.
      */
-    protected function SetValueExt($Variable, $Value, $Pos)
+    protected function SetValueExt($Variable, $Value)
     {
         $id = @$this->GetIDForIdent($Variable['Ident']);
         if ($id == false) {
             $this->MaintainVariable($Variable['Ident'], $Variable['Name'], $Variable['VarType'], $Variable['Profile'], $Variable['Pos'], $Variable['Keep']);
         }
         if (method_exists('IPSModule', 'SetValue')) {
-            parent::SetValue($Ident, $Value);
+            parent::SetValue($Variable['Ident'], $Value);
         } else {
-            $id = @$this->GetIDForIdent($Ident);
+            $id = @$this->GetIDForIdent($Variable['Ident']);
             SetValueFloat($id, $Value);
         }
         return true;
