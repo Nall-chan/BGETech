@@ -38,5 +38,4 @@ class SDM230 extends BGETech
         ['Total active energy', vtFloat, 'Electricity', 0x0156, 4, 2, true],
         ['Total reactive energy', vtFloat, 'kVArh', 0x0158, 4, 2, true]
     ];
-
 }

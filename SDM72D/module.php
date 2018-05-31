@@ -26,5 +26,4 @@ class SDM72D extends BGETech
         ['Power', vtFloat, 'Watt.14490', 0x0034, 4, 2, true],
         ['Total active energy', vtFloat, 'Electricity', 0x0156, 4, 2, true]
     ];
-
 }
