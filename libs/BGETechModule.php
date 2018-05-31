@@ -101,6 +101,12 @@ class BGETech extends IPSModule
         return $Result;
     }
 
+    protected function ModulErrorHandler($errno, $errstr)
+    {
+        $this->SendDebug('ERROR', $errstr, 0);
+        echo $errstr;
+    }
+
     private function ReadData()
     {
         $Variables = json_decode($this->ReadPropertyString('Variables'), true);
@@ -113,7 +119,9 @@ class BGETech extends IPSModule
             $SendData['Address'] = $Variable['Address'];
             $SendData['Quantity'] = $Variable['Quantity'];
             $SendData['Data'] = '';
+            set_error_handler([$this, 'ModulErrorHandler']);
             $ReadData = $this->SendDataToParent(json_encode($SendData));
+            restore_error_handler();
             if ($ReadData === false) {
                 return false;
             }
@@ -125,7 +133,7 @@ class BGETech extends IPSModule
                 $this->LogMessage(sprintf($this->Translate('Combination of type and size of value (%s) not supported.'), $Variable['Name']), KL_ERROR);
                 continue;
             }
-            $this->SendDebug($Variable['Name'], (int) $Value, 0);
+            $this->SendDebug($Variable['Name'], $Value, 0);
             $this->SetValueExt($Variable, $Value);
         }
         return true;
