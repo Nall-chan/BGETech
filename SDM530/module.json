@@ -1,0 +1,11 @@
+{
+    "id": "{9A65E88A-21DC-439F-8602-CA14EE9FDF27}",
+    "name": "SDM 530",
+    "aliases": ["SDM 530"],
+    "type": 3,
+    "vendor": "B+G E-Tech",
+    "parentRequirements": ["{E310B701-4AE7-458E-B618-EC13A1A6F6A8}"],
+    "childRequirements": [],
+    "implemented": ["{77B31ABB-18FA-4B91-BB63-E5B2AB5588F4}"],
+    "prefix": "SDM530"
+}

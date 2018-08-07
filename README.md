@@ -1,5 +1,5 @@
 [![Version](https://img.shields.io/badge/Symcon-PHPModul-red.svg)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
-[![Version](https://img.shields.io/badge/Modul%20Version-2.00-blue.svg)]()
+[![Version](https://img.shields.io/badge/Modul%20Version-2.30-blue.svg)]()
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
 [![Version](https://img.shields.io/badge/Symcon%20Version-4.3%20%3E-green.svg)](https://www.symcon.de/forum/threads/30857-IP-Symcon-4-3-%28Stable%29-Changelog)
 [![StyleCI](https://styleci.io/repos/107579755/shield?style=flat)](https://styleci.io/repos/107579755)  
@@ -47,6 +47,9 @@ Folgende Module beinhaltet das IPSBGETEch Repository:
 - __SDM230__   
 	Zähler vom Typ SDM 230  
 
+- __SDM530__   
+	Zähler vom Typ SDM 530 
+
 - __SDM630__   
 	Zähler vom Typ SDM 630  
 
@@ -81,10 +84,14 @@ Ist direkt in der Dokumentation der jeweiligen Module beschrieben.
 | SDM210C | Device | SDM210C | {32DCCC5C-78D3-475E-885A-652F56DB4D18} |
 | SDM220  | Device | SDM220  | {93668601-F92A-46FC-AE5B-E44451F022EE} |
 | SDM230  | Device | SDM230  | {10D08FCD-D1AC-4CF3-8B19-54B92209DA07} |
+| SDM530  | Device | SDM530  | {9A65E88A-21DC-439F-8602-CA14EE9FDF27} |
 | SDM630  | Device | SDM630  | {BBCA5E14-505E-4394-B653-8CD33AD52037} |
 
 
 ### 2. Changlog
+
+Version 2.03:  
+ - SDM 530 ergänzt  
 
 Version 2.2:  
  - Intern werden jetzt auch Integer, Boolean und String Variablen unterstützt  
