@@ -1,5 +1,5 @@
 [![Version](https://img.shields.io/badge/Symcon-PHPModul-red.svg)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
-[![Version](https://img.shields.io/badge/Modul%20Version-2.30-blue.svg)]()
+[![Version](https://img.shields.io/badge/Modul%20Version-2.04-blue.svg)]()
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
 [![Version](https://img.shields.io/badge/Symcon%20Version-4.3%20%3E-green.svg)](https://www.symcon.de/forum/threads/30857-IP-Symcon-4-3-%28Stable%29-Changelog)
 [![StyleCI](https://styleci.io/repos/107579755/shield?style=flat)](https://styleci.io/repos/107579755)  
@@ -34,6 +34,9 @@ Folgende Module beinhaltet das IPSBGETEch Repository:
 
 - __DRS458__  
 	Zähler vom Typ DRS 458  
+
+- __DRT710M__  
+	Zähler vom Typ DRT 710M  
 
 - __SDM72D__   
 	Zähler vom Typ SDM 72D
@@ -80,6 +83,7 @@ Ist direkt in der Dokumentation der jeweiligen Module beschrieben.
 | :-----: | :----: | :-----: | :------------------------------------: |
 | DRS210C | Device | DRS210C | {2CA41C9F-355C-4231-90A5-6D83A90B65BD} |
 | DRS458  | Device | DRS458  | {8CA96C98-3014-44E4-8D15-4EC6B524F1F4} |
+| DRT710M | Device | DRT710M | {187BB86B-A52F-4ADD-A233-92108BD71767} |
 | SDM72D  | Device | SDM72D  | {08371372-5993-4BAF-A6EC-D70759709CD9} |
 | SDM210C | Device | SDM210C | {32DCCC5C-78D3-475E-885A-652F56DB4D18} |
 | SDM220  | Device | SDM220  | {93668601-F92A-46FC-AE5B-E44451F022EE} |
@@ -89,6 +93,9 @@ Ist direkt in der Dokumentation der jeweiligen Module beschrieben.
 
 
 ### 2. Changlog
+
+Version 2.04:  
+ - DRT 710M ergänzt  
 
 Version 2.03:  
  - SDM 530 ergänzt  

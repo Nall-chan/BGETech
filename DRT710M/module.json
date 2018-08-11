@@ -1,0 +1,11 @@
+{
+    "id": "{187BB86B-A52F-4ADD-A233-92108BD71767}",
+    "name": "DRT 710M",
+    "aliases": ["DRT 710M"],
+    "type": 3,
+    "vendor": "B+G E-Tech",
+    "parentRequirements": ["{E310B701-4AE7-458E-B618-EC13A1A6F6A8}"],
+    "childRequirements": [],
+    "implemented": ["{77B31ABB-18FA-4B91-BB63-E5B2AB5588F4}"],
+    "prefix": "DRT710M"
+}

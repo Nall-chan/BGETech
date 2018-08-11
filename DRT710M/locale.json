@@ -1,0 +1,36 @@
+{
+    "translations": {
+        "de": {
+            "Read values": "Werte lesen",
+            "Combination of type and size of value (%s) not supported.": "Kombination von Type und Wert (%s) nicht unterstützt.",
+            "milliseconds": "Millisekunden",
+            "Active": "Aktiv",
+            "Voltage L1": "Spannung L1",
+            "Voltage L2": "Spannung L2",
+            "Voltage L3": "Spannung L3",
+            "Current L1": "Strom L1",
+            "Current L2": "Strom L2",
+            "Current L3": "Strom L3",
+            "Active power L1": "Wirkleistung L1",
+            "Active power L2": "Wirkleistung L2",
+            "Active power L3": "Wirkleistung L3",
+            "Apparent power L1": "Scheinleistung L1",
+            "Apparent power L2": "Scheinleistung L2",
+            "Apparent power L3": "Scheinleistung L3",
+            "Reactive power L1": "Blindleistung L1",
+            "Reactive power L2": "Blindleistung L2",
+            "Reactive power L3": "Blindleistung L3",
+            "Power factor L1": "Leistungsfaktor L1",
+            "Power factor L2": "Leistungsfaktor L2",
+            "Power factor L3": "Leistungsfaktor L3",
+            "Total system power": "Kumulierte System Wirkleistung",
+            "Total system apparent power": "Kumulierte System Scheinleistung",
+            "Total system reactive power": "Kumulierte System Blindleistung",
+            "Total system power factor": "Kumulierte System Leistungsfaktor",
+            "Frequency": "Frequenz",
+            "Neutral current": "Neutral Strom",
+            "Total import energy": "Gesamte Import Wirkleistung",
+            "Total export energy": "Gesamte Export Wirkleistung"
+        }
+    }
+}
