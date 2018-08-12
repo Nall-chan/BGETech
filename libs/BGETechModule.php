@@ -65,7 +65,7 @@ class BGETech extends IPSModule
         $this->RegisterProfileFloat('kVArh', '', '', ' kVArh', 0, 100, 0, 2);
         $Variables = json_decode($this->ReadPropertyString('Variables'), true);
         foreach ($Variables as $Variable) {
-            $this->MaintainVariable($Variable['Ident'], $Variable['Name'], $Variable['VarType'], $Variable['Profile'], $Variable['Pos'], $Variable['Keep']);
+            @$this->MaintainVariable($Variable['Ident'], $Variable['Name'], $Variable['VarType'], $Variable['Profile'], $Variable['Pos'], $Variable['Keep']);
         }
         if ($this->ReadPropertyInteger('Interval') > 0) {
             $this->SetTimerInterval('UpdateTimer', $this->ReadPropertyInteger('Interval'));

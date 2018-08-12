@@ -21,7 +21,7 @@
                         }, {
                             "label": "Position",
                             "name": "Pos",
-                            "width": "100px",
+                            "width": "15px",
                             "save": true
                         }, {
                             "label": "Name",
@@ -31,33 +31,73 @@
                         }, {
                             "label": "Type",
                             "name": "VarType",
-                            "visible": false,
-                            "width": "0px",
-                            "save": true
+                            "width": "75px",
+                            "edit": {
+                                "type": "Select",
+                                "caption": "VarType",
+                                "options": [
+                                    {
+                                        "caption": "Integer",
+                                        "value": 1
+                                    },
+                                    {
+                                        "caption": "Float",
+                                        "value": 2
+                                    }
+                                ]
+                            }                    
                         }, {
                             "label": "Profile",
                             "name": "Profile",
-                            "visible": false,
-                            "width": "0px",
-                            "save": true
+                            "width": "75px",
+                            "edit": {
+                                "caption": "Profile",
+                                "type": "ValidationTextBox"
+                            }
                         }, {
                             "label": "Address",
                             "name": "Address",
-                            "visible": false,
-                            "width": "0px",
-                            "save": true
+                            "width": "75px",
+                            "edit": {
+                                "caption": "Address",
+                                "type": "NumberSpinner"
+                            }
                         }, {
                             "label": "Function",
                             "name": "Function",
-                            "visible": false,
-                            "width": "0px",
-                            "save": true
+                            "width": "75px",
+                            "edit": {
+                                "type": "Select",
+                                "caption": "Function",
+                                "options": [
+                                    {
+                                        "caption": "03",
+                                        "value": 3
+                                    },
+                                    {
+                                        "caption": "04",
+                                        "value": 4
+                                    }
+                                ]
+                            }                    
                         }, {
                             "label": "Quantity",
                             "name": "Quantity",
-                            "visible": false,
-                            "width": "0px",
-                            "save": true
+                            "width": "75px",
+                            "edit": {
+                                "type": "Select",
+                                "caption": "Quantity",
+                                "options": [
+                                    {
+                                        "caption": "02",
+                                        "value": 2
+                                    },
+                                    {
+                                        "caption": "04",
+                                        "value": 4
+                                    }
+                                ]
+                            }  
                         }, {
                             "label": "Active",
                             "name": "Keep",
