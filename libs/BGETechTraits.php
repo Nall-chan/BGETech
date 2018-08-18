@@ -254,7 +254,6 @@ trait VariableProfile
             IPS_SetVariableProfileDigits($Name, $Digits);
         }
     }
-
 }
 
 /**
@@ -287,7 +286,6 @@ trait Semaphore
     {
         IPS_SemaphoreLeave('ModBus.' . (string) $ident);
     }
-
 }
 
 /** @} */
