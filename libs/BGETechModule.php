@@ -20,7 +20,6 @@ require_once(__DIR__ . "/BGETechTraits.php");  // diverse Klassen
  */
 class BGETech extends IPSModule
 {
-
     use Semaphore,
         VariableProfile;
     const Swap = true;
@@ -228,5 +227,4 @@ class BGETech extends IPSModule
         //$this->SendDebug('form', json_encode($Form), 0);
         return json_encode($Form);
     }
-
 }

@@ -51,5 +51,4 @@ class DRT710M extends BGETech
         ['Total import energy', vtInteger, 'Electricity.I', 0x0160, 3, 4, true],
         ['Total export energy', vtInteger, 'Electricity.I', 0x0166, 3, 4, true]
     ];
-
 }
