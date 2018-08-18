@@ -21,7 +21,7 @@
                         }, {
                             "label": "Position",
                             "name": "Pos",
-                            "width": "15px",
+                            "width": "100px",
                             "save": true
                         }, {
                             "label": "Name",
@@ -31,73 +31,33 @@
                         }, {
                             "label": "Type",
                             "name": "VarType",
-                            "width": "75px",
-                            "edit": {
-                                "type": "Select",
-                                "caption": "VarType",
-                                "options": [
-                                    {
-                                        "caption": "Integer",
-                                        "value": 1
-                                    },
-                                    {
-                                        "caption": "Float",
-                                        "value": 2
-                                    }
-                                ]
-                            }                    
+                            "visible": false,
+                            "width": "0px",
+                            "save": true
                         }, {
                             "label": "Profile",
                             "name": "Profile",
-                            "width": "75px",
-                            "edit": {
-                                "caption": "Profile",
-                                "type": "ValidationTextBox"
-                            }
+                            "visible": false,
+                            "width": "0px",
+                            "save": true
                         }, {
                             "label": "Address",
                             "name": "Address",
-                            "width": "75px",
-                            "edit": {
-                                "caption": "Address",
-                                "type": "NumberSpinner"
-                            }
+                            "visible": false,
+                            "width": "0px",
+                            "save": true
                         }, {
                             "label": "Function",
                             "name": "Function",
-                            "width": "75px",
-                            "edit": {
-                                "type": "Select",
-                                "caption": "Function",
-                                "options": [
-                                    {
-                                        "caption": "03",
-                                        "value": 3
-                                    },
-                                    {
-                                        "caption": "04",
-                                        "value": 4
-                                    }
-                                ]
-                            }                    
+                            "visible": false,
+                            "width": "0px",
+                            "save": true
                         }, {
                             "label": "Quantity",
                             "name": "Quantity",
-                            "width": "75px",
-                            "edit": {
-                                "type": "Select",
-                                "caption": "Quantity",
-                                "options": [
-                                    {
-                                        "caption": "02",
-                                        "value": 2
-                                    },
-                                    {
-                                        "caption": "04",
-                                        "value": 4
-                                    }
-                                ]
-                            }  
+                            "visible": false,
+                            "width": "0px",
+                            "save": true
                         }, {
                             "label": "Active",
                             "name": "Keep",

@@ -9,7 +9,7 @@
  * @author        Michael Tröger <micha@nall-chan.net>
  * @copyright     2018 Michael Tröger
  * @license       https://creativecommons.org/licenses/by-nc-sa/4.0/ CC BY-NC-SA 4.0
- * @version       2.0
+ * @version       2.05
  *
  */
 require_once(__DIR__ . "/BGETechTraits.php");  // diverse Klassen
@@ -20,8 +20,11 @@ require_once(__DIR__ . "/BGETechTraits.php");  // diverse Klassen
  */
 class BGETech extends IPSModule
 {
+
     use Semaphore,
         VariableProfile;
+    const Swap = true;
+
     /**
      * Interne Funktion des SDK.
      *
@@ -63,6 +66,15 @@ class BGETech extends IPSModule
         $this->RegisterProfileFloat('PhaseAngle', '', '', ' °', 0, 0, 0, 2);
         $this->RegisterProfileFloat('Intensity.F', '', '', ' %', 0, 100, 0, 2);
         $this->RegisterProfileFloat('kVArh', '', '', ' kVArh', 0, 100, 0, 2);
+        $this->RegisterProfileInteger('Volt.I', 'Electricity', '', ' V', 0, 0, 0);
+        $this->RegisterProfileInteger('Hertz.I', 'Electricity', '', ' Hz', 0, 0, 0);
+        $this->RegisterProfileInteger('Ampere.I', 'Electricity', '', ' A', 0, 0, 0);
+        $this->RegisterProfileInteger('Watt.I', 'Electricity', '', ' W', 0, 0, 0);
+        $this->RegisterProfileInteger('VaR.I', '', '', ' VAr', 0, 0, 0);
+        $this->RegisterProfileInteger('VA.I', '', '', ' VA', 0, 0, 0);
+        $this->RegisterProfileInteger('Electricity.I', '', '', ' kWh', 0, 0, 0);
+
+
         $Variables = json_decode($this->ReadPropertyString('Variables'), true);
         foreach ($Variables as $Variable) {
             @$this->MaintainVariable($Variable['Ident'], $Variable['Name'], $Variable['VarType'], $Variable['Profile'], $Variable['Pos'], $Variable['Keep']);
@@ -102,7 +114,7 @@ class BGETech extends IPSModule
 
     protected function ModulErrorHandler($errno, $errstr)
     {
-        $this->SendDebug('ERROR', $errstr, 0);
+        $this->SendDebug('ERROR', utf8_decode($errstr), 0);
         echo $errstr;
     }
 
@@ -126,8 +138,10 @@ class BGETech extends IPSModule
             }
             $ReadValue = substr($ReadData, 2);
             $this->SendDebug($Variable['Name'] . ' RAW', $ReadValue, 1);
-            $Value = $this->ConvertValue($Variable, strrev($ReadValue));
-
+            if (static::Swap) {
+                $ReadValue = strrev($ReadValue);
+            }
+            $Value = $this->ConvertValue($Variable, $ReadValue);
             if ($Value === null) {
                 $this->LogMessage(sprintf($this->Translate('Combination of type and size of value (%s) not supported.'), $Variable['Name']), KL_ERROR);
                 continue;
@@ -214,4 +228,5 @@ class BGETech extends IPSModule
         //$this->SendDebug('form', json_encode($Form), 0);
         return json_encode($Form);
     }
+
 }

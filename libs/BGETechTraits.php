@@ -189,6 +189,22 @@ if (!defined("vtBoolean")) { //Nur wenn Konstanten noch nicht bekannt sind.
  */
 trait VariableProfile
 {
+    /**
+     * Erstell und konfiguriert ein VariablenProfil für den Typ integer
+     *
+     * @access protected
+     * @param string $Name Name des Profils.
+     * @param string $Icon Name des Icon.
+     * @param string $Prefix Prefix für die Darstellung.
+     * @param string $Suffix Suffix für die Darstellung.
+     * @param int $MinValue Minimaler Wert.
+     * @param int $MaxValue Maximaler wert.
+     * @param int $StepSize Schrittweite
+     */
+    protected function RegisterProfileInteger($Name, $Icon, $Prefix, $Suffix, $MinValue, $MaxValue, $StepSize)
+    {
+        $this->RegisterProfile(1, $Name, $Icon, $Prefix, $Suffix, $MinValue, $MaxValue, $StepSize);
+    }
 
     /**
      * Erstell und konfiguriert ein VariablenProfil für den Typ float
@@ -238,6 +254,7 @@ trait VariableProfile
             IPS_SetVariableProfileDigits($Name, $Digits);
         }
     }
+
 }
 
 /**
@@ -245,7 +262,6 @@ trait VariableProfile
  */
 trait Semaphore
 {
-
     /**
      * Versucht eine Semaphore zu setzen und wiederholt dies bei Misserfolg bis zu 100 mal.
      * @param string $ident Ein String der den Lock bezeichnet.
@@ -271,6 +287,7 @@ trait Semaphore
     {
         IPS_SemaphoreLeave('ModBus.' . (string) $ident);
     }
+
 }
 
 /** @} */

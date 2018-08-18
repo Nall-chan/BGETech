@@ -1,5 +1,5 @@
 [![Version](https://img.shields.io/badge/Symcon-PHPModul-red.svg)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
-[![Version](https://img.shields.io/badge/Modul%20Version-2.04-blue.svg)]()
+[![Version](https://img.shields.io/badge/Modul%20Version-2.05-blue.svg)]()
 [![Version](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
 [![Version](https://img.shields.io/badge/Symcon%20Version-4.3%20%3E-green.svg)](https://www.symcon.de/forum/threads/30857-IP-Symcon-4-3-%28Stable%29-Changelog)
 
@@ -58,44 +58,47 @@ Details hierzu sind dem Handbuch des Zählers (RS485) und dem eventuell verwende
 
 Folgende Statusvariablen werden automatisch angelegt.  
 
-| Name                                              | Typ   | Ident                                      | Profil       |
-| :-----------------------------------------------: | :---: | :----------------------------------------: | :----------: |
-| Spannung L1                                       | float | Voltage L1                                 | Volt.230     |
-| Spannung L2                                       | float | Voltage L2                                 | Volt.230     |
-| Spannung L3                                       | float | Voltage L3                                 | Volt.230     |
-| Strom L1                                          | float | Current L1                                 | Ampere       |
-| Strom L2                                          | float | Current L2                                 | Ampere       |
-| Strom L3                                          | float | Current L3                                 | Ampere       |
-| Wirkleistung L1                                   | float | Active power L1                            | Watt.14490   |
-| Wirkleistung L2                                   | float | Active power L2                            | Watt.14490   |
-| Wirkleistung L3                                   | float | Active power L3                            | Watt.14490   |
-| Scheinleistung L1                                 | float | Apparent power L1                          | VA           |
-| Scheinleistung L2                                 | float | Apparent power L2                          | VA           |
-| Scheinleistung L3                                 | float | Apparent power L3                          | VA           |
-| Blindleistung L1                                  | float | Reactive power L1                          | VaR          |
-| Blindleistung L2                                  | float | Reactive power L2                          | VaR          |
-| Blindleistung L3                                  | float | Reactive power L3                          | VaR          |
-| Leistungsfaktor L1                                | float | Power factor L1                            |              |
-| Leistungsfaktor L2                                | float | Power factor L2                            |              |
-| Leistungsfaktor L3                                | float | Power factor L3                            |              |
-| Kumulierte System Wirkleistung                    | float | Total system power                         | Watt.14490   |
-| Kumulierte System Scheinleistung                  | float | Total system apparent power                | VA           |
-| Kumulierte System Blindleistung                   | float | Total system reactive power                | VaR          |
-| Kumulierte System Leistungsfaktor                 | float | Total system power factor                  |              |
-| Frequenz                                          | float | Frequency                                  | Hertz.50     |
-| Neutral Strom                                     | float | Neutral current                            | Ampere       |
-| Gesamte Import Wirkleistung                       | float | Total import energy                        | Electricity  |
-| Gesamte Export Wirkleistung                       | float | Total export energy                        | Electricity  |
+| Name                                              | Typ     | Ident                                      | Profil       |
+| :-----------------------------------------------: | :-----: | :----------------------------------------: | :----------: |
+| Spannung L1                                       | integer | Voltage L1                                 | Volt.230     |
+| Spannung L2                                       | integer | Voltage L2                                 | Volt.230     |
+| Spannung L3                                       | integer | Voltage L3                                 | Volt.230     |
+| Strom L1                                          | integer | Current L1                                 | Ampere       |
+| Strom L2                                          | integer | Current L2                                 | Ampere       |
+| Strom L3                                          | integer | Current L3                                 | Ampere       |
+| Wirkleistung L1                                   | integer | Active power L1                            | Watt.14490   |
+| Wirkleistung L2                                   | integer | Active power L2                            | Watt.14490   |
+| Wirkleistung L3                                   | integer | Active power L3                            | Watt.14490   |
+| Scheinleistung L1                                 | integer | Apparent power L1                          | VA           |
+| Scheinleistung L2                                 | integer | Apparent power L2                          | VA           |
+| Scheinleistung L3                                 | integer | Apparent power L3                          | VA           |
+| Blindleistung L1                                  | integer | Reactive power L1                          | VaR          |
+| Blindleistung L2                                  | integer | Reactive power L2                          | VaR          |
+| Blindleistung L3                                  | integer | Reactive power L3                          | VaR          |
+| Leistungsfaktor L1                                | integer | Power factor L1                            |              |
+| Leistungsfaktor L2                                | integer | Power factor L2                            |              |
+| Leistungsfaktor L3                                | integer | Power factor L3                            |              |
+| Kumulierte System Wirkleistung                    | integer | Total system power                         | Watt.14490   |
+| Kumulierte System Scheinleistung                  | integer | Total system apparent power                | VA           |
+| Kumulierte System Blindleistung                   | integer | Total system reactive power                | VaR          |
+| Kumulierte System Leistungsfaktor                 | integer | Total system power factor                  |              |
+| Frequenz                                          | integer | Frequency                                  | Hertz.50     |
+| Neutral Strom                                     | integer | Neutral current                            | Ampere       |
+| Gesamte Import Wirkleistung                       | integer | Total import energy                        | Electricity  |
+| Gesamte Export Wirkleistung                       | integer | Total export energy                        | Electricity  |
 
 Folgende Profile werden automatisch angelegt.  
 
-| Name        | Typ   |
-| :---------: | :---: |
-| PhaseAngle  | float |
-| VA          | float |
-| VaR         | float |
-| Intensity.F | float |
-| kVArh       | float |
+| Name          | Typ     |
+| :-----------: | :-----: |
+| Ampere.I      | integer |
+| Electricity.I | integer |
+| Hertz.I       | integer |
+| VA.I          | integer |
+| VaR.I         | integer |
+| Volt.I        | integer |
+| Watt.I        | integer |
+
 
 Darstellung in der Console.  
 ![Instanz](../imgs/DRT710M.png) 
@@ -112,6 +115,9 @@ Bei Erfolg wird `true` und im Fehlerfall wird `false` zurückgegeben und eine Wa
 ## 7. Anhang
 
 ### 1. Changlog
+
+Version 2.05:  
+ - Bugfix für DRT 710M  
 
 Version 2.04:  
  - DRT 710M ergänzt  
