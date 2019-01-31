@@ -3,8 +3,9 @@
             [
                 {
                     "name": "Interval",
-                    "type": "IntervalBox",
-                    "caption": "milliseconds"
+                    "type": "NumberSpinner",
+                    "caption": "milliseconds",
+                    "suffix": "ms"
                 }
                 , {
                     "type": "List",
@@ -13,53 +14,53 @@
                     "add": false,
                     "delete": false,
                     "columns": [{
-                            "label": "Ident",
+                            "caption": "Ident",
                             "name": "Ident",
                             "visible": false,
                             "width": "0px",
                             "save": true
                         }, {
-                            "label": "Position",
+                            "caption": "Position",
                             "name": "Pos",
                             "width": "100px",
                             "save": true
                         }, {
-                            "label": "Name",
+                            "caption": "Name",
                             "name": "Name",
                             "width": "auto",
                             "save": true
                         }, {
-                            "label": "Type",
+                            "caption": "Type",
                             "name": "VarType",
                             "visible": false,
                             "width": "0px",
                             "save": true
                         }, {
-                            "label": "Profile",
+                            "caption": "Profile",
                             "name": "Profile",
                             "visible": false,
                             "width": "0px",
                             "save": true
                         }, {
-                            "label": "Address",
+                            "caption": "Address",
                             "name": "Address",
                             "visible": false,
                             "width": "0px",
                             "save": true
                         }, {
-                            "label": "Function",
+                            "caption": "Function",
                             "name": "Function",
                             "visible": false,
                             "width": "0px",
                             "save": true
                         }, {
-                            "label": "Quantity",
+                            "caption": "Quantity",
                             "name": "Quantity",
                             "visible": false,
                             "width": "0px",
                             "save": true
                         }, {
-                            "label": "Active",
+                            "caption": "Active",
                             "name": "Keep",
                             "width": "75px",
                             "edit": {
@@ -74,7 +75,7 @@
             [
                 {
                     "type": "Button",
-                    "label": "Read values",
+                    "caption": "Read values",
                     "onClick": ""
                 }
             ]
