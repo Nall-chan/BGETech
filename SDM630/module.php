@@ -94,5 +94,4 @@ class SDM630 extends BGETech
         ['L2 total reactive energy', VARIABLETYPE_FLOAT, 'kVArh', 0x017A, 4, 2, true],
         ['L3 total reactive energy', VARIABLETYPE_FLOAT, 'kVArh', 0x017C, 4, 2, true]
     ];
-
 }

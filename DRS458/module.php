@@ -27,5 +27,4 @@ class DRS458 extends BGETech
     public static $Variables = [
         ['Total active energy', VARIABLETYPE_FLOAT, 'Electricity', 0x0000, 3, 2, true]
     ];
-
 }
