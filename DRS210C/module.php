@@ -34,5 +34,4 @@ class DRS210C extends BGETech
         ['Frequency', VARIABLETYPE_FLOAT, 'Hertz.50', 0x2020, 3, 2, true],
         ['Total active energy', VARIABLETYPE_FLOAT, 'Electricity', 0x3000, 3, 2, true]
     ];
-
 }

@@ -36,5 +36,4 @@ class SDM220 extends BGETech
         ['Total active energy', VARIABLETYPE_FLOAT, 'Electricity', 0x0156, 4, 2, true],
         ['Total reactive energy', VARIABLETYPE_FLOAT, 'kVArh', 0x0158, 4, 2, true]
     ];
-
 }
