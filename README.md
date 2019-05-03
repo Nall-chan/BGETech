@@ -1,7 +1,7 @@
 [![Version](https://img.shields.io/badge/Symcon-PHPModul-red.svg)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
-[![Version](https://img.shields.io/badge/Modul%20Version-2.06-blue.svg)]()
+[![Version](https://img.shields.io/badge/Modul%20Version-3.00-blue.svg)]()
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
-[![Version](https://img.shields.io/badge/Symcon%20Version-4.3%20%3E-green.svg)](https://www.symcon.de/forum/threads/30857-IP-Symcon-4-3-%28Stable%29-Changelog)
+[![Version](https://img.shields.io/badge/Symcon%20Version-5.1%20%3E-green.svg)](https://www.symcon.de/forum/threads/30857-IP-Symcon-5-1-%28Stable%29-Changelog)
 [![StyleCI](https://styleci.io/repos/107579755/shield?style=flat)](https://styleci.io/repos/107579755)  
 
 # IPSBGETech
@@ -58,16 +58,15 @@ Folgende Module beinhaltet das IPSBGETEch Repository:
 
 ## 2. Voraussetzungen
 
- - IPS 4.3 oder höher  
+ - IPS 5.1 oder höher  
  - Unterstützte Zähler  
  - physikalisches RS485 Interface für die Zähler  
 
 ## 3. Software-Installation
 
-**IPS 4.3:**  
-   Bei privater Nutzung: Über das 'Module-Control' in IPS folgende URL hinzufügen.  
-    `git://github.com/Nall-chan/IPSBGETEch.git`  
-
+**IPS 5.1:**  
+   Bei privater Nutzung:
+     Über den 'Module-Store' in IPS.  
    **Bei kommerzieller Nutzung (z.B. als Errichter oder Integrator) wenden Sie sich bitte an den Autor.**  
 
 ## 4. Einrichten der Instanzen in IP-Symcon
@@ -93,6 +92,9 @@ Ist direkt in der Dokumentation der jeweiligen Module beschrieben.
 
 
 ### 2. Changlog
+
+Version 3.0:  
+ - Release für IPS 5.1 und den Modul-Store  
 
 Version 2.06:  
  - IntervallBox und caption ersetzt  

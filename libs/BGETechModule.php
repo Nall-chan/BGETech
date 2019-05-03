@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * @addtogroup bgetech
  * @{
@@ -7,12 +9,13 @@
  * @package       BGETech
  * @file          module.php
  * @author        Michael Tröger <micha@nall-chan.net>
- * @copyright     2018 Michael Tröger
+ * @copyright     2013 Michael Tröger
  * @license       https://creativecommons.org/licenses/by-nc-sa/4.0/ CC BY-NC-SA 4.0
- * @version       2.05
+ * @version       3.00
  *
  */
-require_once(__DIR__ . "/BGETechTraits.php");  // diverse Klassen
+require_once(__DIR__ . '/SemaphoreHelper.php');  // diverse Klassen
+eval('declare(strict_types=1);namespace BGETech {?>' . file_get_contents(__DIR__ . '/helper/VariableProfileHelper.php') . '}');
 
 /**
  * BGETech ist die Basisklasse für alle Energie-Zähler der Firma B+G E-Tech
@@ -20,8 +23,9 @@ require_once(__DIR__ . "/BGETechTraits.php");  // diverse Klassen
  */
 class BGETech extends IPSModule
 {
-    use Semaphore,
-        VariableProfile;
+
+    use \BGETech\Semaphore,
+        \BGETech\VariableProfile;
     const Swap = true;
 
     /**
@@ -154,46 +158,37 @@ class BGETech extends IPSModule
     private function ConvertValue(array $Variable, string $Value)
     {
         switch ($Variable['VarType']) {
-            case vtBoolean:
+            case VARIABLETYPE_BOOLEAN:
                 if ($Variable['Quantity'] == 1) {
                     return ord($Value) == 0x01;
                 }
                 break;
-            case vtInteger:
+            case VARIABLETYPE_INTEGER:
                 switch ($Variable['Quantity']) {
                     case 1:
                         return ord($Value);
                     case 2:
-                        return unpack("n", $Value)[1];
+                        return unpack('n', $Value)[1];
                     case 4:
-                        return unpack("N", $Value)[1];
+                        return unpack('N', $Value)[1];
                     case 8:
-                        return unpack("J", $Value)[1];
+                        return unpack('J', $Value)[1];
                 }
                 break;
-            case vtFloat:
+            case VARIABLETYPE_FLOAT:
                 switch ($Variable['Quantity']) {
                     case 2:
-                        return unpack("f", $Value)[1];
+                        return unpack('f', $Value)[1];
                     case 4:
-                        return unpack("f", $Value)[1];
+                        return unpack('f', $Value)[1];
                     case 8:
-                        return unpack("f", $Value)[1];
+                        return unpack('f', $Value)[1];
                 }
                 break;
-            case vtString:
+            case VARIABLETYPE_STRING:
                 return $Value;
         }
         return null;
-    }
-
-    protected function LogMessage($Message, $Type)
-    {
-        if (method_exists('IPSModule', 'LogMessage')) {
-            parent::LogMessage($Message, $Type);
-        } else {
-            IPS_LogMessage(IPS_GetName($this->InstanceID), $Message);
-        }
     }
 
     /**
@@ -219,7 +214,7 @@ class BGETech extends IPSModule
 
     public function GetConfigurationForm()
     {
-        $Form = json_decode(file_get_contents(__DIR__ . "/form.json"), true);
+        $Form = json_decode(file_get_contents(__DIR__ . '/form.json'), true);
         $Form['actions'][0]['onClick'] = static::PREFIX . '_RequestRead($id)';
         if (count(static::$Variables) == 1) {
             unset($Form['elements'][1]);
@@ -227,4 +222,5 @@ class BGETech extends IPSModule
         //$this->SendDebug('form', json_encode($Form), 0);
         return json_encode($Form);
     }
+
 }
