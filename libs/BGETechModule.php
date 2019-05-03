@@ -23,7 +23,6 @@ eval('declare(strict_types=1);namespace BGETech {?>' . file_get_contents(__DIR__
  */
 class BGETech extends IPSModule
 {
-
     use \BGETech\Semaphore,
         \BGETech\VariableProfile;
     const Swap = true;
@@ -222,5 +221,4 @@ class BGETech extends IPSModule
         //$this->SendDebug('form', json_encode($Form), 0);
         return json_encode($Form);
     }
-
 }

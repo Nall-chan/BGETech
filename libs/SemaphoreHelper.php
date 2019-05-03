@@ -47,7 +47,6 @@ trait Semaphore
     {
         IPS_SemaphoreLeave('ModBus.' . (string) $ident);
     }
-
 }
 
 /** @} */
