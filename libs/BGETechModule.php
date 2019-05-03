@@ -25,7 +25,7 @@ class BGETech extends IPSModule
 {
 
     use \BGETech\Semaphore,
-        \BGETech\VariableProfile;
+        \BGETech\VariableProfileHelper;
     const Swap = true;
 
     /**
