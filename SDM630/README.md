@@ -156,7 +156,7 @@ Bei Erfolg wird `true` und im Fehlerfall wird `false` zurückgegeben und eine Wa
 ### 1. Changlog
 
 Version 3.0:  
- - Release für IPS 5.1 und den Modul-Store  
+ - Release für IPS 5.1 und den Module-Store  
 
 Version 2.0:  
  - DRS 458 ergänzt  

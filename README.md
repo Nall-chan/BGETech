@@ -94,7 +94,7 @@ Ist direkt in der Dokumentation der jeweiligen Module beschrieben.
 ### 2. Changlog
 
 Version 3.0:  
- - Release für IPS 5.1 und den Modul-Store  
+ - Release für IPS 5.1 und den Module-Store  
 
 Version 2.06:  
  - IntervallBox und caption ersetzt  
