@@ -20,12 +20,14 @@ namespace BGETech;
 /**
  * Biete Funktionen um Thread-Safe auf Objekte zuzugrifen.
  */
-trait Semaphore
+trait SemaphoreHelper
 {
     /**
      * Versucht eine Semaphore zu setzen und wiederholt dies bei Misserfolg bis zu 100 mal.
+     *
      * @param string $ident Ein String der den Lock bezeichnet.
-     * @return boolean TRUE bei Erfolg, FALSE bei Misserfolg.
+     *
+     * @return bool TRUE bei Erfolg, FALSE bei Misserfolg.
      */
     private function lock($ident)
     {
@@ -41,6 +43,7 @@ trait Semaphore
 
     /**
      * Löscht eine Semaphore.
+     *
      * @param string $ident Ein String der den Lock bezeichnet.
      */
     private function unlock($ident)
@@ -49,4 +52,4 @@ trait Semaphore
     }
 }
 
-/** @} */
+/* @} */

@@ -14,11 +14,11 @@ declare(strict_types=1);
  * @version       3.00
  *
  */
-require_once(__DIR__ . '/../libs/BGETechModule.php');  // diverse Klassen
+require_once __DIR__ . '/../libs/BGETechModule.php';  // diverse Klassen
 
 /**
  * SDM210C ist die Klasse für die SDM210C ModBus Energie-Zähler der Firma B+G E-Tech
- * Erweitert BGETech
+ * Erweitert BGETech.
  */
 class SDM210C extends BGETech
 {
