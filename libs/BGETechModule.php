@@ -14,12 +14,12 @@ declare(strict_types=1);
  * @version       3.00
  *
  */
-require_once(__DIR__ . '/SemaphoreHelper.php');  // diverse Klassen
+require_once __DIR__ . '/SemaphoreHelper.php';  // diverse Klassen
 eval('declare(strict_types=1);namespace BGETech {?>' . file_get_contents(__DIR__ . '/helper/VariableProfileHelper.php') . '}');
 
 /**
  * BGETech ist die Basisklasse für alle Energie-Zähler der Firma B+G E-Tech
- * Erweitert ipsmodule
+ * Erweitert ipsmodule.
  */
 class BGETech extends IPSModule
 {
@@ -29,8 +29,6 @@ class BGETech extends IPSModule
 
     /**
      * Interne Funktion des SDK.
-     *
-     * @access public
      */
     public function Create()
     {
@@ -57,8 +55,6 @@ class BGETech extends IPSModule
 
     /**
      * Interne Funktion des SDK.
-     *
-     * @access public
      */
     public function ApplyChanges()
     {
@@ -76,7 +72,6 @@ class BGETech extends IPSModule
         $this->RegisterProfileInteger('VA.I', '', '', ' VA', 0, 0, 0);
         $this->RegisterProfileInteger('Electricity.I', '', '', ' kWh', 0, 0, 0);
 
-
         $Variables = json_decode($this->ReadPropertyString('Variables'), true);
         foreach ($Variables as $Variable) {
             @$this->MaintainVariable($Variable['Ident'], $Variable['Name'], $Variable['VarType'], $Variable['Profile'], $Variable['Pos'], $Variable['Keep']);
@@ -92,7 +87,6 @@ class BGETech extends IPSModule
      * IPS-Instanz Funktion PREFIX_RequestRead.
      * Ließt alle Werte aus dem Gerät.
      *
-     * @access public
      * @return bool True wenn Befehl erfolgreich ausgeführt wurde, sonst false.
      */
     public function RequestRead()
@@ -194,7 +188,7 @@ class BGETech extends IPSModule
      * Setzte eine IPS-Variableauf den Wert von $value.
      *
      * @param array $Variable Statusvariable
-     * @param mixed  $Value Neuer Wert der Statusvariable.
+     * @param mixed $Value    Neuer Wert der Statusvariable.
      */
     protected function SetValueExt($Variable, $Value)
     {
