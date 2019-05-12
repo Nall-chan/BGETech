@@ -23,7 +23,7 @@ eval('declare(strict_types=1);namespace BGETech {?>' . file_get_contents(__DIR__
  */
 class BGETech extends IPSModule
 {
-    use \BGETech\Semaphore,
+    use \BGETech\SemaphoreHelper,
         \BGETech\VariableProfileHelper;
     const Swap = true;
 
