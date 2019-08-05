@@ -1,10 +1,10 @@
 [![Version](https://img.shields.io/badge/Symcon-PHPModul-red.svg)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
-[![Version](https://img.shields.io/badge/Modul%20Version-3.00-blue.svg)]()
+[![Version](https://img.shields.io/badge/Modul%20Version-3.01-blue.svg)]()
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
 [![Version](https://img.shields.io/badge/Symcon%20Version-5.1%20%3E-green.svg)](https://www.symcon.de/forum/threads/30857-IP-Symcon-5-1-%28Stable%29-Changelog)
 [![StyleCI](https://styleci.io/repos/107579755/shield?style=flat)](https://styleci.io/repos/107579755)  
 
-# SDM 210C
+# SDM 120C
 
 ## Dokumentation
 
@@ -23,13 +23,13 @@
 
 ## 1. Funktionsumfang
 
-Ermöglich die einfache Einbindung von Energie-Zählern des Typs SDM 210C der Firma B+G E-Tech. 
+Ermöglich die einfache Einbindung von Energie-Zählern des Typs SDM 120C der Firma B+G E-Tech. 
 Zusätzlich können mehrere Zähler auf einem physikalischen RS485-Bus betrieben werden.  
 
 ## 2. Voraussetzungen
 
  - IPS 5.1 oder höher  
- - SDM 210C Zähler mit 'ModBus-Interface 
+ - SDM 120C Zähler mit 'ModBus-Interface 
  - physikalisches RS485 Interface für die Zähler  
 
 ## 3. Software-Installation
@@ -80,12 +80,12 @@ Folgende Profile werden automatisch angelegt.
 | kVArh       | float |
 
 Darstellung in der Console.  
-![Instanz](../imgs/SDM210C.png) 
+![Instanz](../imgs/SDM120C.png) 
 
 ## 6. PHP-Befehlsreferenz
 
 ```php
-bool SDM210C_RequestRead(int $InstanzID);
+bool SDM120C_RequestRead(int $InstanzID);
 ```
 Ließt alle Werte vom Zähler.  
 Bei Erfolg wird `true` und im Fehlerfall wird `false` zurückgegeben und eine Warnung erzeugt.  
@@ -94,6 +94,9 @@ Bei Erfolg wird `true` und im Fehlerfall wird `false` zurückgegeben und eine Wa
 ## 7. Anhang
 
 ### 1. Changlog
+
+Version 3.01:  
+ - Falsche Bezeichnung des SDM210C zu SDM120C umbenannt  
 
 Version 3.0:  
  - Release für IPS 5.1 und den Module-Store  

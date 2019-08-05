@@ -1,5 +1,5 @@
 [![Version](https://img.shields.io/badge/Symcon-PHPModul-red.svg)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
-[![Version](https://img.shields.io/badge/Modul%20Version-3.00-blue.svg)]()
+[![Version](https://img.shields.io/badge/Modul%20Version-3.10-blue.svg)]()
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
 [![Version](https://img.shields.io/badge/Symcon%20Version-5.1%20%3E-green.svg)](https://www.symcon.de/forum/threads/30857-IP-Symcon-5-1-%28Stable%29-Changelog)
 [![StyleCI](https://styleci.io/repos/107579755/shield?style=flat)](https://styleci.io/repos/107579755)  
@@ -154,6 +154,9 @@ Bei Erfolg wird `true` und im Fehlerfall wird `false` zurückgegeben und eine Wa
 ## 7. Anhang
 
 ### 1. Changlog
+
+Version 3.10:
+ - Fehler bei SDM360 L3 total active energy behoben  
 
 Version 3.0:  
  - Release für IPS 5.1 und den Module-Store  

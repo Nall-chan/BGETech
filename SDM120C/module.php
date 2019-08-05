@@ -17,12 +17,12 @@ declare(strict_types=1);
 require_once __DIR__ . '/../libs/BGETechModule.php';  // diverse Klassen
 
 /**
- * SDM210C ist die Klasse für die SDM210C ModBus Energie-Zähler der Firma B+G E-Tech
+ * SDM120C ist die Klasse für die SDM120C ModBus Energie-Zähler der Firma B+G E-Tech
  * Erweitert BGETech.
  */
-class SDM210C extends BGETech
+class SDM120C extends BGETech
 {
-    const PREFIX = 'SDM210C';
+    const PREFIX = 'SDM120C';
 
     public static $Variables = [
         ['Voltage', VARIABLETYPE_FLOAT, 'Volt.230', 0x0000, 4, 2, true],

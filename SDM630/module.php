@@ -11,7 +11,7 @@ declare(strict_types=1);
  * @author        Michael Tröger <micha@nall-chan.net>
  * @copyright     2019 Michael Tröger
  * @license       https://creativecommons.org/licenses/by-nc-sa/4.0/ CC BY-NC-SA 4.0
- * @version       3.00
+ * @version       3.10
  *
  */
 require_once __DIR__ . '/../libs/BGETechModule.php';  // diverse Klassen
@@ -89,7 +89,7 @@ class SDM630 extends BGETech
         ['Total reactive energy', VARIABLETYPE_FLOAT, 'kVArh', 0x0158, 4, 2, true],
         ['L1 total active energy', VARIABLETYPE_FLOAT, 'Electricity', 0x0166, 4, 2, true],
         ['L2 total active energy', VARIABLETYPE_FLOAT, 'Electricity', 0x0168, 4, 2, true],
-        ['L3 total active energy', VARIABLETYPE_FLOAT, 'Electricity', 0x0168A, 4, 2, true],
+        ['L3 total active energy', VARIABLETYPE_FLOAT, 'Electricity', 0x016A, 4, 2, true],
         ['L1 total reactive energy', VARIABLETYPE_FLOAT, 'kVArh', 0x0178, 4, 2, true],
         ['L2 total reactive energy', VARIABLETYPE_FLOAT, 'kVArh', 0x017A, 4, 2, true],
         ['L3 total reactive energy', VARIABLETYPE_FLOAT, 'kVArh', 0x017C, 4, 2, true]

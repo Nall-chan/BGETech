@@ -1,5 +1,5 @@
 [![Version](https://img.shields.io/badge/Symcon-PHPModul-red.svg)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
-[![Version](https://img.shields.io/badge/Modul%20Version-3.00-blue.svg)]()
+[![Version](https://img.shields.io/badge/Modul%20Version-3.10-blue.svg)]()
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
 [![Version](https://img.shields.io/badge/Symcon%20Version-5.1%20%3E-green.svg)](https://www.symcon.de/forum/threads/30857-IP-Symcon-5-1-%28Stable%29-Changelog)
 [![StyleCI](https://styleci.io/repos/107579755/shield?style=flat)](https://styleci.io/repos/107579755)  
@@ -84,7 +84,7 @@ Ist direkt in der Dokumentation der jeweiligen Module beschrieben.
 | DRS458  | Device | DRS458  | {8CA96C98-3014-44E4-8D15-4EC6B524F1F4} |
 | DRT710M | Device | DRT710M | {187BB86B-A52F-4ADD-A233-92108BD71767} |
 | SDM72D  | Device | SDM72D  | {08371372-5993-4BAF-A6EC-D70759709CD9} |
-| SDM210C | Device | SDM210C | {32DCCC5C-78D3-475E-885A-652F56DB4D18} |
+| SDM120C | Device | SDM120C | {32DCCC5C-78D3-475E-885A-652F56DB4D18} |
 | SDM220  | Device | SDM220  | {93668601-F92A-46FC-AE5B-E44451F022EE} |
 | SDM230  | Device | SDM230  | {10D08FCD-D1AC-4CF3-8B19-54B92209DA07} |
 | SDM530  | Device | SDM530  | {9A65E88A-21DC-439F-8602-CA14EE9FDF27} |
@@ -92,6 +92,12 @@ Ist direkt in der Dokumentation der jeweiligen Module beschrieben.
 
 
 ### 2. Changlog
+
+Version 3.10:
+ - Fehler bei SDM360 L3 total active energy behoben  
+
+Version 3.01:  
+ - Falsche Bezeichnung des SDM210C zu SDM120C umbenannt  
 
 Version 3.0:  
  - Release für IPS 5.1 und den Module-Store  

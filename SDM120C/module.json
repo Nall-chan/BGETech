@@ -1,11 +1,11 @@
 {
     "id": "{32DCCC5C-78D3-475E-885A-652F56DB4D18}",
-    "name": "SDM 210C",
-    "aliases": ["SDM 210C"],
+    "name": "SDM 120C",
+    "aliases": ["SDM 120C"],
     "type": 3,
     "vendor": "B+G E-Tech",
     "parentRequirements": ["{E310B701-4AE7-458E-B618-EC13A1A6F6A8}"],
     "childRequirements": [],
     "implemented": ["{77B31ABB-18FA-4B91-BB63-E5B2AB5588F4}"],
-    "prefix": "SDM210C"
+    "prefix": "SDM120C"
 }
