@@ -6,7 +6,14 @@
             "milliseconds": "Millisekunden",
             "Active": "Aktiv",
             "Power": "Wirkleistung",
-            "Total active energy": "Gesamte kumulierte Wirkleistung"
+            "Total active energy": "Gesamte kumulierte Wirkleistung",
+            "Total import energy":"aufgenommene kumulierte Wirkleistung",
+            "Total export energy":"abgegebene kumulierte Wirkleistung",
+            "Settable total energy":"Gesamte kumulierte Wirkleistung (rückstellbar)",
+            "Settable import energy":"aufgenommene kumulierte Wirkleistung (rückstellbar)",
+            "Settable export energy":"abgegebene kumulierte Wirkleistung (rückstellbar)",
+            "Import Power": "aufgenommene Wirkleistung",
+            "Export Power": "abgegebene Wirkleistung"
         }
     }
 }

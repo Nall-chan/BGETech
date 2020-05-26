@@ -26,6 +26,13 @@ class SDM72D extends BGETech
 
     public static $Variables = [
         ['Power', VARIABLETYPE_FLOAT, 'Watt.14490', 0x0034, 4, 2, true],
-        ['Total active energy', VARIABLETYPE_FLOAT, 'Electricity', 0x0156, 4, 2, true]
-    ];
+        ['Total import energy', VARIABLETYPE_FLOAT, 'Electricity', 0x0048, 4, 2, true],
+        ['Total export energy', VARIABLETYPE_FLOAT, 'Electricity', 0x004A, 4, 2, true],
+        ['Total active energy', VARIABLETYPE_FLOAT, 'Electricity', 0x0156, 4, 2, true],
+        ['Settable total energy', VARIABLETYPE_FLOAT, 'Electricity', 0x0180, 4, 2, true],
+        ['Settable import energy', VARIABLETYPE_FLOAT, 'Electricity', 0x0184, 4, 2, true],
+        ['Settable export energy', VARIABLETYPE_FLOAT, 'Electricity', 0x0186, 4, 2, true],
+        ['Import Power', VARIABLETYPE_FLOAT, 'Watt.14490', 0x0500, 4, 2, true],
+        ['Export Power', VARIABLETYPE_FLOAT, 'Watt.14490', 0x0502, 4, 2, true]
+        ];
 }
