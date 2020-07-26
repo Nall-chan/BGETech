@@ -20,6 +20,7 @@ eval('declare(strict_types=1);namespace BGETech {?>' . file_get_contents(__DIR__
 /**
  * BGETech ist die Basisklasse für alle Energie-Zähler der Firma B+G E-Tech
  * Erweitert ipsmodule.
+ * @property array $Variables
  */
 class BGETech extends IPSModule
 {

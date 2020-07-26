@@ -18,7 +18,7 @@ declare(strict_types=1);
 namespace BGETech;
 
 /**
- * Biete Funktionen um Thread-Safe auf Objekte zuzugrifen.
+ * Biete Funktionen um Thread-Safe auf Objekte zuzugreifen.
  */
 trait SemaphoreHelper
 {

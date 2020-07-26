@@ -2,28 +2,27 @@
 [![Version](https://img.shields.io/badge/Modul%20Version-3.00-blue.svg)]()
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
 [![Version](https://img.shields.io/badge/Symcon%20Version-5.1%20%3E-green.svg)](https://www.symcon.de/forum/threads/30857-IP-Symcon-5-1-%28Stable%29-Changelog)
-[![StyleCI](https://styleci.io/repos/107579755/shield?style=flat)](https://styleci.io/repos/107579755)  
+[![Check Style](https://github.com/Nall-chan/BGETech/workflows/Check%20Style/badge.svg)](https://github.com/Nall-chan/BGETech/actions) 
+[![Run Tests](https://github.com/Nall-chan/BGETech/workflows/Run%20Tests/badge.svg)](https://github.com/Nall-chan/BGETech/actions)  
 
 # DRS 210C
 
-## Dokumentation
+## Inhaltsverzeichnis <!-- omit in toc -->
 
-**Inhaltsverzeichnis**
-
-1. [Funktionsumfang](#1-funktionsumfang)  
-2. [Voraussetzungen](#2-voraussetzungen)  
-3. [Software-Installation](#3-software-installation) 
-4. [Einrichten der Instanzen in IP-Symcon](#4-einrichten-der-instanzen-in-ip-symcon)
-5. [Statusvariablen und Profile](#5-statusvariablen-und-profile)  
-6. [PHP-Befehlsreferenz](#6-php-befehlsreferenz)   
-7. [Anhang](#7-anhang)  
-    1. [Changlog](#1-changlog)
-    2. [Spenden](#2-spenden)
-8. [Lizenz](#8-lizenz)
+- [1. Funktionsumfang](#1-funktionsumfang)
+- [2. Voraussetzungen](#2-voraussetzungen)
+- [3. Software-Installation](#3-software-installation)
+- [4. Einrichten der Instanzen in IP-Symcon](#4-einrichten-der-instanzen-in-ip-symcon)
+- [5. Statusvariablen und Profile](#5-statusvariablen-und-profile)
+- [6. PHP-Befehlsreferenz](#6-php-befehlsreferenz)
+- [7. Anhang](#7-anhang)
+  - [1. Changelog](#1-changelog)
+  - [2. Spenden](#2-spenden)
+- [8. Lizenz](#8-lizenz)
 
 ## 1. Funktionsumfang
 
-Ermöglich die einfache Einbindung von Energie-Zählern des Typs DRS 210-C der Firma B+G E-Tech.  
+Ermöglicht die einfache Einbindung von Energie-Zählern des Typs DRS 210-C der Firma B+G E-Tech.  
 Zusätzlich können mehrere Zähler auf einem physikalischen RS485-Bus betrieben werden.  
 
 ## 2. Voraussetzungen
@@ -93,7 +92,7 @@ Bei Erfolg wird `true` und im Fehlerfall wird `false` zurückgegeben und eine Wa
 
 ## 7. Anhang
 
-### 1. Changlog
+### 1. Changelog
 
 Version 3.0:  
  - Release für IPS 5.1 und den Module-Store  
@@ -115,7 +114,7 @@ Version 1.0:
 
 ### 2. Spenden  
   
-  Die Library ist für die nicht kommzerielle Nutzung kostenlos, Schenkungen als Unterstützung für den Autor werden hier akzeptiert:  
+  Die Library ist für die nicht kommerzielle Nutzung kostenlos, Schenkungen als Unterstützung für den Autor werden hier akzeptiert:  
 
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G2SLW2MEMQZH2" target="_blank"><img src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_LG.gif" border="0" /></a>
 
