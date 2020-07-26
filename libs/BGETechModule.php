@@ -197,12 +197,7 @@ class BGETech extends IPSModule
         if ($id == false) {
             $this->MaintainVariable($Variable['Ident'], $Variable['Name'], $Variable['VarType'], $Variable['Profile'], $Variable['Pos'], $Variable['Keep']);
         }
-        if (method_exists('IPSModule', 'SetValue')) {
-            parent::SetValue($Variable['Ident'], $Value);
-        } else {
-            $id = @$this->GetIDForIdent($Variable['Ident']);
-            SetValueFloat($id, $Value);
-        }
+        $this->SetValue($Variable['Ident'], $Value);
         return true;
     }
 
@@ -213,7 +208,6 @@ class BGETech extends IPSModule
         if (count(static::$Variables) == 1) {
             unset($Form['elements'][1]);
         }
-        //$this->SendDebug('form', json_encode($Form), 0);
         return json_encode($Form);
     }
 }
