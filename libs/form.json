@@ -1,82 +1,91 @@
 {
-    "elements":
-            [
+    "elements": [
+        {
+            "name": "Interval",
+            "type": "NumberSpinner",
+            "caption": "milliseconds",
+            "suffix": "ms",
+            "minimum": 0
+        },
+        {
+            "type": "List",
+            "name": "Variables",
+            "caption": "",
+            "add": false,
+            "delete": false,
+            "columns": [
                 {
-                    "name": "Interval",
-                    "type": "NumberSpinner",
-                    "caption": "milliseconds",
-                    "suffix": "ms"
-                }
-                , {
-                    "type": "List",
-                    "name": "Variables",
-                    "caption": "",
-                    "add": false,
-                    "delete": false,
-                    "columns": [{
-                            "caption": "Ident",
-                            "name": "Ident",
-                            "visible": false,
-                            "width": "0px",
-                            "save": true
-                        }, {
-                            "caption": "Position",
-                            "name": "Pos",
-                            "width": "100px",
-                            "save": true
-                        }, {
-                            "caption": "Name",
-                            "name": "Name",
-                            "width": "auto",
-                            "save": true
-                        }, {
-                            "caption": "Type",
-                            "name": "VarType",
-                            "visible": false,
-                            "width": "0px",
-                            "save": true
-                        }, {
-                            "caption": "Profile",
-                            "name": "Profile",
-                            "visible": false,
-                            "width": "0px",
-                            "save": true
-                        }, {
-                            "caption": "Address",
-                            "name": "Address",
-                            "visible": false,
-                            "width": "0px",
-                            "save": true
-                        }, {
-                            "caption": "Function",
-                            "name": "Function",
-                            "visible": false,
-                            "width": "0px",
-                            "save": true
-                        }, {
-                            "caption": "Quantity",
-                            "name": "Quantity",
-                            "visible": false,
-                            "width": "0px",
-                            "save": true
-                        }, {
-                            "caption": "Active",
-                            "name": "Keep",
-                            "width": "75px",
-                            "edit": {
-                                "caption": "Active",
-                                "type": "CheckBox"
-                            }
-                        }],
-                    "values": []
+                    "caption": "Ident",
+                    "name": "Ident",
+                    "visible": false,
+                    "width": "0px",
+                    "save": true
+                },
+                {
+                    "caption": "Index",
+                    "name": "Pos",
+                    "width": "100px",
+                    "save": true
+                },
+                {
+                    "caption": "Function",
+                    "name": "Name",
+                    "width": "auto",
+                    "save": true
+                },
+                {
+                    "caption": "Type",
+                    "name": "VarType",
+                    "visible": false,
+                    "width": "0px",
+                    "save": true
+                },
+                {
+                    "caption": "Profile",
+                    "name": "Profile",
+                    "visible": false,
+                    "width": "0px",
+                    "save": true
+                },
+                {
+                    "caption": "Register",
+                    "name": "Address",
+                    "visible": true,
+                    "width": "100px",
+                    "save": true
+                },
+                {
+                    "caption": "Function",
+                    "name": "Function",
+                    "visible": false,
+                    "width": "0px",
+                    "save": true
+                },
+                {
+                    "caption": "Quantity",
+                    "name": "Quantity",
+                    "visible": false,
+                    "width": "0px",
+                    "save": true
+                },
+                {
+                    "caption": "Active",
+                    "name": "Keep",
+                    "width": "75px",
+                    "edit": {
+                        "caption": "Active",
+                        "type": "CheckBox"
+                    }
                 }
             ],
-    "actions":
-            [
-                {
-                    "type": "Button",
-                    "caption": "Read values",
-                    "onClick": ""
-                }
-            ]
+            "values": []
+        }
+    ],
+    "actions": [
+        {
+            "type": "Button",
+            "caption": "Read values",
+            "onClick": ""
+        }
+    ]
 }

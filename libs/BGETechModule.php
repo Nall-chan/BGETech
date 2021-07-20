@@ -73,9 +73,38 @@ class BGETech extends IPSModule
         $this->RegisterProfileInteger('VA.I', '', '', ' VA', 0, 0, 0);
         $this->RegisterProfileInteger('Electricity.I', '', '', ' kWh', 0, 0, 0);
 
+        //Create Variables and check when new Rows in config appear after an update.
+        $NewRows = static::$Variables;
+        $NewPos = 0;
         $Variables = json_decode($this->ReadPropertyString('Variables'), true);
         foreach ($Variables as $Variable) {
             @$this->MaintainVariable($Variable['Ident'], $Variable['Name'], $Variable['VarType'], $Variable['Profile'], $Variable['Pos'], $Variable['Keep']);
+            foreach ($NewRows as $Index => $Row) {
+                if ($Variable['Ident'] == str_replace(' ', '', $Row[0])) {
+                    unset($NewRows[$Index]);
+                }
+            }
+            if ($NewPos < $Variable['Pos']) {
+                $NewPos = $Variable['Pos'];
+            }
+        }
+        if (count($NewRows) != 0) {
+            foreach ($NewRows as $NewVariable) {
+                $Variables[] = [
+                    'Ident'    => str_replace(' ', '', $NewVariable[0]),
+                    'Name'     => $this->Translate($NewVariable[0]),
+                    'VarType'  => $NewVariable[1],
+                    'Profile'  => $NewVariable[2],
+                    'Address'  => $NewVariable[3],
+                    'Function' => $NewVariable[4],
+                    'Quantity' => $NewVariable[5],
+                    'Pos'      => ++$NewPos,
+                    'Keep'     => $NewVariable[6]
+                ];
+            }
+            IPS_SetProperty($this->InstanceID, 'Variables', json_encode($Variables));
+            IPS_ApplyChanges($this->InstanceID);
+            return;
         }
         if ($this->ReadPropertyInteger('Interval') > 0) {
             $this->SetTimerInterval('UpdateTimer', $this->ReadPropertyInteger('Interval'));
