@@ -4,9 +4,10 @@
 [![Version](https://img.shields.io/badge/Symcon%20Version-5.1%20%3E-green.svg)](https://www.symcon.de/forum/threads/30857-IP-Symcon-5-1-%28Stable%29-Changelog)
 [![Check Style](https://github.com/Nall-chan/BGETech/workflows/Check%20Style/badge.svg)](https://github.com/Nall-chan/BGETech/actions) 
 [![Run Tests](https://github.com/Nall-chan/BGETech/workflows/Run%20Tests/badge.svg)](https://github.com/Nall-chan/BGETech/actions)  
+[![Spenden](https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_SM.gif)](#2-spenden)    
 
 
-# DRT 710M
+# DRT 710M <!-- omit in toc -->  
 
 ## Inhaltsverzeichnis <!-- omit in toc -->
 
@@ -58,46 +59,46 @@ Details hierzu sind dem Handbuch des Zählers (RS485) und dem eventuell verwende
 
 Folgende Statusvariablen werden automatisch angelegt.  
 
-| Name                                              | Typ     | Ident                                      | Profil       |
-| :-----------------------------------------------: | :-----: | :----------------------------------------: | :----------: |
-| Spannung L1                                       | integer | Voltage L1                                 | Volt.230     |
-| Spannung L2                                       | integer | Voltage L2                                 | Volt.230     |
-| Spannung L3                                       | integer | Voltage L3                                 | Volt.230     |
-| Strom L1                                          | integer | Current L1                                 | Ampere       |
-| Strom L2                                          | integer | Current L2                                 | Ampere       |
-| Strom L3                                          | integer | Current L3                                 | Ampere       |
-| Wirkleistung L1                                   | integer | Active power L1                            | Watt.14490   |
-| Wirkleistung L2                                   | integer | Active power L2                            | Watt.14490   |
-| Wirkleistung L3                                   | integer | Active power L3                            | Watt.14490   |
-| Scheinleistung L1                                 | integer | Apparent power L1                          | VA           |
-| Scheinleistung L2                                 | integer | Apparent power L2                          | VA           |
-| Scheinleistung L3                                 | integer | Apparent power L3                          | VA           |
-| Blindleistung L1                                  | integer | Reactive power L1                          | VaR          |
-| Blindleistung L2                                  | integer | Reactive power L2                          | VaR          |
-| Blindleistung L3                                  | integer | Reactive power L3                          | VaR          |
-| Leistungsfaktor L1                                | integer | Power factor L1                            |              |
-| Leistungsfaktor L2                                | integer | Power factor L2                            |              |
-| Leistungsfaktor L3                                | integer | Power factor L3                            |              |
-| Kumulierte System Wirkleistung                    | integer | Total system power                         | Watt.14490   |
-| Kumulierte System Scheinleistung                  | integer | Total system apparent power                | VA           |
-| Kumulierte System Blindleistung                   | integer | Total system reactive power                | VaR          |
-| Kumulierte System Leistungsfaktor                 | integer | Total system power factor                  |              |
-| Frequenz                                          | integer | Frequency                                  | Hertz.50     |
-| Neutral Strom                                     | integer | Neutral current                            | Ampere       |
-| Gesamte Import Wirkleistung                       | integer | Total import energy                        | Electricity  |
-| Gesamte Export Wirkleistung                       | integer | Total export energy                        | Electricity  |
+|               Name                |   Typ   |          Ident           |   Profil    |
+| :-------------------------------: | :-----: | :----------------------: | :---------: |
+|            Spannung L1            | integer |        VoltageL1         |  Volt.230   |
+|            Spannung L2            | integer |        VoltageL2         |  Volt.230   |
+|            Spannung L3            | integer |        VoltageL3         |  Volt.230   |
+|             Strom L1              | integer |        CurrentL1         |   Ampere    |
+|             Strom L2              | integer |        CurrentL2         |   Ampere    |
+|             Strom L3              | integer |        CurrentL3         |   Ampere    |
+|          Wirkleistung L1          | integer |      ActivepowerL1       | Watt.14490  |
+|          Wirkleistung L2          | integer |      ActivepowerL2       | Watt.14490  |
+|          Wirkleistung L3          | integer |      ActivepowerL3       | Watt.14490  |
+|         Scheinleistung L1         | integer |     ApparentpowerL1      |     VA      |
+|         Scheinleistung L2         | integer |     ApparentpowerL2      |     VA      |
+|         Scheinleistung L3         | integer |     ApparentpowerL3      |     VA      |
+|         Blindleistung L1          | integer |     ReactivepowerL1      |     VaR     |
+|         Blindleistung L2          | integer |     ReactivepowerL2      |     VaR     |
+|         Blindleistung L3          | integer |     ReactivepowerL3      |     VaR     |
+|        Leistungsfaktor L1         | integer |      PowerfactorL1       |             |
+|        Leistungsfaktor L2         | integer |      PowerfactorL2       |             |
+|        Leistungsfaktor L3         | integer |      PowerfactorL3       |             |
+|  Kumulierte System Wirkleistung   | integer |     Totalsystempower     | Watt.14490  |
+| Kumulierte System Scheinleistung  | integer | Totalsystemapparentpower |     VA      |
+|  Kumulierte System Blindleistung  | integer | Totalsystemreactivepower |     VaR     |
+| Kumulierte System Leistungsfaktor | integer |  Totalsystempowerfactor  |             |
+|             Frequenz              | integer |        Frequency         |  Hertz.50   |
+|           Neutral Strom           | integer |      Neutralcurrent      |   Ampere    |
+|    Gesamte Import Wirkleistung    | integer |    Totalimportenergy     | Electricity |
+|    Gesamte Export Wirkleistung    | integer |    Totalexportenergy     | Electricity |
 
 Folgende Profile werden automatisch angelegt.  
 
-| Name          | Typ     |
+|     Name      |   Typ   |
 | :-----------: | :-----: |
-| Ampere.I      | integer |
+|   Ampere.I    | integer |
 | Electricity.I | integer |
-| Hertz.I       | integer |
-| VA.I          | integer |
-| VaR.I         | integer |
-| Volt.I        | integer |
-| Watt.I        | integer |
+|    Hertz.I    | integer |
+|     VA.I      | integer |
+|     VaR.I     | integer |
+|    Volt.I     | integer |
+|    Watt.I     | integer |
 
 
 Darstellung in der Console.  
@@ -116,39 +117,7 @@ Bei Erfolg wird `true` und im Fehlerfall wird `false` zurückgegeben und eine Wa
 
 ### 1. Changelog
 
-Version 3.0:  
- - Release für IPS 5.1 und den Module-Store  
-
-Version 2.05:  
- - Bugfix für DRT 710M  
-
-Version 2.04:  
- - DRT 710M ergänzt  
-
-Version 2.03:  
- - SDM 530 ergänzt  
-
-Version 2.2:  
- - Intern werden jetzt auch Integer, Boolean und String Variablen unterstützt  
- - Fehlende Übersetzungen ergänzt  
-
-Version 2.1:  
- - Abzufragende Werte können deaktiviert werden  
-
-Version 2.0:  
- - DRS 458 ergänzt  
- - SDM 72D ergänzt  
- - SDM 120C ergänzt  
- - SDM 220 ergänzt  
- - SDM 230 ergänzt  
- - SDM 630 fehlende Werte ergänzt und kleiner Bugfixes  
-
-Version 1.1:  
- - Profile ergänzt  
- - Doku ergänzt  
-
-Version 1.0:  
- - Erstes offizielles Release  
+[Siehe hier](../README.md)  
 
 ### 2. Spenden  
   

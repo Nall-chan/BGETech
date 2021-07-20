@@ -18,7 +18,11 @@
             "Current demand": "Strombedarf",
             "Maximum current demand": "Maximum Strombedarf",
             "Total active energy": "Gesamte kumulierte Wirkleistung",
-            "Total reactive energy": "Gesamte kumulierte Blindleistung"
+            "Total import energy": "aufgenommene kumulierte Wirkleistung",
+            "Total export energy": "abgegebene kumulierte Wirkleistung",
+            "Total reactive energy": "Gesamte kumulierte Blindleistung",
+            "Total import reactive energy": "aufgenommene kumulierte Blindleistung",
+            "Total export reactive energy": "abgegebene kumulierte Blindleistung"
         }
     }
 }

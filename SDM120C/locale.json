@@ -12,7 +12,9 @@
             "Reactive power": "Blindleistung",
             "Power factor": "Leistungsfaktor",
             "Frequency": "Frequenz",
-            "Total active energy": "Gesamte kumulierte Wirkleistung"
+            "Total active energy": "Gesamte kumulierte Wirkleistung",
+            "Total import energy": "aufgenommene kumulierte Wirkleistung",
+            "Total export energy": "abgegebene kumulierte Wirkleistung"
         }
     }
 }

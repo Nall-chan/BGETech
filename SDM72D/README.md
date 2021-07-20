@@ -4,9 +4,10 @@
 [![Version](https://img.shields.io/badge/Symcon%20Version-5.1%20%3E-green.svg)](https://www.symcon.de/forum/threads/30857-IP-Symcon-5-1-%28Stable%29-Changelog)
 [![Check Style](https://github.com/Nall-chan/BGETech/workflows/Check%20Style/badge.svg)](https://github.com/Nall-chan/BGETech/actions) 
 [![Run Tests](https://github.com/Nall-chan/BGETech/workflows/Run%20Tests/badge.svg)](https://github.com/Nall-chan/BGETech/actions)  
+[![Spenden](https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_SM.gif)](#2-spenden)    
 
 
-# SDM 72D
+# SDM 72D <!-- omit in toc -->  
 
 ## Inhaltsverzeichnis <!-- omit in toc -->
 
@@ -58,10 +59,10 @@ Details hierzu sind dem Handbuch des Zählers (RS485) und dem eventuell verwende
 
 Folgende Statusvariablen werden automatisch angelegt.  
 
-|              Name               |  Typ  |        Ident        |   Profil    |
-| :-----------------------------: | :---: | :-----------------: | :---------: |
-|          Wirkleistung           | float |        Power        | Watt.14490  |
-| Gesamte kumulierte Wirkleistung | float | Total active energy | Electricity |
+|              Name               |  Typ  |       Ident       |   Profil    |
+| :-----------------------------: | :---: | :---------------: | :---------: |
+|          Wirkleistung           | float |       Power       | Watt.14490  |
+| Gesamte kumulierte Wirkleistung | float | Totalactiveenergy | Electricity |
 
 Folgende Profile werden automatisch angelegt.  
 
@@ -89,23 +90,7 @@ Bei Erfolg wird `true` und im Fehlerfall wird `false` zurückgegeben und eine Wa
 
 ### 1. Changelog
 
-Version 3.0:  
- - Release für IPS 5.1 und den Module-Store  
-
-Version 2.0:  
- - DRS 458 ergänzt  
- - SDM 72D ergänzt  
- - SDM 120C ergänzt  
- - SDM 220 ergänzt  
- - SDM 230 ergänzt  
- - SDM 630 fehlende Werte ergänzt und kleiner Bugfixes  
-
-Version 1.1:  
- - Profile ergänzt  
- - Doku ergänzt  
-
-Version 1.0:  
- - Erstes offizielles Release  
+[Siehe hier](../README.md)  
 
 ### 2. Spenden  
   

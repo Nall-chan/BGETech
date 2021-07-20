@@ -4,9 +4,10 @@
 [![Version](https://img.shields.io/badge/Symcon%20Version-5.1%20%3E-green.svg)](https://www.symcon.de/forum/threads/30857-IP-Symcon-5-1-%28Stable%29-Changelog)
 [![Check Style](https://github.com/Nall-chan/BGETech/workflows/Check%20Style/badge.svg)](https://github.com/Nall-chan/BGETech/actions) 
 [![Run Tests](https://github.com/Nall-chan/BGETech/workflows/Run%20Tests/badge.svg)](https://github.com/Nall-chan/BGETech/actions)  
+[![Spenden](https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_SM.gif)](#2-spenden)    
 
 
-# SDM 630
+# SDM 630 <!-- omit in toc -->  
 
 ## Inhaltsverzeichnis <!-- omit in toc -->
 
@@ -58,76 +59,80 @@ Details hierzu sind dem Handbuch des Zählers (RS485) und dem eventuell verwende
 
 Folgende Statusvariablen werden automatisch angelegt.  
 
-|                       Name                       |  Typ  |                   Ident                    |   Profil    |
-| :----------------------------------------------: | :---: | :----------------------------------------: | :---------: |
-|                   Spannung L1                    | float |                 Voltage L1                 |  Volt.230   |
-|                   Spannung L2                    | float |                 Voltage L2                 |  Volt.230   |
-|                   Spannung L3                    | float |                 Voltage L3                 |  Volt.230   |
-|                     Strom L1                     | float |                 Current L1                 |   Ampere    |
-|                     Strom L2                     | float |                 Current L2                 |   Ampere    |
-|                     Strom L3                     | float |                 Current L3                 |   Ampere    |
-|                 Wirkleistung L1                  | float |              Active power L1               | Watt.14490  |
-|                 Wirkleistung L2                  | float |              Active power L2               | Watt.14490  |
-|                 Wirkleistung L3                  | float |              Active power L3               | Watt.14490  |
-|                Scheinleistung L1                 | float |             Apparent power L1              |     VA      |
-|                Scheinleistung L2                 | float |             Apparent power L2              |     VA      |
-|                Scheinleistung L3                 | float |             Apparent power L3              |     VA      |
-|                 Blindleistung L1                 | float |             Reactive power L1              |     VaR     |
-|                 Blindleistung L2                 | float |             Reactive power L2              |     VaR     |
-|                 Blindleistung L3                 | float |             Reactive power L3              |     VaR     |
-|                Leistungsfaktor L1                | float |              Power factor L1               |             |
-|                Leistungsfaktor L2                | float |              Power factor L2               |             |
-|                Leistungsfaktor L3                | float |              Power factor L3               |             |
-|           Phasenverschiebungswinkel L1           | float |               Phase angle L1               | PhaseAngle  |
-|           Phasenverschiebungswinkel L2           | float |               Phase angle L2               | PhaseAngle  |
-|           Phasenverschiebungswinkel L3           | float |               Phase angle L3               | PhaseAngle  |
-|               Mittelwert Spannung                | float |      Average line to neutral voltage       |  Volt.230   |
-|                 Mittelwert Strom                 | float |            Average line current            |   Ampere    |
-|                   Summe Strom                    | float |            Sum of line currents            |   Ampere    |
-|          Kumulierte System Wirkleistung          | float |             Total system power             | Watt.14490  |
-|         Kumulierte System Scheinleistung         | float |        Total system apparent power         |     VA      |
-|         Kumulierte System Blindleistung          | float |        Total system reactive power         |     VaR     |
-|        Kumulierte System Leistungsfaktor         | float |         Total system power factor          |             |
-|   Kumulierte System Phasenverschiebungswinkel    | float |          Total system phase angle          | PhaseAngle  |
-|                     Frequenz                     | float |                 Frequency                  |  Hertz.50   |
-|      Kumulierter Bedarf System Wirkleistung      | float |         Total system power demand          | Watt.14490  |
-|  Maximal kumulierter Bedarf System Wirkleistung  | float |     Maximum total system power demand      | Watt.14490  |
-|     Kumulierter Bedarf System Scheinleistung     | float |     Total system apparent power demand     |     VA      |
-| Maximal kumulierter Bedarf System Scheinleistung | float | Maximum total system apparent power demand |     VA      |
-|         Kumulierter Bedarf Neutral Strom         | float |        Total neutral current demand        |   Ampere    |
-|           Maximum Bedarf Neutral Strom           | float |       Maximum neutral current demand       |   Ampere    |
-|            Line 1 zu Line 2 Spannung             | float |          Line 1 to Line 2 voltage          |  Volt.230   |
-|            Line 2 zu Line 3 Spannung             | float |          Line 2 to Line 3 voltage          |  Volt.230   |
-|            Line 3 zu Line 1 Spannung             | float |          Line 3 to Line 1 voltage          |  Volt.230   |
-|         Mittelwert Line zu Line Spannung         | float |        Average line to line voltage        |  Volt.230   |
-|                  Neutral Strom                   | float |              Neutral current               |   Ampere    |
-|           Line 1 Klirrfaktor Spannung            | float |             Line 1 voltage THD             | Intensity.F |
-|           Line 2 Klirrfaktor Spannung            | float |             Line 2 voltage THD             | Intensity.F |
-|           Line 3 Klirrfaktor Spannung            | float |             Line 3 voltage THD             | Intensity.F |
-|             Line 1 Klirrfaktor Strom             | float |             Line 1 Current THD             | Intensity.F |
-|             Line 2 Klirrfaktor Strom             | float |             Line 2 Current THD             | Intensity.F |
-|             Line 3 Klirrfaktor Strom             | float |             Line 3 Current THD             | Intensity.F |
-|         Mittelwert Klirrfaktor Spannung          | float |    Average line to neutral voltage THD     | Intensity.F |
-|           Mittelwert Klirrfaktor Strom           | float |          Average line current THD          | Intensity.F |
-|        Kumulierte System Leistungsfaktor         | float |         Total system power factor          | PhaseAngle  |
-|               Bedarf Line 1 Strom                | float |           Line 1 current demand            |   Ampere    |
-|               Bedarf Line 2 Strom                | float |           Line 2 current demand            |   Ampere    |
-|               Bedarf Line 3 Strom                | float |           Line 3 current demand            |   Ampere    |
-|           Maximum Bedarf Line 1 Strom            | float |       Maximum line 1 current demand        |   Ampere    |
-|           Maximum Bedarf Line 2 Strom            | float |       Maximum line 2 current demand        |   Ampere    |
-|           Maximum Bedarf Line 3 Strom            | float |       Maximum line 3 current demand        |   Ampere    |
-|      Line 1 zu Line 2 Klirrfaktor Spannung       | float |        Line 1 to line 2 voltage THD        | Intensity.F |
-|      Line 2 zu Line 3 Klirrfaktor Spannung       | float |        Line 2 to line 3 voltage THD        | Intensity.F |
-|      Line 3 zu Line 1 Klirrfaktor Spannung       | float |        Line 3 to line 1 voltage THD        | Intensity.F |
-|   Mittelwert Line zu Line Klirrfaktor Spannung   | float |      Average line to line voltage THD      | Intensity.F |
-|         Gesamte kumulierte Wirkleistung          | float |            Total active energy             | Electricity |
-|         Gesamte kumulierte Blindleistung         | float |           Total reactive energy            |    kVArh    |
-|        L1 Gesamte kumulierte Wirkleistung        | float |           L1 total active energy           | Electricity |
-|        L2 Gesamte kumulierte Wirkleistung        | float |           L2 total active energy           | Electricity |
-|        L3 Gesamte kumulierte Wirkleistung        | float |           L3 total active energy           | Electricity |
-|       L1 Gesamte kumulierte Blindleistung        | float |          L1 total reactive energy          |    kVArh    |
-|       L2 Gesamte kumulierte Blindleistung        | float |          L2 total reactive energy          |    kVArh    |
-|       L3 Gesamte kumulierte Blindleistung        | float |          L3 total reactive energy          |    kVArh    |
+|                       Name                       |  Typ  |                 Ident                 |   Profil    |
+| :----------------------------------------------: | :---: | :-----------------------------------: | :---------: |
+|                   Spannung L1                    | float |               VoltageL1               |  Volt.230   |
+|                   Spannung L2                    | float |               VoltageL2               |  Volt.230   |
+|                   Spannung L3                    | float |               VoltageL3               |  Volt.230   |
+|                     Strom L1                     | float |               CurrentL1               |   Ampere    |
+|                     Strom L2                     | float |               CurrentL2               |   Ampere    |
+|                     Strom L3                     | float |               CurrentL3               |   Ampere    |
+|                 Wirkleistung L1                  | float |             ActivepowerL1             | Watt.14490  |
+|                 Wirkleistung L2                  | float |             ActivepowerL2             | Watt.14490  |
+|                 Wirkleistung L3                  | float |             ActivepowerL3             | Watt.14490  |
+|                Scheinleistung L1                 | float |            ApparentpowerL1            |     VA      |
+|                Scheinleistung L2                 | float |            ApparentpowerL2            |     VA      |
+|                Scheinleistung L3                 | float |            ApparentpowerL3            |     VA      |
+|                 Blindleistung L1                 | float |            ReactivepowerL1            |     VaR     |
+|                 Blindleistung L2                 | float |            ReactivepowerL2            |     VaR     |
+|                 Blindleistung L3                 | float |            ReactivepowerL3            |     VaR     |
+|                Leistungsfaktor L1                | float |             PowerfactorL1             |             |
+|                Leistungsfaktor L2                | float |             PowerfactorL2             |             |
+|                Leistungsfaktor L3                | float |             PowerfactorL3             |             |
+|           Phasenverschiebungswinkel L1           | float |             PhaseangleL1              | PhaseAngle  |
+|           Phasenverschiebungswinkel L2           | float |             PhaseangleL2              | PhaseAngle  |
+|           Phasenverschiebungswinkel L3           | float |             PhaseangleL3              | PhaseAngle  |
+|               Mittelwert Spannung                | float |      Averagelinetoneutralvoltage      |  Volt.230   |
+|                 Mittelwert Strom                 | float |          Averagelinecurrent           |   Ampere    |
+|                   Summe Strom                    | float |           Sumoflinecurrents           |   Ampere    |
+|          Kumulierte System Wirkleistung          | float |           Totalsystempower            | Watt.14490  |
+|         Kumulierte System Scheinleistung         | float |       Totalsystemapparentpower        |     VA      |
+|         Kumulierte System Blindleistung          | float |       Totalsystemreactivepower        |     VaR     |
+|        Kumulierte System Leistungsfaktor         | float |        Totalsystempowerfactor         |             |
+|   Kumulierte System Phasenverschiebungswinkel    | float |         Totalsystemphaseangle         | PhaseAngle  |
+|                     Frequenz                     | float |               Frequency               |  Hertz.50   |
+|      Kumulierter Bedarf System Wirkleistung      | float |        Totalsystempowerdemand         | Watt.14490  |
+|  Maximal kumulierter Bedarf System Wirkleistung  | float |     Maximumtotalsystempowerdemand     | Watt.14490  |
+|     Kumulierter Bedarf System Scheinleistung     | float |    Totalsystemapparentpowerdemand     |     VA      |
+| Maximal kumulierter Bedarf System Scheinleistung | float | Maximumtotalsystemapparentpowerdemand |     VA      |
+|         Kumulierter Bedarf Neutral Strom         | float |       Totalneutralcurrentdemand       |   Ampere    |
+|           Maximum Bedarf Neutral Strom           | float |      Maximumneutralcurrentdemand      |   Ampere    |
+|            Line 1 zu Line 2 Spannung             | float |          Line1toLine2voltage          |  Volt.230   |
+|            Line 2 zu Line 3 Spannung             | float |          Line2toLine3voltage          |  Volt.230   |
+|            Line 3 zu Line 1 Spannung             | float |          Line3toLine1voltage          |  Volt.230   |
+|         Mittelwert Line zu Line Spannung         | float |       Averagelinetolinevoltage        |  Volt.230   |
+|                  Neutral Strom                   | float |            Neutralcurrent             |   Ampere    |
+|           Line 1 Klirrfaktor Spannung            | float |            Line1voltageTHD            | Intensity.F |
+|           Line 2 Klirrfaktor Spannung            | float |            Line2voltageTHD            | Intensity.F |
+|           Line 3 Klirrfaktor Spannung            | float |            Line3voltageTHD            | Intensity.F |
+|             Line 1 Klirrfaktor Strom             | float |            Line1CurrentTHD            | Intensity.F |
+|             Line 2 Klirrfaktor Strom             | float |            Line2CurrentTHD            | Intensity.F |
+|             Line 3 Klirrfaktor Strom             | float |            Line3CurrentTHD            | Intensity.F |
+|         Mittelwert Klirrfaktor Spannung          | float |    AveragelinetoneutralvoltageTHD     | Intensity.F |
+|           Mittelwert Klirrfaktor Strom           | float |         AveragelinecurrentTHD         | Intensity.F |
+|        Kumulierte System Leistungsfaktor         | float |        Totalsystempowerfactor         | PhaseAngle  |
+|               Bedarf Line 1 Strom                | float |          Line1currentdemand           |   Ampere    |
+|               Bedarf Line 2 Strom                | float |          Line2currentdemand           |   Ampere    |
+|               Bedarf Line 3 Strom                | float |          Line3currentdemand           |   Ampere    |
+|           Maximum Bedarf Line 1 Strom            | float |       Maximumline1currentdemand       |   Ampere    |
+|           Maximum Bedarf Line 2 Strom            | float |       Maximumline2currentdemand       |   Ampere    |
+|           Maximum Bedarf Line 3 Strom            | float |       Maximumline3currentdemand       |   Ampere    |
+|      Line 1 zu Line 2 Klirrfaktor Spannung       | float |        Line1toline2voltageTHD         | Intensity.F |
+|      Line 2 zu Line 3 Klirrfaktor Spannung       | float |        Line2toline3voltageTHD         | Intensity.F |
+|      Line 3 zu Line 1 Klirrfaktor Spannung       | float |        Line3toline1voltageTHD         | Intensity.F |
+|   Mittelwert Line zu Line Klirrfaktor Spannung   | float |      AveragelinetolinevoltageTHD      | Intensity.F |
+|         Gesamte kumulierte Wirkleistung          | float |           Totalactiveenergy           | Electricity |
+|         Gesamte kumulierte Blindleistung         | float |          Totalreactiveenergy          |    kVArh    |
+|        L1 Gesamte kumulierte Wirkleistung        | float |          L1totalactiveenergy          | Electricity |
+|        L2 Gesamte kumulierte Wirkleistung        | float |          L2totalactiveenergy          | Electricity |
+|        L3 Gesamte kumulierte Wirkleistung        | float |          L3totalactiveenergy          | Electricity |
+|       L1 Gesamte kumulierte Blindleistung        | float |         L1totalreactiveenergy         |    kVArh    |
+|       L2 Gesamte kumulierte Blindleistung        | float |         L2totalreactiveenergy         |    kVArh    |
+|       L3 Gesamte kumulierte Blindleistung        | float |         L3totalreactiveenergy         |    kVArh    |
+|        abgegebene kumulierte Wirkleistung        | float |           Totalexportenergy           | Electricity |
+|       aufgenommene kumulierte Wirkleistung       | float |           Totalimportenergy           | Electricity |
+|       abgegebene kumulierte Blindleistung        | float |       Totalexportreactiveenergy       |    kVArh    |
+|      aufgenommene kumulierte Blindleistung       | float |       Totalimportreactiveenergy       |    kVArh    |
 
 Folgende Profile werden automatisch angelegt.  
 
@@ -155,26 +160,7 @@ Bei Erfolg wird `true` und im Fehlerfall wird `false` zurückgegeben und eine Wa
 
 ### 1. Changelog
 
-Version 3.10:
- - Fehler bei SDM360 L3 total active energy behoben  
-
-Version 3.0:  
- - Release für IPS 5.1 und den Module-Store  
-
-Version 2.0:  
- - DRS 458 ergänzt  
- - SDM 72D ergänzt  
- - SDM 120C ergänzt  
- - SDM 220 ergänzt  
- - SDM 230 ergänzt  
- - SDM 630 fehlende Werte ergänzt und kleiner Bugfixes  
-
-Version 1.1:  
- - Profile ergänzt  
- - Doku ergänzt  
-
-Version 1.0:  
- - Erstes offizielles Release  
+[Siehe hier](../README.md)  
 
 ### 2. Spenden  
   
