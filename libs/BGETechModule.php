@@ -24,8 +24,8 @@ eval('declare(strict_types=1);namespace BGETech {?>' . file_get_contents(__DIR__
  */
 class BGETech extends IPSModule
 {
-    use \BGETech\SemaphoreHelper,
-        \BGETech\VariableProfileHelper;
+    use \BGETech\SemaphoreHelper;
+    use \BGETech\VariableProfileHelper;
     const Swap = true;
 
     /**
@@ -109,10 +109,36 @@ class BGETech extends IPSModule
         return $Result;
     }
 
+    public function GetConfigurationForm()
+    {
+        $Form = json_decode(file_get_contents(__DIR__ . '/form.json'), true);
+        $Form['actions'][0]['onClick'] = static::PREFIX . '_RequestRead($id);';
+        if (count(static::$Variables) == 1) {
+            unset($Form['elements'][1]);
+        }
+        return json_encode($Form);
+    }
+
     protected function ModulErrorHandler($errno, $errstr)
     {
         $this->SendDebug('ERROR', utf8_decode($errstr), 0);
         echo $errstr;
+    }
+
+    /**
+     * Setzte eine IPS-Variableauf den Wert von $value.
+     *
+     * @param array $Variable Statusvariable
+     * @param mixed $Value    Neuer Wert der Statusvariable.
+     */
+    protected function SetValueExt($Variable, $Value)
+    {
+        $id = @$this->GetIDForIdent($Variable['Ident']);
+        if ($id == false) {
+            $this->MaintainVariable($Variable['Ident'], $Variable['Name'], $Variable['VarType'], $Variable['Profile'], $Variable['Pos'], $Variable['Keep']);
+        }
+        $this->SetValue($Variable['Ident'], $Value);
+        return true;
     }
 
     private function ReadData()
@@ -183,31 +209,5 @@ class BGETech extends IPSModule
                 return $Value;
         }
         return null;
-    }
-
-    /**
-     * Setzte eine IPS-Variableauf den Wert von $value.
-     *
-     * @param array $Variable Statusvariable
-     * @param mixed $Value    Neuer Wert der Statusvariable.
-     */
-    protected function SetValueExt($Variable, $Value)
-    {
-        $id = @$this->GetIDForIdent($Variable['Ident']);
-        if ($id == false) {
-            $this->MaintainVariable($Variable['Ident'], $Variable['Name'], $Variable['VarType'], $Variable['Profile'], $Variable['Pos'], $Variable['Keep']);
-        }
-        $this->SetValue($Variable['Ident'], $Value);
-        return true;
-    }
-
-    public function GetConfigurationForm()
-    {
-        $Form = json_decode(file_get_contents(__DIR__ . '/form.json'), true);
-        $Form['actions'][0]['onClick'] = static::PREFIX . '_RequestRead($id);';
-        if (count(static::$Variables) == 1) {
-            unset($Form['elements'][1]);
-        }
-        return json_encode($Form);
     }
 }

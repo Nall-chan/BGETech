@@ -34,5 +34,5 @@ class SDM72D extends BGETech
         ['Settable export energy', VARIABLETYPE_FLOAT, 'Electricity', 0x0186, 4, 2, true],
         ['Import Power', VARIABLETYPE_FLOAT, 'Watt.14490', 0x0500, 4, 2, true],
         ['Export Power', VARIABLETYPE_FLOAT, 'Watt.14490', 0x0502, 4, 2, true]
-        ];
+    ];
 }
