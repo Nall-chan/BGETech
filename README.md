@@ -1,12 +1,13 @@
 [![Version](https://img.shields.io/badge/Symcon-PHPModul-red.svg)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
-[![Version](https://img.shields.io/badge/Modul%20Version-3.23-blue.svg)]()
+[![Version](https://img.shields.io/badge/Modul%20Version-3.30-blue.svg)]()
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
 [![Version](https://img.shields.io/badge/Symcon%20Version-5.1%20%3E-green.svg)](https://www.symcon.de/forum/threads/30857-IP-Symcon-5-1-%28Stable%29-Changelog)
 [![Check Style](https://github.com/Nall-chan/BGETech/workflows/Check%20Style/badge.svg)](https://github.com/Nall-chan/BGETech/actions) 
 [![Run Tests](https://github.com/Nall-chan/BGETech/workflows/Run%20Tests/badge.svg)](https://github.com/Nall-chan/BGETech/actions)  
+[![Spenden](https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_SM.gif)](#2-spenden)    
 
 
-# Symcon-Modul: B+G E-Tech
+# Symcon-Modul: B+G E-Tech <!-- omit in toc -->  
 
 ## Inhaltsverzeichnis <!-- omit in toc -->
 
@@ -92,6 +93,9 @@ Ist direkt in der Dokumentation der jeweiligen Module beschrieben.
 
 
 ### 2. Changelog
+
+Version 3.30:  
+ - Import und Export Werte für SDM120C, SDM220, SDM230, SDM530 und SDM630 ergänzt
 
 Version 3.23:  
  - Schreibfehler korrigiert  
