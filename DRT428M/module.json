@@ -1,0 +1,12 @@
+{
+    "id": "{7EE791EF-574D-4B52-84D7-331CFDF0C512}",
+    "name": "DRT 428M",
+    "aliases": ["DRT 428M"],
+    "type": 3,
+    "vendor": "B+G E-Tech",
+    "parentRequirements": ["{E310B701-4AE7-458E-B618-EC13A1A6F6A8}"],
+    "childRequirements": [],
+    "implemented": ["{77B31ABB-18FA-4B91-BB63-E5B2AB5588F4}"],
+    "prefix": "DRT428M",
+    "url": "http://github.com/Nall-chan/BGETech/master/blob/DRT428M/"
+}

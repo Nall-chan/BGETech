@@ -33,8 +33,14 @@ Folgende Module beinhaltet das BGETech Repository:
 - __DRS210C__  
 	Zähler vom Typ DRS 210C  
 
+- __SDM120MODBUS__  
+	Zähler vom Typ SDM 120-ModBus  
+
 - __DRS458__  
 	Zähler vom Typ DRS 458  
+
+- __DRT428M__
+  Zähler vom Typ DRT 428M  
 
 - __DRT710M__  
 	Zähler vom Typ DRT 710M  
@@ -42,6 +48,9 @@ Folgende Module beinhaltet das BGETech Repository:
 - __SDM72D__   
 	Zähler vom Typ SDM 72D
 
+- __SDM72DMV2__
+  Zähler vom Typ SDM 72DM-V2  
+  
 - __SDM120C__   
 	Zähler vom Typ SDM 120C
 
@@ -79,24 +88,28 @@ Ist direkt in der Dokumentation der jeweiligen Module beschrieben.
 ###  1. GUID der Module
 
  
-|  Modul  |  Typ   | Prefix  |                  GUID                  |
-| :-----: | :----: | :-----: | :------------------------------------: |
-| DRS210C | Device | DRS210C | {2CA41C9F-355C-4231-90A5-6D83A90B65BD} |
-| DRS458  | Device | DRS458  | {8CA96C98-3014-44E4-8D15-4EC6B524F1F4} |
-| DRT710M | Device | DRT710M | {187BB86B-A52F-4ADD-A233-92108BD71767} |
-| SDM72D  | Device | SDM72D  | {08371372-5993-4BAF-A6EC-D70759709CD9} |
-| SDM120C | Device | SDM120C | {32DCCC5C-78D3-475E-885A-652F56DB4D18} |
-| SDM220  | Device | SDM220  | {93668601-F92A-46FC-AE5B-E44451F022EE} |
-| SDM230  | Device | SDM230  | {10D08FCD-D1AC-4CF3-8B19-54B92209DA07} |
-| SDM530  | Device | SDM530  | {9A65E88A-21DC-439F-8602-CA14EE9FDF27} |
-| SDM630  | Device | SDM630  | {BBCA5E14-505E-4394-B653-8CD33AD52037} |
+|     Modul      |  Typ   |    Prefix    |                  GUID                  |
+| :------------: | :----: | :----------: | :------------------------------------: |
+|    DRS 210C    | Device |   DRS210C    | {2CA41C9F-355C-4231-90A5-6D83A90B65BD} |
+| SDM 120-ModBus | Device | SDM120MODBUS | {007A55EC-C9C4-4241-8F39-2F0CA809F54D} |
+|    DRS 458     | Device |    DRS458    | {8CA96C98-3014-44E4-8D15-4EC6B524F1F4} |
+|    DRT 428M    | Device |   DRT428M    | {7EE791EF-574D-4B52-84D7-331CFDF0C512} |
+|    DRT 710M    | Device |   DRT710M    | {187BB86B-A52F-4ADD-A233-92108BD71767} |
+|    SDM 72D     | Device |    SDM72D    | {08371372-5993-4BAF-A6EC-D70759709CD9} |
+|  SDM 72DM-V2   | Device |  SDM72DMV2   | {A4320883-E4EE-4F01-B0CC-B1DDF3E73ACA} |
+|    SDM 120C    | Device |   SDM120C    | {32DCCC5C-78D3-475E-885A-652F56DB4D18} |
+|    SDM 220     | Device |    SDM220    | {93668601-F92A-46FC-AE5B-E44451F022EE} |
+|    SDM 230     | Device |    SDM230    | {10D08FCD-D1AC-4CF3-8B19-54B92209DA07} |
+|    SDM 530     | Device |    SDM530    | {9A65E88A-21DC-439F-8602-CA14EE9FDF27} |
+|    SDM 630     | Device |    SDM630    | {BBCA5E14-505E-4394-B653-8CD33AD52037} |
 
 
 ### 2. Changelog
 
 Version 3.40:  
- -  ergänzt  
- -  ergänzt  
+ -  SDM 120-ModBus ergänzt  
+ -  DRT 428M ergänzt  
+ -  SDM 72DM-V2 ergänzt
  -  Aktuelle und Summen für Import und Export ergänzt für SDM230
  -  Rücksetzbare Zähler vom SDM230, SDM530 und SDM630 ergänzt
  -  Dokumentation SDM72D ergänzt
