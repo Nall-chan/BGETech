@@ -9,9 +9,9 @@ declare(strict_types=1);
  * @package       BGETech
  * @file          module.php
  * @author        Michael Tröger <micha@nall-chan.net>
- * @copyright     2021 Michael Tröger
+ * @copyright     2022 Michael Tröger
  * @license       https://creativecommons.org/licenses/by-nc-sa/4.0/ CC BY-NC-SA 4.0
- * @version       3.30
+ * @version       3.40
  *
  */
 require_once __DIR__ . '/../libs/BGETechModule.php';  // diverse Klassen
@@ -39,9 +39,15 @@ class SDM230 extends BGETech
         ['Total export reactive energy', VARIABLETYPE_FLOAT, 'kVArh', 0x004E, 4, 2, true],
         ['Total system power demand', VARIABLETYPE_FLOAT, 'Watt.14490', 0x0054, 4, 2, true],
         ['Maximum total system power demand', VARIABLETYPE_FLOAT, 'Watt.14490', 0x0056, 4, 2, true],
+        ['Current system positive power demand', VARIABLETYPE_FLOAT, 'Watt.14490', 0x0058, 4, 2, true],
+        ['Maximum system positive power demand', VARIABLETYPE_FLOAT, 'Watt.14490', 0x005A, 4, 2, true],
+        ['Current system reverse power demand', VARIABLETYPE_FLOAT, 'Watt.14490', 0x005C, 4, 2, true],
+        ['Maximum system reverse power demand', VARIABLETYPE_FLOAT, 'Watt.14490', 0x005E, 4, 2, true],
         ['Current demand', VARIABLETYPE_FLOAT, 'Ampere', 0x0102, 4, 2, true],
         ['Maximum current demand', VARIABLETYPE_FLOAT, 'Ampere', 0x0108, 4, 2, true],
         ['Total active energy', VARIABLETYPE_FLOAT, 'Electricity', 0x0156, 4, 2, true],
-        ['Total reactive energy', VARIABLETYPE_FLOAT, 'kVArh', 0x0158, 4, 2, true]
+        ['Total reactive energy', VARIABLETYPE_FLOAT, 'kVArh', 0x0158, 4, 2, true],
+        ['Resettable total energy', VARIABLETYPE_FLOAT, 'Electricity', 0x0180, 4, 2, true],
+        ['Resettable total reactive energy', VARIABLETYPE_FLOAT, 'kVArh', 0x0182, 4, 2, true]
     ];
 }

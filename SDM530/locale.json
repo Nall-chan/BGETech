@@ -70,7 +70,9 @@
             "Total export energy": "abgegebene kumulierte Wirkleistung",
             "Total reactive energy": "Gesamte kumulierte Blindleistung",
             "Total import reactive energy": "aufgenommene kumulierte Blindleistung",
-            "Total export reactive energy": "abgegebene kumulierte Blindleistung"
+            "Total export reactive energy": "abgegebene kumulierte Blindleistung",
+            "Reactive energy since last reset": "Blindleistung seit letzten Reset",
+            "Energy since last reset": "Wirkleistung seit letzten Reset"
         }
     }
 }

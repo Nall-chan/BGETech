@@ -9,9 +9,9 @@ declare(strict_types=1);
  * @package       BGETech
  * @file          BGETechTraits.php
  * @author        Michael Tröger <micha@nall-chan.net>
- * @copyright     2021 Michael Tröger
+ * @copyright     2022 Michael Tröger
  * @license       https://creativecommons.org/licenses/by-nc-sa/4.0/ CC BY-NC-SA 4.0
- * @version       3.30
+ * @version       3.40
  *
  */
 

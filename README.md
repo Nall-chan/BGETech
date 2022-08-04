@@ -1,7 +1,7 @@
 [![Version](https://img.shields.io/badge/Symcon-PHPModul-red.svg)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
-[![Version](https://img.shields.io/badge/Modul%20Version-3.30-blue.svg)]()
+[![Version](https://img.shields.io/badge/Modul%20Version-3.40-blue.svg)](https://community.symcon.de/t/modul-alle-modbus-zaehler-von-b-g-e-tech/45290)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
-[![Version](https://img.shields.io/badge/Symcon%20Version-5.1%20%3E-green.svg)](https://www.symcon.de/forum/threads/30857-IP-Symcon-5-1-%28Stable%29-Changelog)
+[![Version](https://img.shields.io/badge/Symcon%20Version-5.1%20%3E-green.svg)](https://www.symcon.de/service/dokumentation/installation/migrationen/v50-v51-q2-2019/)
 [![Check Style](https://github.com/Nall-chan/BGETech/workflows/Check%20Style/badge.svg)](https://github.com/Nall-chan/BGETech/actions) 
 [![Run Tests](https://github.com/Nall-chan/BGETech/workflows/Run%20Tests/badge.svg)](https://github.com/Nall-chan/BGETech/actions)  
 [![Spenden](https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_SM.gif)](#2-spenden)    
@@ -79,7 +79,7 @@ Ist direkt in der Dokumentation der jeweiligen Module beschrieben.
 ###  1. GUID der Module
 
  
-| Modul   | Typ    | Prefix  | GUID                                   |
+|  Modul  |  Typ   | Prefix  |                  GUID                  |
 | :-----: | :----: | :-----: | :------------------------------------: |
 | DRS210C | Device | DRS210C | {2CA41C9F-355C-4231-90A5-6D83A90B65BD} |
 | DRS458  | Device | DRS458  | {8CA96C98-3014-44E4-8D15-4EC6B524F1F4} |
@@ -93,6 +93,14 @@ Ist direkt in der Dokumentation der jeweiligen Module beschrieben.
 
 
 ### 2. Changelog
+
+Version 3.40:  
+ -  ergänzt  
+ -  ergänzt  
+ -  Aktuelle und Summen für Import und Export ergänzt für SDM230
+ -  Rücksetzbare Zähler vom SDM230, SDM530 und SDM630 ergänzt
+ -  Dokumentation SDM72D ergänzt
+ -  Tarifzähler DRS210C ergänzt
 
 Version 3.30:  
  - Import und Export Werte für SDM120C, SDM220, SDM230, SDM530 und SDM630 ergänzt
@@ -149,7 +157,11 @@ Version 1.0:
   
   Die Library ist für die nicht kommerzielle Nutzung kostenlos, Schenkungen als Unterstützung für den Autor werden hier akzeptiert:  
 
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G2SLW2MEMQZH2" target="_blank"><img src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_LG.gif" border="0" /></a>
+  PayPal:  
+<a href="https://www.paypal.com/donate?hosted_button_id=G2SLW2MEMQZH2" target="_blank"><img src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_LG.gif" border="0" /></a>  
+
+  Wunschliste:  
+<a href="https://www.amazon.de/hz/wishlist/ls/YU4AI9AQT9F?ref_=wl_share" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg" border="0" width="100"/></a>  
 
 ## 6. Lizenz
 

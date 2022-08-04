@@ -9,9 +9,9 @@ declare(strict_types=1);
  * @package       BGETech
  * @file          module.php
  * @author        Michael Tröger <micha@nall-chan.net>
- * @copyright     2021 Michael Tröger
+ * @copyright     2022 Michael Tröger
  * @license       https://creativecommons.org/licenses/by-nc-sa/4.0/ CC BY-NC-SA 4.0
- * @version       3.30
+ * @version       3.40
  *
  */
 require_once __DIR__ . '/../libs/BGETechModule.php';  // diverse Klassen
@@ -59,6 +59,8 @@ class SDM530 extends BGETech
         ['Total export energy', VARIABLETYPE_FLOAT, 'Electricity', 0x004A, 4, 2, true],
         ['Total import reactive energy', VARIABLETYPE_FLOAT, 'kVArh', 0x004C, 4, 2, true],
         ['Total export reactive energy', VARIABLETYPE_FLOAT, 'kVArh', 0x004E, 4, 2, true],
+        ['Reactive energy since last reset', VARIABLETYPE_FLOAT, 'Electricity', 0x0050, 4, 2, true],
+        ['Energy since last reset', VARIABLETYPE_FLOAT, 'Electricity', 0x0052, 4, 2, true],
         ['Total system power demand', VARIABLETYPE_FLOAT, 'Watt.14490', 0x0054, 4, 2, true],
         ['Maximum total system power demand', VARIABLETYPE_FLOAT, 'Watt.14490', 0x0056, 4, 2, true],
         ['Total system apparent power demand', VARIABLETYPE_FLOAT, 'VA', 0x0064, 4, 2, true],

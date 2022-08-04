@@ -76,7 +76,9 @@
             "L3 total active energy": "L3 Gesamte kumulierte Wirkleistung",
             "L1 total reactive energy": "L1 Gesamte kumulierte Blindleistung",
             "L2 total reactive energy": "L2 Gesamte kumulierte Blindleistung",
-            "L3 total reactive energy": "L3 Gesamte kumulierte Blindleistung"
+            "L3 total reactive energy": "L3 Gesamte kumulierte Blindleistung",
+            "Reactive energy since last reset": "Blindleistung seit letzten Reset",
+            "Energy since last reset": "Wirkleistung seit letzten Reset"
         }
     }
 }

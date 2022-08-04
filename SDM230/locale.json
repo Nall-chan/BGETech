@@ -16,6 +16,10 @@
             "Frequency": "Frequenz",
             "Total system power demand": "Kumulierter Bedarf System Wirkleistung",
             "Maximum total system power demand": "Maximal kumulierter Bedarf System Wirkleistung",
+            "Current system positive power demand": "Aktueller positiver Leistungsbedarf des Systems",
+            "Maximum system positive power demand": "Maximaler positiver Leistungsbedarf des Systems",
+            "Current system reverse power demand": "Aktueller Rückleistungsbedarf des Systems",
+            "Maximum system reverse power demand": "Maximaler Rückleistungsbedarf des Systems",
             "Current demand": "Strombedarf",
             "Maximum current demand": "Maximum Strombedarf",
             "Total active energy": "Gesamte kumulierte Wirkleistung",
@@ -23,7 +27,9 @@
             "Total export energy": "abgegebene kumulierte Wirkleistung",
             "Total reactive energy": "Gesamte kumulierte Blindleistung",
             "Total import reactive energy": "aufgenommene kumulierte Blindleistung",
-            "Total export reactive energy": "abgegebene kumulierte Blindleistung"
+            "Total export reactive energy": "abgegebene kumulierte Blindleistung",
+            "Resettable total energy": "Gesamte kumulierte Wirkleistung (rückstellbar)",
+            "Resettable total reactive energy": "Gesamte kumulierte Blindleistung (rückstellbar)"
         }
     }
 }
