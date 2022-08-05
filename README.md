@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/badge/Symcon%20Version-5.1%20%3E-green.svg)](https://www.symcon.de/service/dokumentation/installation/migrationen/v50-v51-q2-2019/)
 [![Check Style](https://github.com/Nall-chan/BGETech/workflows/Check%20Style/badge.svg)](https://github.com/Nall-chan/BGETech/actions) 
 [![Run Tests](https://github.com/Nall-chan/BGETech/workflows/Run%20Tests/badge.svg)](https://github.com/Nall-chan/BGETech/actions)  
-[![Spenden](https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_SM.gif)](#2-spenden)    
+[![Spenden](https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_SM.gif)](#3-spenden)    
 
 
 # Symcon-Modul: B+G E-Tech <!-- omit in toc -->  
@@ -28,10 +28,10 @@ ohne mehrere ModBus-Instanzen in IPS.
 Zusätzlich können mehrere Zähler auf einem physikalischen RS485-Bus
 betrieben werden.  
 
-Folgende Module beinhaltet das BGETech Repository:
+Folgende Module beinhaltet die B+G E-Tech Library:
 
 - __DRS210C__  
-	Zähler vom Typ DRS 210C  
+	Zähler vom Typ DRS 210-C  
 
 - __SDM120MODBUS__  
 	Zähler vom Typ SDM 120-ModBus  
@@ -39,7 +39,7 @@ Folgende Module beinhaltet das BGETech Repository:
 - __DRS458__  
 	Zähler vom Typ DRS 458  
 
-- __DRT428M__
+- __DRT428M__  
   Zähler vom Typ DRT 428M  
 
 - __DRT710M__  
@@ -48,7 +48,7 @@ Folgende Module beinhaltet das BGETech Repository:
 - __SDM72D__   
 	Zähler vom Typ SDM 72D
 
-- __SDM72DMV2__
+- __SDM72DMV2__  
   Zähler vom Typ SDM 72DM-V2  
   
 - __SDM120C__   
@@ -74,14 +74,26 @@ Folgende Module beinhaltet das BGETech Repository:
 
 ## 3. Software-Installation
 
-**IPS 5.1:**  
-   Bei privater Nutzung:
-     Über den 'Module-Store' in IPS.  
+  Über den 'Module-Store' in IPS das Modul 'B+G E-Tech' hinzufügen.  
    **Bei kommerzieller Nutzung (z.B. als Errichter oder Integrator) wenden Sie sich bitte an den Autor.**  
+![Module-Store](imgs/install.png)  
 
 ## 4. Einrichten der Instanzen in IP-Symcon
 
-Ist direkt in der Dokumentation der jeweiligen Module beschrieben.  
+Ist direkt in der Dokumentation der jeweiligen Module beschrieben:  
+
+- __[DRS 210-C](DRS210C/README.md#4-einrichten-der-instanzen-in-ip-symcon)__
+- __[SDM 120-ModBus](SDM120MODBUS/README.md#4-einrichten-der-instanzen-in-ip-symcon)__
+- __[DRS 458](DRS458/README.md#4-einrichten-der-instanzen-in-ip-symcon)__
+- __[DRT 428M](DRT428M/README.md#4-einrichten-der-instanzen-in-ip-symcon)__
+- __[DRT 710M](DRT710M/README.md#4-einrichten-der-instanzen-in-ip-symcon)__
+- __[SDM 72D](SDM72D/README.md#4-einrichten-der-instanzen-in-ip-symcon)__
+- __[SDM 72DM-V2](SDM72DMV2/README.md#4-einrichten-der-instanzen-in-ip-symcon)__
+- __[SDM 120C](SDM120C/README.md#4-einrichten-der-instanzen-in-ip-symcon)__
+- __[SDM 220](SDM220/README.md#4-einrichten-der-instanzen-in-ip-symcon)__
+- __[SDM 230](SDM230/README.md#4-einrichten-der-instanzen-in-ip-symcon)__
+- __[SDM 530](SDM530/README.md#4-einrichten-der-instanzen-in-ip-symcon)__
+- __[SDM 630](SDM630/README.md#4-einrichten-der-instanzen-in-ip-symcon)__
 
 ## 5. Anhang
 
@@ -90,7 +102,7 @@ Ist direkt in der Dokumentation der jeweiligen Module beschrieben.
  
 |     Modul      |  Typ   |    Prefix    |                  GUID                  |
 | :------------: | :----: | :----------: | :------------------------------------: |
-|    DRS 210C    | Device |   DRS210C    | {2CA41C9F-355C-4231-90A5-6D83A90B65BD} |
+|    DRS 210-C    | Device |   DRS210C    | {2CA41C9F-355C-4231-90A5-6D83A90B65BD} |
 | SDM 120-ModBus | Device | SDM120MODBUS | {007A55EC-C9C4-4241-8F39-2F0CA809F54D} |
 |    DRS 458     | Device |    DRS458    | {8CA96C98-3014-44E4-8D15-4EC6B524F1F4} |
 |    DRT 428M    | Device |   DRT428M    | {7EE791EF-574D-4B52-84D7-331CFDF0C512} |
@@ -106,7 +118,7 @@ Ist direkt in der Dokumentation der jeweiligen Module beschrieben.
 
 ### 2. Changelog
 
-Version 3.40:  
+__Version 3.40:__  
  -  SDM 120-ModBus ergänzt  
  -  DRT 428M ergänzt  
  -  SDM 72DM-V2 ergänzt
@@ -115,43 +127,43 @@ Version 3.40:
  -  Dokumentation SDM72D ergänzt
  -  Tarifzähler DRS210C ergänzt
 
-Version 3.30:  
+__Version 3.30:__  
  - Import und Export Werte für SDM120C, SDM220, SDM230, SDM530 und SDM630 ergänzt
 
-Version 3.23:  
+__Version 3.23:__
  - Schreibfehler korrigiert  
  - Neue Tests  
  - Neues Style  
 
-Version 3.10:
+__Version 3.10:
  - Fehler bei SDM360 L3 total active energy behoben  
 
-Version 3.01:  
+__Version 3.01:__
  - Falsche Bezeichnung des SDM210C zu SDM120C umbenannt  
 
-Version 3.0:  
+__Version 3.0:__
  - Release für IPS 5.1 und den Module-Store  
 
-Version 2.06:  
+__Version 2.06:__
  - IntervallBox und caption ersetzt  
 
-Version 2.05:  
+__Version 2.05:__
  - Bugfix für DRT 710M  
 
-Version 2.04:  
+__Version 2.04:__
  - DRT 710M ergänzt  
 
-Version 2.03:  
+__Version 2.03:__
  - SDM 530 ergänzt  
 
-Version 2.2:  
+__Version 2.2:__
  - Intern werden jetzt auch Integer, Boolean und String Variablen unterstützt  
  - Fehlende Übersetzungen ergänzt  
 
-Version 2.1:  
+__Version 2.1:__
  - Abzufragende Werte können deaktiviert werden  
 
-Version 2.0:  
+__Version 2.0:__
  - DRS 458 ergänzt  
  - SDM 72D ergänzt  
  - SDM 120C ergänzt  
@@ -159,11 +171,11 @@ Version 2.0:
  - SDM 230 ergänzt  
  - SDM 630 fehlende Werte ergänzt und kleiner Bugfixes  
 
-Version 1.1:  
+__Version 1.1:__
  - Profile ergänzt  
  - Doku ergänzt  
 
-Version 1.0:  
+__Version 1.0:__
  - Erstes offizielles Release  
 
 ### 3. Spenden  

@@ -5,6 +5,7 @@
             "Function": "Funktion",
             "Combination of type and size of value (%s) not supported.": "Kombination von Type und Wert (%s) nicht unterstützt.",
             "milliseconds": "Millisekunden",
+            "Interval less than 500 ms not allowed.": "Intervall kleiner als 500 ms nicht erlaubt.",
             "Active": "Aktiv",
             "Voltage L1": "Spannung L1",
             "Voltage L2": "Spannung L2",

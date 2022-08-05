@@ -23,7 +23,7 @@ require_once __DIR__ . '/../libs/BGETechModule.php';  // diverse Klassen
 class SDM120MODBUS extends BGETech
 {
     const PREFIX = 'SDM120MODBUS';
-// TODO
+
     public static $Variables = [
         ['Voltage', VARIABLETYPE_FLOAT, 'Volt.230', 0x0000, 4, 2, true],
         ['Current', VARIABLETYPE_FLOAT, 'Ampere', 0x0006, 4, 2, true],
@@ -31,7 +31,6 @@ class SDM120MODBUS extends BGETech
         ['Apparent power', VARIABLETYPE_FLOAT, 'VA', 0x0012, 4, 2, true],
         ['Reactive power', VARIABLETYPE_FLOAT, 'VaR', 0x0018, 4, 2, true],
         ['Power factor', VARIABLETYPE_FLOAT, '', 0x001E, 4, 2, true],
-        ['Phase angle', VARIABLETYPE_FLOAT, 'PhaseAngle', 0x0024, 4, 2, true],
         ['Frequency', VARIABLETYPE_FLOAT, 'Hertz.50', 0x0046, 4, 2, true],
         ['Total import energy', VARIABLETYPE_FLOAT, 'Electricity', 0x0048, 4, 2, true],
         ['Total export energy', VARIABLETYPE_FLOAT, 'Electricity', 0x004A, 4, 2, true],
@@ -47,7 +46,5 @@ class SDM120MODBUS extends BGETech
         ['Maximum current demand', VARIABLETYPE_FLOAT, 'Ampere', 0x0108, 4, 2, true],
         ['Total active energy', VARIABLETYPE_FLOAT, 'Electricity', 0x0156, 4, 2, true],
         ['Total reactive energy', VARIABLETYPE_FLOAT, 'kVArh', 0x0158, 4, 2, true],
-        ['Resettable total energy', VARIABLETYPE_FLOAT, 'Electricity', 0x0180, 4, 2, true],
-        ['Resettable total reactive energy', VARIABLETYPE_FLOAT, 'kVArh', 0x0182, 4, 2, true]
     ];
 }

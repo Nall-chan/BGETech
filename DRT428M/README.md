@@ -44,9 +44,10 @@ Das Modul ist im Dialog 'Instanz hinzufügen' unter dem Hersteller 'B+G E-Tech' 
 
 Es wird automatisch ein 'ModBus Gateway' als Splitter-Instanz, sowie ein 'Client Socket' als dessen I/O-Instanz erzeugt.  
 In dem sich öffnenden Konfigurationsformular muss der Abfrage-Zyklus eingestellt werden.  
-Über den Button 'Gateway konfigurieren' oder das Zahnrad hinter der Übergeordneten Instanz wird das Konfigurationsformular des 'ModBus Gateway' geöffnet.  
+ Über den Button 'Gateway konfigurieren' wird das Konfigurationsformular des 'ModBus Gateway' geöffnet.  
+![Instanz konfigurieren](../imgs/config.png)    
 Hier muss jetzt der Modus passend zur Hardwareanbindung (TCP /RTU) sowie die Geräte-ID des Zählers eingestellt und übernommen werden.  
-Anschließend über den Button 'Schnittstelle konfigurieren' oder wieder über das Zahnrad hinter der Übergeordneten Instanz, das Konfigurationsformular der I/O-Instanz öffnen.  
+Anschließend über den Button 'Schnittstelle konfigurieren' das Konfigurationsformular der I/O-Instanz öffnen.  
 Je nach Hardwareanbindung müssen hier die RS485 Parameter oder die IP-Adresse des ModBus-Umsetzers eingetragen werden.  
 Details hierzu sind dem Handbuch des Zählers (RS485) und dem eventuell verwendeten Umsetzer zu entnehmen.  
 
@@ -54,82 +55,56 @@ Details hierzu sind dem Handbuch des Zählers (RS485) und dem eventuell verwende
 
 Folgende Statusvariablen werden automatisch angelegt.  
 
-|                       Name                       |  Typ  |                 Ident                 |   Profil    |
-| :----------------------------------------------: | :---: | :-----------------------------------: | :---------: |
-|                   Spannung L1                    | float |               VoltageL1               |  Volt.230   |
-|                   Spannung L2                    | float |               VoltageL2               |  Volt.230   |
-|                   Spannung L3                    | float |               VoltageL3               |  Volt.230   |
-|                     Strom L1                     | float |               CurrentL1               |   Ampere    |
-|                     Strom L2                     | float |               CurrentL2               |   Ampere    |
-|                     Strom L3                     | float |               CurrentL3               |   Ampere    |
-|                 Wirkleistung L1                  | float |             ActivepowerL1             | Watt.14490  |
-|                 Wirkleistung L2                  | float |             ActivepowerL2             | Watt.14490  |
-|                 Wirkleistung L3                  | float |             ActivepowerL3             | Watt.14490  |
-|                Scheinleistung L1                 | float |            ApparentpowerL1            |     VA      |
-|                Scheinleistung L2                 | float |            ApparentpowerL2            |     VA      |
-|                Scheinleistung L3                 | float |            ApparentpowerL3            |     VA      |
-|                 Blindleistung L1                 | float |            ReactivepowerL1            |     VaR     |
-|                 Blindleistung L2                 | float |            ReactivepowerL2            |     VaR     |
-|                 Blindleistung L3                 | float |            ReactivepowerL3            |     VaR     |
-|                Leistungsfaktor L1                | float |             PowerfactorL1             |             |
-|                Leistungsfaktor L2                | float |             PowerfactorL2             |             |
-|                Leistungsfaktor L3                | float |             PowerfactorL3             |             |
-|           Phasenverschiebungswinkel L1           | float |             PhaseangleL1              | PhaseAngle  |
-|           Phasenverschiebungswinkel L2           | float |             PhaseangleL2              | PhaseAngle  |
-|           Phasenverschiebungswinkel L3           | float |             PhaseangleL3              | PhaseAngle  |
-|               Mittelwert Spannung                | float |      Averagelinetoneutralvoltage      |  Volt.230   |
-|                 Mittelwert Strom                 | float |          Averagelinecurrent           |   Ampere    |
-|                   Summe Strom                    | float |           Sumoflinecurrents           |   Ampere    |
-|          Kumulierte System Wirkleistung          | float |           Totalsystempower            | Watt.14490  |
-|         Kumulierte System Scheinleistung         | float |       Totalsystemapparentpower        |     VA      |
-|         Kumulierte System Blindleistung          | float |       Totalsystemreactivepower        |     VaR     |
-|        Kumulierte System Leistungsfaktor         | float |        Totalsystempowerfactor         |             |
-|   Kumulierte System Phasenverschiebungswinkel    | float |         Totalsystemphaseangle         | PhaseAngle  |
-|                     Frequenz                     | float |               Frequency               |  Hertz.50   |
-|      Kumulierter Bedarf System Wirkleistung      | float |        Totalsystempowerdemand         | Watt.14490  |
-|  Maximal kumulierter Bedarf System Wirkleistung  | float |     Maximumtotalsystempowerdemand     | Watt.14490  |
-|     Kumulierter Bedarf System Scheinleistung     | float |    Totalsystemapparentpowerdemand     |     VA      |
-| Maximal kumulierter Bedarf System Scheinleistung | float | Maximumtotalsystemapparentpowerdemand |     VA      |
-|         Kumulierter Bedarf Neutral Strom         | float |       Totalneutralcurrentdemand       |   Ampere    |
-|           Maximum Bedarf Neutral Strom           | float |      Maximumneutralcurrentdemand      |   Ampere    |
-|            Line 1 zu Line 2 Spannung             | float |          Line1toLine2voltage          |  Volt.230   |
-|            Line 2 zu Line 3 Spannung             | float |          Line2toLine3voltage          |  Volt.230   |
-|            Line 3 zu Line 1 Spannung             | float |          Line3toLine1voltage          |  Volt.230   |
-|         Mittelwert Line zu Line Spannung         | float |       Averagelinetolinevoltage        |  Volt.230   |
-|                  Neutral Strom                   | float |            Neutralcurrent             |   Ampere    |
-|           Line 1 Klirrfaktor Spannung            | float |            Line1voltageTHD            | Intensity.F |
-|           Line 2 Klirrfaktor Spannung            | float |            Line2voltageTHD            | Intensity.F |
-|           Line 3 Klirrfaktor Spannung            | float |            Line3voltageTHD            | Intensity.F |
-|             Line 1 Klirrfaktor Strom             | float |            Line1CurrentTHD            | Intensity.F |
-|             Line 2 Klirrfaktor Strom             | float |            Line2CurrentTHD            | Intensity.F |
-|             Line 3 Klirrfaktor Strom             | float |            Line3CurrentTHD            | Intensity.F |
-|         Mittelwert Klirrfaktor Spannung          | float |    AveragelinetoneutralvoltageTHD     | Intensity.F |
-|           Mittelwert Klirrfaktor Strom           | float |         AveragelinecurrentTHD         | Intensity.F |
-|        Kumulierte System Leistungsfaktor         | float |        Totalsystempowerfactor         | PhaseAngle  |
-|               Bedarf Line 1 Strom                | float |          Line1currentdemand           |   Ampere    |
-|               Bedarf Line 2 Strom                | float |          Line2currentdemand           |   Ampere    |
-|               Bedarf Line 3 Strom                | float |          Line3currentdemand           |   Ampere    |
-|           Maximum Bedarf Line 1 Strom            | float |       Maximumline1currentdemand       |   Ampere    |
-|           Maximum Bedarf Line 2 Strom            | float |       Maximumline2currentdemand       |   Ampere    |
-|           Maximum Bedarf Line 3 Strom            | float |       Maximumline3currentdemand       |   Ampere    |
-|      Line 1 zu Line 2 Klirrfaktor Spannung       | float |        Line1toline2voltageTHD         | Intensity.F |
-|      Line 2 zu Line 3 Klirrfaktor Spannung       | float |        Line2toline3voltageTHD         | Intensity.F |
-|      Line 3 zu Line 1 Klirrfaktor Spannung       | float |        Line3toline1voltageTHD         | Intensity.F |
-|   Mittelwert Line zu Line Klirrfaktor Spannung   | float |      AveragelinetolinevoltageTHD      | Intensity.F |
-|         Gesamte kumulierte Wirkleistung          | float |           Totalactiveenergy           | Electricity |
-|         Gesamte kumulierte Blindleistung         | float |          Totalreactiveenergy          |    kVArh    |
-|        L1 Gesamte kumulierte Wirkleistung        | float |          L1totalactiveenergy          | Electricity |
-|        L2 Gesamte kumulierte Wirkleistung        | float |          L2totalactiveenergy          | Electricity |
-|        L3 Gesamte kumulierte Wirkleistung        | float |          L3totalactiveenergy          | Electricity |
-|       L1 Gesamte kumulierte Blindleistung        | float |         L1totalreactiveenergy         |    kVArh    |
-|       L2 Gesamte kumulierte Blindleistung        | float |         L2totalreactiveenergy         |    kVArh    |
-|       L3 Gesamte kumulierte Blindleistung        | float |         L3totalreactiveenergy         |    kVArh    |
-|        abgegebene kumulierte Wirkleistung        | float |           Totalexportenergy           | Electricity |
-|       aufgenommene kumulierte Wirkleistung       | float |           Totalimportenergy           | Electricity |
-|       abgegebene kumulierte Blindleistung        | float |       Totalexportreactiveenergy       |    kVArh    |
-|      aufgenommene kumulierte Blindleistung       | float |       Totalimportreactiveenergy       |    kVArh    |
-|         Blindleistung seit letzten Reset         | float |     Reactiveenergysincelastreset      | Electricity |
-|         Wirkleistung seit letzten Reset          | float |         Energysincelastreset          |    kVArh    |
+|                   Name                   |  Typ  |         Ident          |   Profil    |
+| :--------------------------------------: | :---: | :--------------------: | :---------: |
+|               Spannung L1                | float |       VoltageL1        |  Volt.230   |
+|               Spannung L2                | float |       VoltageL2        |  Volt.230   |
+|               Spannung L3                | float |       VoltageL3        |  Volt.230   |
+|                 Frequenz                 | float |       Frequency        |  Hertz.50   |
+|                 Strom L1                 | float |       CurrentL1        |   Ampere    |
+|                 Strom L2                 | float |       CurrentL2        |   Ampere    |
+|                 Strom L3                 | float |       CurrentL3        |   Ampere    |
+|         Kumulierte Wirkleistung          | float |    Totalactivepower    | Watt.14490  |
+|             Wirkleistung L1              | float |     ActivepowerL1      | Watt.14490  |
+|             Wirkleistung L2              | float |     ActivepowerL2      | Watt.14490  |
+|             Wirkleistung L3              | float |     ActivepowerL3      | Watt.14490  |
+|         Kumulierte Blindleistung         | float |   Totalreactivepower   |     VaR     |
+|             Blindleistung L1             | float |    ReactivepowerL1     |     VaR     |
+|             Blindleistung L2             | float |    ReactivepowerL2     |     VaR     |
+|             Blindleistung L3             | float |    ReactivepowerL3     |     VaR     |
+|        Kumulierte Scheinleistung         | float |   Totalapparentpower   |     VA      |
+|            Scheinleistung L1             | float |    ApparentpowerL1     |     VA      |
+|            Scheinleistung L2             | float |    ApparentpowerL2     |     VA      |
+|            Scheinleistung L3             | float |    ApparentpowerL3     |     VA      |
+|       Kumulierter Leistungsfaktor        | float |    Totalpowerfactor    |             |
+|            Leistungsfaktor L1            | float |     PowerfactorL1      |             |
+|            Leistungsfaktor L2            | float |     PowerfactorL2      |             |
+|            Leistungsfaktor L3            | float |     PowerfactorL3      |             |
+|     Gesamte kumulierte Wirkleistung      | float |   Totalactiveenergy    | Electricity |
+|    Gesamte kumulierte Wirkleistung L1    | float |  TotalactiveenergyL1   | Electricity |
+|    Gesamte kumulierte Wirkleistung L2    | float |  TotalactiveenergyL2   | Electricity |
+|    Gesamte kumulierte Wirkleistung L3    | float |  TotalactiveenergyL3   | Electricity |
+|   aufgenommene kumulierte Wirkleistung   | float |   Importactiveenergy   | Electricity |
+| aufgenommene kumulierte Wirkleistung L1  | float |  ImportactiveenergyL1  | Electricity |
+| aufgenommene kumulierte Wirkleistung L2  | float |  ImportactiveenergyL2  | Electricity |
+| aufgenommene kumulierte Wirkleistung L3  | float |  ImportactiveenergyL3  | Electricity |
+|    abgegebene kumulierte Wirkleistung    | float |   Exportactiveenergy   | Electricity |
+|  abgegebene kumulierte Wirkleistung L1   | float |  ExportactiveenergyL1  | Electricity |
+|  abgegebene kumulierte Wirkleistung L2   | float |  ExportactiveenergyL2  | Electricity |
+|  abgegebene kumulierte Wirkleistung L3   | float |  ExportactiveenergyL3  | Electricity |
+|     Gesamte kumulierte Blindleistung     | float |  Totalreactiveenergy   |    kVArh    |
+|   Gesamte kumulierte Blindleistung L1    | float | TotalreactiveenergyL1  |    kVArh    |
+|   Gesamte kumulierte Blindleistung L2    | float | TotalreactiveenergyL2  |    kVArh    |
+|   Gesamte kumulierte Blindleistung L3    | float | TotalreactiveenergyL3  |    kVArh    |
+|  aufgenommene kumulierte Blindleistung   | float |  Importreactiveenergy  |    kVArh    |
+| aufgenommene kumulierte Blindleistung L1 | float | ImportreactiveenergyL1 |    kVArh    |
+| aufgenommene kumulierte Blindleistung L2 | float | ImportreactiveenergyL2 |    kVArh    |
+| aufgenommene kumulierte Blindleistung L3 | float | ImportreactiveenergyL3 |    kVArh    |
+|   abgegebene kumulierte Blindleistung    | float |  Exportreactiveenergy  |    kVArh    |
+|  abgegebene kumulierte Blindleistung L1  | float | ExportreactiveenergyL1 |    kVArh    |
+|  abgegebene kumulierte Blindleistung L2  | float | ExportreactiveenergyL2 |    kVArh    |
+|  abgegebene kumulierte Blindleistung L3  | float | ExportreactiveenergyL3 |    kVArh    |
+
 
 Folgende Profile werden automatisch angelegt.  
 

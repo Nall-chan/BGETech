@@ -44,9 +44,10 @@ Das Modul ist im Dialog 'Instanz hinzufügen' unter dem Hersteller 'B+G E-Tech' 
 
 Es wird automatisch ein 'ModBus Gateway' als Splitter-Instanz, sowie ein 'Client Socket' als dessen I/O-Instanz erzeugt.  
 In dem sich öffnenden Konfigurationsformular muss der Abfrage-Zyklus eingestellt werden.  
-Über den Button 'Gateway konfigurieren' oder das Zahnrad hinter der Übergeordneten Instanz wird das Konfigurationsformular des 'ModBus Gateway' geöffnet.  
+ Über den Button 'Gateway konfigurieren' wird das Konfigurationsformular des 'ModBus Gateway' geöffnet.  
+![Instanz konfigurieren](../imgs/config.png)    
 Hier muss jetzt der Modus passend zur Hardwareanbindung (TCP /RTU) sowie die Geräte-ID des Zählers eingestellt und übernommen werden.  
-Anschließend über den Button 'Schnittstelle konfigurieren' oder wieder über das Zahnrad hinter der Übergeordneten Instanz, das Konfigurationsformular der I/O-Instanz öffnen.  
+Anschließend über den Button 'Schnittstelle konfigurieren' das Konfigurationsformular der I/O-Instanz öffnen.  
 Je nach Hardwareanbindung müssen hier die RS485 Parameter oder die IP-Adresse des ModBus-Umsetzers eingetragen werden.  
 Details hierzu sind dem Handbuch des Zählers (RS485) und dem eventuell verwendeten Umsetzer zu entnehmen.  
 
@@ -62,24 +63,21 @@ Folgende Statusvariablen werden automatisch angelegt.
 |                 Scheinleistung                  | float |          Apparentpower           |     VA      |
 |                  Blindleistung                  | float |          Reactivepower           |     VaR     |
 |                 Leistungsfaktor                 | float |           Powerfactor            |             |
-|            Phasenverschiebungswinkel            | float |            Phaseangle            | PhaseAngle  |
 |                    Frequenz                     | float |            Frequency             |  Hertz.50   |
+|      aufgenommene kumulierte Wirkleistung       | float |        Totalimportenergy         | Electricity |
+|       abgegebene kumulierte Wirkleistung        | float |        Totalexportenergy         | Electricity |
+|      aufgenommene kumulierte Blindleistung      | float |    Totalimportreactiveenergy     |    kVArh    |
+|       abgegebene kumulierte Blindleistung       | float |    Totalexportreactiveenergy     |    kVArh    |
 |     Kumulierter Bedarf System Wirkleistung      | float |      Totalsystempowerdemand      | Watt.14490  |
 | Maximal kumulierter Bedarf System Wirkleistung  | float |  Maximumtotalsystempowerdemand   | Watt.14490  |
-|                   Strombedarf                   | float |          Currentdemand           |   Ampere    |
-|               Maximum Strombedarf               | float |       Maximumcurrentdemand       |   Ampere    |
-|         Gesamte kumulierte Wirkleistung         | float |        Totalactiveenergy         | Electricity |
-|        Gesamte kumulierte Blindleistung         | float |       Totalreactiveenergy        |    kVArh    |
-|       abgegebene kumulierte Wirkleistung        | float |        Totalexportenergy         | Electricity |
-|      aufgenommene kumulierte Wirkleistung       | float |        Totalimportenergy         | Electricity |
-|       abgegebene kumulierte Blindleistung       | float |    Totalexportreactiveenergy     |    kVArh    |
-|      aufgenommene kumulierte Blindleistung      | float |    Totalimportreactiveenergy     |    kVArh    |
 | Aktueller positiver Leistungsbedarf des Systems | float | Currentsystempositivepowerdemand | Watt.14490  |
 | Maximaler positiver Leistungsbedarf des Systems | float | Maximumsystempositivepowerdemand | Watt.14490  |
 |    Aktueller Rückleistungsbedarf des Systems    | float | Currentsystemreversepowerdemand  | Watt.14490  |
 |    Maximaler Rückleistungsbedarf des Systems    | float | Maximumsystemreversepowerdemand  | Watt.14490  |
-| Gesamte kumulierte Wirkleistung (rückstellbar)  | float |      Resettabletotalenergy       | Electricity |
-| Gesamte kumulierte Blindleistung (rückstellbar) | float |  Resettabletotalreactiveenergy   |    kVArh    |
+|                   Strombedarf                   | float |          Currentdemand           |   Ampere    |
+|               Maximum Strombedarf               | float |       Maximumcurrentdemand       |   Ampere    |
+|         Gesamte kumulierte Wirkleistung         | float |        Totalactiveenergy         | Electricity |
+|        Gesamte kumulierte Blindleistung         | float |       Totalreactiveenergy        |    kVArh    |
 
 Folgende Profile werden automatisch angelegt.  
 

@@ -32,10 +32,10 @@ class DRS210C extends BGETech
         ['Reactive power', VARIABLETYPE_FLOAT, 'VaR', 0x20A0, 3, 2, true],
         ['Apparent power', VARIABLETYPE_FLOAT, 'VA', 0x20C0, 3, 2, true],
         ['Power factor', VARIABLETYPE_FLOAT, '', 0x20E0, 3, 2, true],
-        ['Current tariff', VARIABLETYPE_INTEGER, '', 0x22000, 3, 2, true],
+        ['Current tariff', VARIABLETYPE_INTEGER, '', 0x2200, 3, 2, true],
         ['Total active energy', VARIABLETYPE_FLOAT, 'Electricity', 0x3000, 3, 2, true],
-        ['Total import energy', VARIABLETYPE_FLOAT, 'Electricity', 0x0320, 4, 2, true],
-        ['Total export energy', VARIABLETYPE_FLOAT, 'Electricity', 0x0340, 4, 2, true],
+        ['Total import energy', VARIABLETYPE_FLOAT, 'Electricity', 0x3020, 4, 2, true],
+        ['Total export energy', VARIABLETYPE_FLOAT, 'Electricity', 0x3040, 4, 2, true],
         ['Active energy tariff 1', VARIABLETYPE_FLOAT, 'Electricity', 0x3140, 3, 2, true],
         ['Active energy tariff 2', VARIABLETYPE_FLOAT, 'Electricity', 0x3240, 3, 2, true]
 

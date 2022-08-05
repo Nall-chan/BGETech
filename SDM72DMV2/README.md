@@ -44,9 +44,10 @@ Das Modul ist im Dialog 'Instanz hinzufügen' unter dem Hersteller 'B+G E-Tech' 
 
 Es wird automatisch ein 'ModBus Gateway' als Splitter-Instanz, sowie ein 'Client Socket' als dessen I/O-Instanz erzeugt.  
 In dem sich öffnenden Konfigurationsformular muss der Abfrage-Zyklus eingestellt werden.  
-Über den Button 'Gateway konfigurieren' oder das Zahnrad hinter der Übergeordneten Instanz wird das Konfigurationsformular des 'ModBus Gateway' geöffnet.  
+ Über den Button 'Gateway konfigurieren' wird das Konfigurationsformular des 'ModBus Gateway' geöffnet.  
+![Instanz konfigurieren](../imgs/config.png)    
 Hier muss jetzt der Modus passend zur Hardwareanbindung (TCP /RTU) sowie die Geräte-ID des Zählers eingestellt und übernommen werden.  
-Anschließend über den Button 'Schnittstelle konfigurieren' oder wieder über das Zahnrad hinter der Übergeordneten Instanz, das Konfigurationsformular der I/O-Instanz öffnen.  
+Anschließend über den Button 'Schnittstelle konfigurieren' das Konfigurationsformular der I/O-Instanz öffnen.  
 Je nach Hardwareanbindung müssen hier die RS485 Parameter oder die IP-Adresse des ModBus-Umsetzers eingetragen werden.  
 Details hierzu sind dem Handbuch des Zählers (RS485) und dem eventuell verwendeten Umsetzer zu entnehmen.  
 
@@ -54,17 +55,50 @@ Details hierzu sind dem Handbuch des Zählers (RS485) und dem eventuell verwende
 
 Folgende Statusvariablen werden automatisch angelegt.  
 
-|                        Name                         |  Typ  |        Ident         |   Profil    |
-| :-------------------------------------------------: | :---: | :------------------: | :---------: |
-|                    Wirkleistung                     | float |        Power         | Watt.14490  |
-|        aufgenommene kumulierte Wirkleistung         | float |  Totalimportenergy   | Electricity |
-|         abgegebene kumulierte Wirkleistung          | float |  Totalexportenergy   | Electricity |
-|           Gesamte kumulierte Wirkleistung           | float |  Totalactiveenergy   | Electricity |
-|   Gesamte kumulierte Wirkleistung (rückstellbar)    | float | Settabletotalenergy  | Electricity |
-| aufgenommene kumulierte Wirkleistung (rückstellbar) | float | Settableimportenergy | Electricity |
-|  abgegebene kumulierte Wirkleistung (rückstellbar)  | float | Settableexportenergy | Electricity |
-|              aufgenommene Wirkleistung              | float |     ImportPower      | Watt.14490  |
-|               abgegebene Wirkleistung               | float |     ExportPower      | Watt.14490  |
+|                        Name                         |  Typ  |            Ident            |   Profil    |
+| :-------------------------------------------------: | :---: | :-------------------------: | :---------: |
+|                     Spannung L1                     | float |          VoltageL1          |  Volt.230   |
+|                     Spannung L2                     | float |          VoltageL2          |  Volt.230   |
+|                     Spannung L3                     | float |          VoltageL3          |  Volt.230   |
+|                      Strom L1                       | float |          CurrentL1          |   Ampere    |
+|                      Strom L2                       | float |          CurrentL2          |   Ampere    |
+|                      Strom L3                       | float |          CurrentL3          |   Ampere    |
+|                   Wirkleistung L1                   | float |        ActivepowerL1        | Watt.14490  |
+|                   Wirkleistung L2                   | float |        ActivepowerL2        | Watt.14490  |
+|                   Wirkleistung L3                   | float |        ActivepowerL3        | Watt.14490  |
+|                  Scheinleistung L1                  | float |       ApparentpowerL1       |     VA      |
+|                  Scheinleistung L2                  | float |       ApparentpowerL2       |     VA      |
+|                  Scheinleistung L3                  | float |       ApparentpowerL3       |     VA      |
+|                  Blindleistung L1                   | float |       ReactivepowerL1       |     VaR     |
+|                  Blindleistung L2                   | float |       ReactivepowerL2       |     VaR     |
+|                  Blindleistung L3                   | float |       ReactivepowerL3       |     VaR     |
+|                 Leistungsfaktor L1                  | float |        PowerfactorL1        |             |
+|                 Leistungsfaktor L2                  | float |        PowerfactorL2        |             |
+|                 Leistungsfaktor L3                  | float |        PowerfactorL3        |             |
+|                 Mittelwert Spannung                 | float | Averagelinetoneutralvoltage |  Volt.230   |
+|                  Mittelwert Strom                   | float |     Averagelinecurrent      |   Ampere    |
+|                     Summe Strom                     | float |      Sumoflinecurrents      |   Ampere    |
+|           Kumulierte System Wirkleistung            | float |      Totalsystempower       | Watt.14490  |
+|          Kumulierte System Scheinleistung           | float |  Totalsystemapparentpower   |     VA      |
+|           Kumulierte System Blindleistung           | float |  Totalsystemreactivepower   |     VaR     |
+|          Kumulierte System Leistungsfaktor          | float |   Totalsystempowerfactor    |             |
+|                      Frequenz                       | float |          Frequency          |  Hertz.50   |
+|        aufgenommene kumulierte Wirkleistung         | float |      Totalimportenergy      | Electricity |
+|         abgegebene kumulierte Wirkleistung          | float |      Totalexportenergy      | Electricity |
+|              Line 1 zu Line 2 Spannung              | float |     Line1toLine2voltage     |  Volt.230   |
+|              Line 2 zu Line 3 Spannung              | float |     Line2toLine3voltage     |  Volt.230   |
+|              Line 3 zu Line 1 Spannung              | float |     Line3toLine1voltage     |  Volt.230   |
+|          Mittelwert Line zu Line Spannung           | float |  Averagelinetolinevoltage   |  Volt.230   |
+|                    Neutral Strom                    | float |       Neutralcurrent        |   Ampere    |
+|           Gesamte kumulierte Wirkleistung           | float |      Totalactiveenergy      | Electricity |
+|          Gesamte kumulierte Blindleistung           | float |     Totalreactiveenergy     |    kVArh    |
+|   Gesamte kumulierte Wirkleistung (rückstellbar)    | float |    Resettabletotalenergy    | Electricity |
+| aufgenommene kumulierte Wirkleistung (rückstellbar) | float |   Resettableimportenergy    | Electricity |
+|  abgegebene kumulierte Wirkleistung (rückstellbar)  | float |   Resettableexportenergy    | Electricity |
+|                 Netto-Wirkleistung                  | float |      Nettoactiveenergy      | Electricity |
+|              aufgenommene Wirkleistung              | float |         Importpower         | Watt.14490  |
+|               abgegebene Wirkleistung               | float |         Exportpower         | Watt.14490  |
+
 
 Folgende Profile werden automatisch angelegt.  
 

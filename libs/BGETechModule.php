@@ -106,10 +106,16 @@ class BGETech extends IPSModule
             IPS_ApplyChanges($this->InstanceID);
             return;
         }
-        if ($this->ReadPropertyInteger('Interval') > 0) {
-            $this->SetTimerInterval('UpdateTimer', $this->ReadPropertyInteger('Interval'));
-        } else {
+        if ($this->ReadPropertyInteger('Interval') < 500) {
+            if ($this->ReadPropertyInteger('Interval') != 0) {
+                $this->SetStatus(IS_EBASE + 1);
+            } else {
+                $this->SetStatus(IS_ACTIVE);
+            }
             $this->SetTimerInterval('UpdateTimer', 0);
+        } else {
+            $this->SetTimerInterval('UpdateTimer', $this->ReadPropertyInteger('Interval'));
+            $this->SetStatus(IS_ACTIVE);
         }
     }
 
