@@ -20,7 +20,8 @@
             "Total export energy": "abgegebene kumulierte Wirkleistung",
             "Total reactive energy": "Gesamte kumulierte Blindleistung",
             "Total import reactive energy": "aufgenommene kumulierte Blindleistung",
-            "Total export reactive energy": "abgegebene kumulierte Blindleistung"
+            "Total export reactive energy": "abgegebene kumulierte Blindleistung",
+            "This module is free for non-commercial use,\r\nDonations in support of the author are accepted here:": "Dieses Modul ist für die nicht kommerzielle Nutzung kostenlos,\r\nSchenkungen als Unterstützung für den Autor werden hier akzeptiert:"
         }
     }
 }

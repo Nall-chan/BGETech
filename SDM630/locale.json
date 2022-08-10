@@ -79,7 +79,8 @@
             "L2 total reactive energy": "L2 Gesamte kumulierte Blindleistung",
             "L3 total reactive energy": "L3 Gesamte kumulierte Blindleistung",
             "Reactive energy since last reset": "Blindleistung seit letzten Reset",
-            "Energy since last reset": "Wirkleistung seit letzten Reset"
+            "Energy since last reset": "Wirkleistung seit letzten Reset",
+            "This module is free for non-commercial use,\r\nDonations in support of the author are accepted here:": "Dieses Modul ist für die nicht kommerzielle Nutzung kostenlos,\r\nSchenkungen als Unterstützung für den Autor werden hier akzeptiert:"
         }
     }
 }
