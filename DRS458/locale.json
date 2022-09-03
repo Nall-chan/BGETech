@@ -7,7 +7,8 @@
             "milliseconds": "Millisekunden",
             "Interval less than 500 ms not allowed.": "Intervall kleiner als 500 ms nicht erlaubt.",
             "Active": "Aktiv",
-            "Total active energy": "Gesamte kumulierte Wirkleistung"
+            "Total active energy": "Gesamte kumulierte Wirkleistung",
+            "This module is free for non-commercial use,\r\nDonations in support of the author are accepted here:": "Dieses Modul ist für die nicht kommerzielle Nutzung kostenlos,\r\nSchenkungen als Unterstützung für den Autor werden hier akzeptiert:"
         }
     }
 }
