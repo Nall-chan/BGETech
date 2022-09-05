@@ -1,5 +1,5 @@
 [![SDK](https://img.shields.io/badge/Symcon-PHPModul-red.svg)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
-[![Version](https://img.shields.io/badge/Modul%20Version-3.40-blue.svg)](https://community.symcon.de/t/modul-alle-modbus-zaehler-von-b-g-e-tech/45290)
+[![Version](https://img.shields.io/badge/Modul%20Version-3.50-blue.svg)](https://community.symcon.de/t/modul-alle-modbus-zaehler-von-b-g-e-tech/45290)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
 [![Version](https://img.shields.io/badge/Symcon%20Version-5.1%20%3E-green.svg)](https://www.symcon.de/service/dokumentation/installation/migrationen/v50-v51-q2-2019/)
 [![Check Style](https://github.com/Nall-chan/BGETech/workflows/Check%20Style/badge.svg)](https://github.com/Nall-chan/BGETech/actions) 
@@ -85,10 +85,10 @@ Folgende Statusvariablen werden automatisch angelegt.
 |                      Frequenz                       | float |          Frequency          |  Hertz.50   |
 |        aufgenommene kumulierte Wirkleistung         | float |      Totalimportenergy      | Electricity |
 |         abgegebene kumulierte Wirkleistung          | float |      Totalexportenergy      | Electricity |
-|              Line 1 zu Line 2 Spannung              | float |     Line1toLine2voltage     |  Volt.230   |
-|              Line 2 zu Line 3 Spannung              | float |     Line2toLine3voltage     |  Volt.230   |
-|              Line 3 zu Line 1 Spannung              | float |     Line3toLine1voltage     |  Volt.230   |
-|          Mittelwert Line zu Line Spannung           | float |  Averagelinetolinevoltage   |  Volt.230   |
+|                  L1 zu L2 Spannung                  | float |     Line1toLine2voltage     |  Volt.230   |
+|                  L2 zu L3 Spannung                  | float |     Line2toLine3voltage     |  Volt.230   |
+|                  L3 zu L1 Spannung                  | float |     Line3toLine1voltage     |  Volt.230   |
+|             Mittelwert L zu L Spannung              | float |  Averagelinetolinevoltage   |  Volt.230   |
 |                    Neutral Strom                    | float |       Neutralcurrent        |   Ampere    |
 |           Gesamte kumulierte Wirkleistung           | float |      Totalactiveenergy      | Electricity |
 |          Gesamte kumulierte Blindleistung           | float |     Totalreactiveenergy     |    kVArh    |

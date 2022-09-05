@@ -7,7 +7,7 @@
 [![Spenden](https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_SM.gif)](#2-spenden)    
 
 
-# SDM 530 <!-- omit in toc -->  
+# Smart X96-5C/I/J <!-- omit in toc -->  
 
 ## Inhaltsverzeichnis <!-- omit in toc -->
 
@@ -24,13 +24,13 @@
 
 ## 1. Funktionsumfang
 
-Ermöglicht die einfache Einbindung von Energie-Zählern des Typs SDM 530 der Firma B+G E-Tech.  
+Ermöglicht die einfache Einbindung von Energie-Zählern des Typs SDM 630 der Firma B+G E-Tech.  
 Zusätzlich können mehrere Zähler auf einem physikalischen RS485-Bus betrieben werden.  
 
 ## 2. Voraussetzungen
 
  - IPS 5.1 oder höher  
- - SDM 530 Zähler mit **ModBus-Interface**  
+ - Smart X96-5C/I/J Zähler mit **ModBus-Interface**  
  - physikalisches RS485 Interface für die Zähler  
 
 ## 3. Software-Installation
@@ -89,10 +89,20 @@ Folgende Statusvariablen werden automatisch angelegt.
 |                     Frequenz                     | float |               Frequency               |  Hertz.50   |
 |      Kumulierter Bedarf System Wirkleistung      | float |        Totalsystempowerdemand         | Watt.14490  |
 |  Maximal kumulierter Bedarf System Wirkleistung  | float |     Maximumtotalsystempowerdemand     | Watt.14490  |
+| Aktueller positiver Leistungsbedarf des Systems  | float |   Currentsystempositivepowerdemand    | Watt.14490  |
+| Maximaler positiver Leistungsbedarf des Systems  | float |   Maximumsystempositivepowerdemand    | Watt.14490  |
+|    Aktueller Rückleistungsbedarf des Systems     | float |    Currentsystemreversepowerdemand    | Watt.14490  |
+|    Maximaler Rückleistungsbedarf des Systems     | float |    Maximumsystemreversepowerdemand    | Watt.14490  |
 |     Kumulierter Bedarf System Scheinleistung     | float |    Totalsystemapparentpowerdemand     |     VA      |
 | Maximal kumulierter Bedarf System Scheinleistung | float | Maximumtotalsystemapparentpowerdemand |     VA      |
 |         Kumulierter Bedarf Neutral Strom         | float |       Totalneutralcurrentdemand       |   Ampere    |
 |           Maximum Bedarf Neutral Strom           | float |      Maximumneutralcurrentdemand      |   Ampere    |
+|     Kumulierter Bedarf System Blindleistung      | float |    Totalsystemreactivepowerdemand     |     VaR     |
+| Maximal kumulierter Bedarf System Blindleistung  | float | Maximumtotalsystemreactivepowerdemand |     VaR     |
+|              L1 Verschiebungsfaktor              | float |     Phase1displacementpowerfactor     |             |
+|              L2 Verschiebungsfaktor              | float |     Phase2displacementpowerfactor     |             |
+|              L3 Verschiebungsfaktor              | float |     Phase3displacementpowerfactor     |             |
+|         Kumulierter Verschiebungsfaktor          | float |     Totaldisplacementpowerfactor      |             |
 |                L1 zu L2 Spannung                 | float |          Line1toLine2voltage          |  Volt.230   |
 |                L2 zu L3 Spannung                 | float |          Line2toLine3voltage          |  Volt.230   |
 |                L3 zu L1 Spannung                 | float |          Line3toLine1voltage          |  Volt.230   |
@@ -119,6 +129,12 @@ Folgende Statusvariablen werden automatisch angelegt.
 |      Mittelwert L zu L Klirrfaktor Spannung      | float |      AveragelinetolinevoltageTHD      | Intensity.F |
 |         Gesamte kumulierte Wirkleistung          | float |           Totalactiveenergy           | Electricity |
 |         Gesamte kumulierte Blindleistung         | float |          Totalreactiveenergy          |    kVArh    |
+|        L1 Gesamte kumulierte Wirkleistung        | float |          L1totalactiveenergy          | Electricity |
+|        L2 Gesamte kumulierte Wirkleistung        | float |          L2totalactiveenergy          | Electricity |
+|        L3 Gesamte kumulierte Wirkleistung        | float |          L3totalactiveenergy          | Electricity |
+|       L1 Gesamte kumulierte Blindleistung        | float |         L1totalreactiveenergy         |    kVArh    |
+|       L2 Gesamte kumulierte Blindleistung        | float |         L2totalreactiveenergy         |    kVArh    |
+|       L3 Gesamte kumulierte Blindleistung        | float |         L3totalreactiveenergy         |    kVArh    |
 |        abgegebene kumulierte Wirkleistung        | float |           Totalexportenergy           | Electricity |
 |       aufgenommene kumulierte Wirkleistung       | float |           Totalimportenergy           | Electricity |
 |       abgegebene kumulierte Blindleistung        | float |       Totalexportreactiveenergy       |    kVArh    |
@@ -137,13 +153,12 @@ Folgende Profile werden automatisch angelegt.
 |    kVArh    | float |
 
 Darstellung in der Console.  
-![Instanz](../imgs/SDM530.png)  
- 
+![Instanz](../imgs/SmartX965C.png) 
 
 ## 6. PHP-Befehlsreferenz
 
 ```php
-bool SDM530_RequestRead(int $InstanzID);
+bool X965C_RequestRead(int $InstanzID);
 ```
 Ließt alle Werte vom Zähler.  
 Bei Erfolg wird `true` und im Fehlerfall wird `false` zurückgegeben und eine Warnung erzeugt.  

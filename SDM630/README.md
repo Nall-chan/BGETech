@@ -1,5 +1,5 @@
 [![SDK](https://img.shields.io/badge/Symcon-PHPModul-red.svg)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
-[![Version](https://img.shields.io/badge/Modul%20Version-3.40-blue.svg)](https://community.symcon.de/t/modul-alle-modbus-zaehler-von-b-g-e-tech/45290)
+[![Version](https://img.shields.io/badge/Modul%20Version-3.50-blue.svg)](https://community.symcon.de/t/modul-alle-modbus-zaehler-von-b-g-e-tech/45290)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
 [![Version](https://img.shields.io/badge/Symcon%20Version-5.1%20%3E-green.svg)](https://www.symcon.de/service/dokumentation/installation/migrationen/v50-v51-q2-2019/)
 [![Check Style](https://github.com/Nall-chan/BGETech/workflows/Check%20Style/badge.svg)](https://github.com/Nall-chan/BGETech/actions) 
@@ -93,30 +93,30 @@ Folgende Statusvariablen werden automatisch angelegt.
 | Maximal kumulierter Bedarf System Scheinleistung | float | Maximumtotalsystemapparentpowerdemand |     VA      |
 |         Kumulierter Bedarf Neutral Strom         | float |       Totalneutralcurrentdemand       |   Ampere    |
 |           Maximum Bedarf Neutral Strom           | float |      Maximumneutralcurrentdemand      |   Ampere    |
-|            Line 1 zu Line 2 Spannung             | float |          Line1toLine2voltage          |  Volt.230   |
-|            Line 2 zu Line 3 Spannung             | float |          Line2toLine3voltage          |  Volt.230   |
-|            Line 3 zu Line 1 Spannung             | float |          Line3toLine1voltage          |  Volt.230   |
-|         Mittelwert Line zu Line Spannung         | float |       Averagelinetolinevoltage        |  Volt.230   |
+|                L1 zu L2 Spannung                 | float |          Line1toLine2voltage          |  Volt.230   |
+|                L2 zu L3 Spannung                 | float |          Line2toLine3voltage          |  Volt.230   |
+|                L3 zu L1 Spannung                 | float |          Line3toLine1voltage          |  Volt.230   |
+|            Mittelwert L zu L Spannung            | float |       Averagelinetolinevoltage        |  Volt.230   |
 |                  Neutral Strom                   | float |            Neutralcurrent             |   Ampere    |
-|           Line 1 Klirrfaktor Spannung            | float |            Line1voltageTHD            | Intensity.F |
-|           Line 2 Klirrfaktor Spannung            | float |            Line2voltageTHD            | Intensity.F |
-|           Line 3 Klirrfaktor Spannung            | float |            Line3voltageTHD            | Intensity.F |
-|             Line 1 Klirrfaktor Strom             | float |            Line1CurrentTHD            | Intensity.F |
-|             Line 2 Klirrfaktor Strom             | float |            Line2CurrentTHD            | Intensity.F |
-|             Line 3 Klirrfaktor Strom             | float |            Line3CurrentTHD            | Intensity.F |
+|             L1 Klirrfaktor Spannung              | float |            Line1voltageTHD            | Intensity.F |
+|             L2 Klirrfaktor Spannung              | float |            Line2voltageTHD            | Intensity.F |
+|             L3 Klirrfaktor Spannung              | float |            Line3voltageTHD            | Intensity.F |
+|               L1 Klirrfaktor Strom               | float |            Line1CurrentTHD            | Intensity.F |
+|               L2 Klirrfaktor Strom               | float |            Line2CurrentTHD            | Intensity.F |
+|               L3 Klirrfaktor Strom               | float |            Line3CurrentTHD            | Intensity.F |
 |         Mittelwert Klirrfaktor Spannung          | float |    AveragelinetoneutralvoltageTHD     | Intensity.F |
 |           Mittelwert Klirrfaktor Strom           | float |         AveragelinecurrentTHD         | Intensity.F |
 |        Kumulierte System Leistungsfaktor         | float |        Totalsystempowerfactor         | PhaseAngle  |
-|               Bedarf Line 1 Strom                | float |          Line1currentdemand           |   Ampere    |
-|               Bedarf Line 2 Strom                | float |          Line2currentdemand           |   Ampere    |
-|               Bedarf Line 3 Strom                | float |          Line3currentdemand           |   Ampere    |
-|           Maximum Bedarf Line 1 Strom            | float |       Maximumline1currentdemand       |   Ampere    |
-|           Maximum Bedarf Line 2 Strom            | float |       Maximumline2currentdemand       |   Ampere    |
-|           Maximum Bedarf Line 3 Strom            | float |       Maximumline3currentdemand       |   Ampere    |
-|      Line 1 zu Line 2 Klirrfaktor Spannung       | float |        Line1toline2voltageTHD         | Intensity.F |
-|      Line 2 zu Line 3 Klirrfaktor Spannung       | float |        Line2toline3voltageTHD         | Intensity.F |
-|      Line 3 zu Line 1 Klirrfaktor Spannung       | float |        Line3toline1voltageTHD         | Intensity.F |
-|   Mittelwert Line zu Line Klirrfaktor Spannung   | float |      AveragelinetolinevoltageTHD      | Intensity.F |
+|                 Bedarf L1 Strom                  | float |          Line1currentdemand           |   Ampere    |
+|                 Bedarf L2 Strom                  | float |          Line2currentdemand           |   Ampere    |
+|                 Bedarf L3 Strom                  | float |          Line3currentdemand           |   Ampere    |
+|             Maximum Bedarf L1 Strom              | float |       Maximumline1currentdemand       |   Ampere    |
+|             Maximum Bedarf L2 Strom              | float |       Maximumline2currentdemand       |   Ampere    |
+|             Maximum Bedarf L3 Strom              | float |       Maximumline3currentdemand       |   Ampere    |
+|          L1 zu L2 Klirrfaktor Spannung           | float |        Line1toline2voltageTHD         | Intensity.F |
+|          L2 zu L3 Klirrfaktor Spannung           | float |        Line2toline3voltageTHD         | Intensity.F |
+|          L3 zu L1 Klirrfaktor Spannung           | float |        Line3toline1voltageTHD         | Intensity.F |
+|      Mittelwert L zu L Klirrfaktor Spannung      | float |      AveragelinetolinevoltageTHD      | Intensity.F |
 |         Gesamte kumulierte Wirkleistung          | float |           Totalactiveenergy           | Electricity |
 |         Gesamte kumulierte Blindleistung         | float |          Totalreactiveenergy          |    kVArh    |
 |        L1 Gesamte kumulierte Wirkleistung        | float |          L1totalactiveenergy          | Electricity |
