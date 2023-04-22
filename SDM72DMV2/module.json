@@ -1,12 +1,18 @@
 {
     "id": "{A4320883-E4EE-4F01-B0CC-B1DDF3E73ACA}",
     "name": "SDM 72DM V2",
-    "aliases": ["SDM 72DM V2"],
+    "aliases": [
+        "SDM 72DM V2"
+    ],
     "type": 3,
     "vendor": "B+G E-Tech",
-    "parentRequirements": ["{E310B701-4AE7-458E-B618-EC13A1A6F6A8}"],
+    "parentRequirements": [
+        "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}"
+    ],
     "childRequirements": [],
-    "implemented": ["{77B31ABB-18FA-4B91-BB63-E5B2AB5588F4}"],
+    "implemented": [
+        "{77B31ABB-18FA-4B91-BB63-E5B2AB5588F4}"
+    ],
     "prefix": "SDM72DMV2",
     "url": "http://github.com/Nall-chan/BGETech/main/blob/SDM72DMV2/"
 }
