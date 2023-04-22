@@ -21,6 +21,10 @@ class LibraryTest extends TestCaseSymconValidation
         $this->validateModule(__DIR__ . '/../DRS458');
     }
 
+    public function testValidateDRT428M(): void
+    {
+        $this->validateModule(__DIR__ . '/../DRT428M');
+    }
     public function testValidateDRT710M(): void
     {
         $this->validateModule(__DIR__ . '/../DRT710M');
@@ -30,9 +34,17 @@ class LibraryTest extends TestCaseSymconValidation
     {
         $this->validateModule(__DIR__ . '/../SDM72D');
     }
+    public function testValidateSDM72DMV2(): void
+    {
+        $this->validateModule(__DIR__ . '/../SDM72DMV2');
+    }
     public function testValidateSDM120C(): void
     {
         $this->validateModule(__DIR__ . '/../SDM120C');
+    }
+    public function testValidateSDM120ModBus(): void
+    {
+        $this->validateModule(__DIR__ . '/../SDM120ModBus');
     }
     public function testValidateSDM220(): void
     {
@@ -49,5 +61,9 @@ class LibraryTest extends TestCaseSymconValidation
     public function testValidateSDM630(): void
     {
         $this->validateModule(__DIR__ . '/../SDM630');
+    }
+    public function testValidateSmartX965C(): void
+    {
+        $this->validateModule(__DIR__ . '/../SmartX965C');
     }
 }
