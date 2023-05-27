@@ -11,7 +11,7 @@ declare(strict_types=1);
  * @author        Michael Tröger <micha@nall-chan.net>
  * @copyright     2022 Michael Tröger
  * @license       https://creativecommons.org/licenses/by-nc-sa/4.0/ CC BY-NC-SA 4.0
- * @version       3.51
+ * @version       3.60
  *
  */
 require_once __DIR__ . '/SemaphoreHelper.php';  // diverse Klassen
@@ -24,16 +24,16 @@ eval('declare(strict_types=1);namespace BGETech {?>' . file_get_contents(__DIR__
  * @method void RegisterProfileInteger(string $Name, string $Icon, string $Prefix, string $Suffix, int $MinValue, int $MaxValue, float $StepSize)
  * @method void RegisterProfileFloat(string $Name, string $Icon, string $Prefix, string $Suffix, float $MinValue, float $MaxValue, float $StepSize, int $Digits)
  */
-class BGETech extends IPSModule
+class BGETech extends IPSModuleStrict
 {
     use \BGETech\SemaphoreHelper;
     use \BGETech\VariableProfileHelper;
-    const Swap = true;
-    const PREFIX = '';
+    public const Swap = true;
+    public const PREFIX = '';
     /**
      * Interne Funktion des SDK.
      */
-    public function Create()
+    public function Create(): void
     {
         parent::Create();
         $this->ConnectParent('{A5F663AB-C400-4FE5-B207-4D67CC030564}');
@@ -59,7 +59,7 @@ class BGETech extends IPSModule
     /**
      * Interne Funktion des SDK.
      */
-    public function ApplyChanges()
+    public function ApplyChanges(): void
     {
         parent::ApplyChanges();
         $this->RegisterProfileFloat('VaR', '', '', ' VAr', 0, 0, 0, 2);
@@ -127,7 +127,7 @@ class BGETech extends IPSModule
      *
      * @return bool True wenn Befehl erfolgreich ausgeführt wurde, sonst false.
      */
-    public function RequestRead()
+    public function RequestRead(): bool
     {
         $Gateway = IPS_GetInstance($this->InstanceID)['ConnectionID'];
         if ($Gateway == 0) {
@@ -146,7 +146,7 @@ class BGETech extends IPSModule
         return $Result;
     }
 
-    public function GetConfigurationForm()
+    public function GetConfigurationForm(): string
     {
         $Form = json_decode(file_get_contents(__DIR__ . '/form.json'), true);
         $Form['actions'][0]['onClick'] = static::PREFIX . '_RequestRead($id);';
@@ -156,29 +156,30 @@ class BGETech extends IPSModule
         return json_encode($Form);
     }
 
-    protected function ModulErrorHandler($errno, $errstr)
+    protected function ModulErrorHandler(int $errno, string $errstr): bool
     {
         $this->SendDebug('ERROR', utf8_decode($errstr), 0);
         echo $errstr;
+        return true;
     }
 
     /**
-     * Setzte eine IPS-Variableauf den Wert von $value.
+     * Setzte eine IPS-Variable auf den Wert von $value.
      *
      * @param array $Variable Statusvariable
      * @param mixed $Value    Neuer Wert der Statusvariable.
      */
-    protected function SetValueExt($Variable, $Value)
+    protected function SetValueExt(array $Variable, mixed $Value): bool
     {
-        $id = @$this->GetIDForIdent($Variable['Ident']);
-        if ($id == false) {
+        $id = $this->FindIDForIdent($Variable['Ident']);
+        if (!$id) {
             $this->MaintainVariable($Variable['Ident'], $Variable['Name'], $Variable['VarType'], $Variable['Profile'], $Variable['Pos'], $Variable['Keep']);
         }
         $this->SetValue($Variable['Ident'], $Value);
         return true;
     }
 
-    private function ReadData()
+    private function ReadData(): bool
     {
         $Variables = json_decode($this->ReadPropertyString('Variables'), true);
         foreach ($Variables as $Variable) {
@@ -212,7 +213,7 @@ class BGETech extends IPSModule
         return true;
     }
 
-    private function ConvertValue(array $Variable, string $Value)
+    private function ConvertValue(array $Variable, string $Value): mixed
     {
         switch ($Variable['VarType']) {
             case VARIABLETYPE_BOOLEAN:

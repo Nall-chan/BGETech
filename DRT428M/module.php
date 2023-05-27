@@ -11,7 +11,7 @@ declare(strict_types=1);
  * @author        Michael Tröger <micha@nall-chan.net>
  * @copyright     2022 Michael Tröger
  * @license       https://creativecommons.org/licenses/by-nc-sa/4.0/ CC BY-NC-SA 4.0
- * @version       3.51
+ * @version       3.60
  *
  */
 require_once __DIR__ . '/../libs/BGETechModule.php';  // diverse Klassen
@@ -22,7 +22,7 @@ require_once __DIR__ . '/../libs/BGETechModule.php';  // diverse Klassen
  */
 class DRT428M extends BGETech
 {
-    const PREFIX = 'DRT428M';
+    public const PREFIX = 'DRT428M';
 
     public static $Variables = [
         ['Voltage L1', VARIABLETYPE_FLOAT, 'Volt.230', 0x000E, 3, 2, true],
