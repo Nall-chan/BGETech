@@ -158,7 +158,7 @@ class BGETech extends IPSModuleStrict
 
     protected function ModulErrorHandler(int $errno, string $errstr): bool
     {
-        $this->SendDebug('ERROR', utf8_decode($errstr), 0);
+        $this->SendDebug('ERROR', $errstr, 0);
         echo $errstr;
         return true;
     }
