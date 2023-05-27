@@ -1,5 +1,5 @@
 [![SDK](https://img.shields.io/badge/Symcon-PHPModul-red.svg)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
-[![Version](https://img.shields.io/badge/Modul%20Version-3.50-blue.svg)](https://community.symcon.de/t/modul-alle-modbus-zaehler-von-b-g-e-tech/45290)
+[![Version](https://img.shields.io/badge/Modul%20Version-3.51-blue.svg)](https://community.symcon.de/t/modul-alle-modbus-zaehler-von-b-g-e-tech/45290)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
 [![Version](https://img.shields.io/badge/Symcon%20Version-5.1%20%3E-green.svg)](https://www.symcon.de/service/dokumentation/installation/migrationen/v50-v51-q2-2019/)
 [![Check Style](https://github.com/Nall-chan/BGETech/workflows/Check%20Style/badge.svg)](https://github.com/Nall-chan/BGETech/actions) 
@@ -121,6 +121,10 @@ Ist direkt in der Dokumentation der jeweiligen Module beschrieben:
 | Smart X96-5C/I/J | Device |    X965C     | {E151A4EC-51E8-4066-9FC3-D724E846D3B2} |
 
 ### 2. Changelog
+
+__Version 3.51:__  
+ -  DRT 428M Powerfaktor L3 war defekt  
+ -  DRT 428M Profile für Wirkleistung korrigiert  
 
 __Version 3.50:__  
  - Smart X96-5C/I/J ergänzt  

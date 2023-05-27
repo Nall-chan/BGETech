@@ -11,7 +11,7 @@ declare(strict_types=1);
  * @author        Michael Tröger <micha@nall-chan.net>
  * @copyright     2022 Michael Tröger
  * @license       https://creativecommons.org/licenses/by-nc-sa/4.0/ CC BY-NC-SA 4.0
- * @version       3.50
+ * @version       3.51
  *
  */
 require_once __DIR__ . '/SemaphoreHelper.php';  // diverse Klassen
@@ -21,13 +21,15 @@ eval('declare(strict_types=1);namespace BGETech {?>' . file_get_contents(__DIR__
  * BGETech ist die Basisklasse für alle Energie-Zähler der Firma B+G E-Tech
  * Erweitert ipsmodule.
  * @property array $Variables
+ * @method void RegisterProfileInteger(string $Name, string $Icon, string $Prefix, string $Suffix, int $MinValue, int $MaxValue, float $StepSize)
+ * @method void RegisterProfileFloat(string $Name, string $Icon, string $Prefix, string $Suffix, float $MinValue, float $MaxValue, float $StepSize, int $Digits)
  */
 class BGETech extends IPSModule
 {
     use \BGETech\SemaphoreHelper;
     use \BGETech\VariableProfileHelper;
     const Swap = true;
-
+    const PREFIX = '';
     /**
      * Interne Funktion des SDK.
      */

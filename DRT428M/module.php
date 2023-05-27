@@ -11,7 +11,7 @@ declare(strict_types=1);
  * @author        Michael Tröger <micha@nall-chan.net>
  * @copyright     2022 Michael Tröger
  * @license       https://creativecommons.org/licenses/by-nc-sa/4.0/ CC BY-NC-SA 4.0
- * @version       3.50
+ * @version       3.51
  *
  */
 require_once __DIR__ . '/../libs/BGETechModule.php';  // diverse Klassen
@@ -32,10 +32,10 @@ class DRT428M extends BGETech
         ['Current L1', VARIABLETYPE_FLOAT, 'Ampere', 0x0016, 3, 2, true],
         ['Current L2', VARIABLETYPE_FLOAT, 'Ampere', 0x0018, 3, 2, true],
         ['Current L3', VARIABLETYPE_FLOAT, 'Ampere', 0x001A, 3, 2, true],
-        ['Total active power', VARIABLETYPE_FLOAT, 'Watt.14490', 0x001C, 3, 2, true],
-        ['Active power L1', VARIABLETYPE_FLOAT, 'Watt.14490', 0x001E, 3, 2, true],
-        ['Active power L2', VARIABLETYPE_FLOAT, 'Watt.14490', 0x0020, 3, 2, true],
-        ['Active power L3', VARIABLETYPE_FLOAT, 'Watt.14490', 0x0022, 3, 2, true],
+        ['Total active power', VARIABLETYPE_FLOAT, 'Power', 0x001C, 3, 2, true],
+        ['Active power L1', VARIABLETYPE_FLOAT, 'Power', 0x001E, 3, 2, true],
+        ['Active power L2', VARIABLETYPE_FLOAT, 'Power', 0x0020, 3, 2, true],
+        ['Active power L3', VARIABLETYPE_FLOAT, 'Power', 0x0022, 3, 2, true],
         ['Total reactive power', VARIABLETYPE_FLOAT, 'VaR', 0x0024, 3, 2, true],
         ['Reactive power L1', VARIABLETYPE_FLOAT, 'VaR', 0x0026, 3, 2, true],
         ['Reactive power L2', VARIABLETYPE_FLOAT, 'VaR', 0x0028, 3, 2, true],
@@ -47,7 +47,7 @@ class DRT428M extends BGETech
         ['Total power factor', VARIABLETYPE_FLOAT, '', 0x0034, 3, 2, true],
         ['Power factor L1', VARIABLETYPE_FLOAT, '', 0x0036, 3, 2, true],
         ['Power factor L2', VARIABLETYPE_FLOAT, '', 0x0038, 3, 2, true],
-        ['Power factor L3', VARIABLETYPE_FLOAT, '', 0x004A, 3, 2, true],
+        ['Power factor L3', VARIABLETYPE_FLOAT, '', 0x003A, 3, 2, true],
         ['Total active energy', VARIABLETYPE_FLOAT, 'Electricity', 0x0100, 3, 2, true],
         ['Total active energy L1', VARIABLETYPE_FLOAT, 'Electricity', 0x0102, 3, 2, true],
         ['Total active energy L2', VARIABLETYPE_FLOAT, 'Electricity', 0x0104, 3, 2, true],
