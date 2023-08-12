@@ -15,6 +15,7 @@ declare(strict_types=1);
  *
  */
 require_once __DIR__ . '/SemaphoreHelper.php';  // diverse Klassen
+eval('declare(strict_types=1);namespace BGETech {?>' . file_get_contents(__DIR__ . '/helper/VariableHelper.php') . '}');
 eval('declare(strict_types=1);namespace BGETech {?>' . file_get_contents(__DIR__ . '/helper/VariableProfileHelper.php') . '}');
 
 /**
@@ -27,6 +28,7 @@ eval('declare(strict_types=1);namespace BGETech {?>' . file_get_contents(__DIR__
 class BGETech extends IPSModuleStrict
 {
     use \BGETech\SemaphoreHelper;
+    use \BGETech\VariableHelper;
     use \BGETech\VariableProfileHelper;
     public const Swap = true;
     public const PREFIX = '';
