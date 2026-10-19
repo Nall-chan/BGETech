@@ -6,7 +6,7 @@ declare(strict_types=1);
  * Erzeugt die Vorlagen für die Symcon-Instanz "ModBus Gerät" (Ordner templates/)
  * aus den Registertabellen und Übersetzungen der Zähler-Module dieser Library.
  *
- * Aufruf: php tools/build-templates.php
+ * Aufruf: php .tools/build-templates.php
  *
  * Quellen der zusätzlichen Konfigurationsregister: Datenblätter unter docs/ (siehe templates/README.md).
  * Format: https://www.symcon.de/de/service/dokumentation/modulreferenz/geraete/modbus-rtu-tcp/vorlagen/
