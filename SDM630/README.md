@@ -1,11 +1,10 @@
 [![SDK](https://img.shields.io/badge/Symcon-PHPModul-red.svg)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
-[![Version](https://img.shields.io/badge/Modul%20Version-3.60-blue.svg)](https://community.symcon.de/t/modul-alle-modbus-zaehler-von-b-g-e-tech/45290)
-![Version](https://img.shields.io/badge/Symcon%20Version-7.0%20%3E-green.svg)  
-[![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-[![Check Style](https://github.com/Nall-chan/BGETech/workflows/Check%20Style/badge.svg)](https://github.com/Nall-chan/BGETech/actions) 
+[![Module Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FNall-chan%2FBGETech%2Frefs%2Fheads%2Fmaster%2Flibrary.json&query=%24.version&label=Modul%20Version&color=blue)](https://community.symcon.de/t/modul-alle-modbus-zaehler-von-b-g-e-tech/45290)
+[![Symcon Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FNall-chan%2FBGETech%2Frefs%2Fheads%2Fmaster%2Flibrary.json&query=%24.compatibility.version&suffix=%3E&label=Symcon%20Version&color=green)](https://www.symcon.de/de/service/dokumentation/installation/migrationen/v81-v90-q1-2026/)  
+[![License](https://img.shields.io/badge/License-Custom--NC--SA-green.svg)](#8-lizenz)
+[![Check Style](https://github.com/Nall-chan/BGETech/workflows/Check%20Style/badge.svg)](https://github.com/Nall-chan/BGETech/actions)
 [![Run Tests](https://github.com/Nall-chan/BGETech/workflows/Run%20Tests/badge.svg)](https://github.com/Nall-chan/BGETech/actions)  
-[![Spenden](https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_SM.gif)](#2-spenden)
-[![Wunschliste](https://img.shields.io/badge/Wunschliste-Amazon-ff69fb.svg)](#2-spenden)  
+[![PayPal.Me](https://img.shields.io/badge/PayPal-Me-lightblue.svg)](#2-spenden) [![Wunschliste](https://img.shields.io/badge/Wunschliste-Amazon-ff69fb.svg)](#2-spenden)  
 
 # SDM 630 <!-- omit in toc -->  
 
@@ -27,11 +26,15 @@
 Ermöglicht die einfache Einbindung von Energie-Zählern des Typs SDM 630 der Firma B+G E-Tech.  
 Zusätzlich können mehrere Zähler auf einem physikalischen RS485-Bus betrieben werden.  
 
+> [!NOTE]
+> Dieses Modul ist im Wartungsmodus: Es erhält nur noch Fehlerbehebungen, aber keine neuen Funktionen.  
+> Für neue Installationen ist die Symcon-Instanz `ModBus Gerät` mit einer [Vorlage](../templates/) die bessere Wahl, sofern es für den Zähler eine gibt. Bei mehreren Zählern an einem RS485-Bus sollte die [RS485 Bus Zeitsteuerung](../RS485BusTiming/README.md) zwischen den Gateways und der seriellen Schnittstelle sitzen.
+
 ## 2. Voraussetzungen
 
- - IPS 5.1 oder höher  
- - SDM 630 Zähler mit **ModBus-Interface**  
- - physikalisches RS485 Interface für die Zähler  
+- Symcon 9.0 oder höher  
+- SDM 630 Zähler mit **ModBus-Interface**  
+- physikalisches RS485 Interface für die Zähler  
 
 ## 3. Software-Installation
 
@@ -45,7 +48,7 @@ Das Modul ist im Dialog 'Instanz hinzufügen' unter dem Hersteller 'B+G E-Tech' 
 Es wird automatisch ein 'ModBus Gateway' als Splitter-Instanz, sowie ein 'Client Socket' als dessen I/O-Instanz erzeugt.  
 In dem sich öffnenden Konfigurationsformular muss der Abfrage-Zyklus eingestellt werden.  
  Über den Button 'Gateway konfigurieren' wird das Konfigurationsformular des 'ModBus Gateway' geöffnet.  
-![Instanz konfigurieren](../imgs/config.png)    
+![Instanz konfigurieren](../imgs/config.png)  
 Hier muss jetzt der Modus passend zur Hardwareanbindung (TCP /RTU) sowie die Geräte-ID des Zählers eingestellt und übernommen werden.  
 Anschließend über den Button 'Schnittstelle konfigurieren' das Konfigurationsformular der I/O-Instanz öffnen.  
 Je nach Hardwareanbindung müssen hier die RS485 Parameter oder die IP-Adresse des ModBus-Umsetzers eingetragen werden.  
@@ -143,16 +146,16 @@ Folgende Profile werden automatisch angelegt.
 |    kVArh    | float |
 
 Darstellung in der Console.  
-![Instanz](../imgs/SDM630.png) 
+![Instanz](../imgs/SDM630.png)  
 
 ## 6. PHP-Befehlsreferenz
 
 ```php
 bool SDM630_RequestRead(int $InstanzID);
 ```
+
 Ließt alle Werte vom Zähler.  
 Bei Erfolg wird `true` und im Fehlerfall wird `false` zurückgegeben und eine Warnung erzeugt.  
-
 
 ## 7. Anhang
 
@@ -171,5 +174,4 @@ Die Library ist für die nicht kommerzielle Nutzung kostenlos, Schenkungen als U
 ## 8. Lizenz
 
   IPS-Modul:  
-  [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
- 
+  [Custom NC-SA](../LICENSE)  

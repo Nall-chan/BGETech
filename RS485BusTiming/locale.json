@@ -1,0 +1,13 @@
+{
+    "translations": {
+        "de": {
+            "RS485 Bus Timing": "RS485 Bus Zeitsteuerung",
+            "Sends only one request at a time to the bus and waits between requests.": "Sendet immer nur eine Anfrage gleichzeitig auf den Bus und wartet zwischen den Anfragen.",
+            "Bus idle time after a response": "Ruhezeit auf dem Bus nach einer Antwort",
+            "Release bus without response after": "Bus ohne Antwort freigeben nach",
+            "Instance has no active parent.": "Instanz hat keine aktive übergeordnete Instanz.",
+            "Bus is busy.": "Bus ist belegt.",
+            "This module is free for non-commercial use,\r\nDonations in support of the author are accepted here:": "Dieses Modul ist für die nicht kommerzielle Nutzung kostenlos,\r\nSchenkungen als Unterstützung für den Autor werden hier akzeptiert:"
+        }
+    }
+}

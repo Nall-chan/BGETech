@@ -90,7 +90,7 @@ class SmartX965C extends BGETech
         ['Line 3 Current THD', VARIABLETYPE_FLOAT, 'Intensity.F', 0x00F4, 4, 2, true],
         ['Average line to neutral voltage THD', VARIABLETYPE_FLOAT, 'Intensity.F', 0x00F8, 4, 2, true],
         ['Average line current THD', VARIABLETYPE_FLOAT, 'Intensity.F', 0x00FA, 4, 2, true],
-        ['Total system power factor', VARIABLETYPE_FLOAT, 'PhaseAngle', 0x00FE, 4, 2, true],
+        ['Total system power factor angle', VARIABLETYPE_FLOAT, 'PhaseAngle', 0x00FE, 4, 2, true],
         ['Line 1 current demand', VARIABLETYPE_FLOAT, 'Ampere', 0x0102, 4, 2, true],
         ['Line 2 current demand', VARIABLETYPE_FLOAT, 'Ampere', 0x0104, 4, 2, true],
         ['Line 3 current demand', VARIABLETYPE_FLOAT, 'Ampere', 0x0106, 4, 2, true],

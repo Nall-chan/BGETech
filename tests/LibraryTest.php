@@ -66,4 +66,8 @@ class LibraryTest extends TestCaseSymconValidation
     {
         $this->validateModule(__DIR__ . '/../SmartX965C');
     }
+    public function testValidateRS485BusTiming(): void
+    {
+        $this->validateModule(__DIR__ . '/../RS485BusTiming');
+    }
 }

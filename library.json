@@ -4,9 +4,9 @@
     "name": "B+G E-Tech Zähler",
     "url": "http://github.com/Nall-chan/BGETech",
     "compatibility": {
-        "version": "7.0"
+        "version": "9.0"
     },
-    "version": "3.60",
-    "build": 360,
-    "date": 1684862332
+    "version": "4.00",
+    "build": 400,
+    "date": 1792325287
 }

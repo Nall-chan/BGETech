@@ -8,15 +8,16 @@
             "Interval less than 500 ms not allowed.": "Intervall kleiner als 500 ms nicht erlaubt.",
             "Active": "Aktiv",
             "Power": "Wirkleistung",
-            "Total active energy": "Gesamte kumulierte Wirkleistung",
-            "Total import energy": "aufgenommene kumulierte Wirkleistung",
-            "Total export energy": "abgegebene kumulierte Wirkleistung",
-            "Settable total energy": "Gesamte kumulierte Wirkleistung (rückstellbar)",
-            "Settable import energy": "aufgenommene kumulierte Wirkleistung (rückstellbar)",
-            "Settable export energy": "abgegebene kumulierte Wirkleistung (rückstellbar)",
+            "Total active energy": "Gesamte Wirkenergie",
+            "Total import energy": "aufgenommene Wirkenergie",
+            "Total export energy": "abgegebene Wirkenergie",
+            "Settable total energy": "Gesamte Wirkenergie (rückstellbar)",
+            "Settable import energy": "aufgenommene Wirkenergie (rückstellbar)",
+            "Settable export energy": "abgegebene Wirkenergie (rückstellbar)",
             "Import Power": "aufgenommene Wirkleistung",
             "Export Power": "abgegebene Wirkleistung",
-            "This module is free for non-commercial use,\r\nDonations in support of the author are accepted here:": "Dieses Modul ist für die nicht kommerzielle Nutzung kostenlos,\r\nSchenkungen als Unterstützung für den Autor werden hier akzeptiert:"
+            "This module is free for non-commercial use,\r\nDonations in support of the author are accepted here:": "Dieses Modul ist für die nicht kommerzielle Nutzung kostenlos,\r\nSchenkungen als Unterstützung für den Autor werden hier akzeptiert:",
+            "Instance has no active parent.": "Instanz hat keine aktive übergeordnete Instanz."
         }
     }
 }

@@ -1,0 +1,21 @@
+{
+    "id": "{FF43CA30-41BC-4D29-9B31-EA60B99BCFB3}",
+    "name": "RS485 Bus Timing",
+    "aliases": [
+        "RS485 Bus Zeitsteuerung"
+    ],
+    "type": 2,
+    "vendor": "",
+    "parentRequirements": [
+        "{79827379-F36E-4ADA-8A95-5F8D1DC92FA9}"
+    ],
+    "childRequirements": [
+        "{018EF6B5-AB94-40C6-AA53-46943E824ACF}"
+    ],
+    "implemented": [
+        "{79827379-F36E-4ADA-8A95-5F8D1DC92FA9}",
+        "{018EF6B5-AB94-40C6-AA53-46943E824ACF}"
+    ],
+    "prefix": "RS485BT",
+    "url": "https://github.com/Nall-chan/BGETech/blob/main/RS485BusTiming/README.md"
+}
