@@ -13,6 +13,6 @@
 [submodule ".claude-rules"]
 	path = .claude-rules
 	url = https://github.com/Nall-chan/symcon-module-rules.git
-[submodule "templates"]
-	path = templates
+[submodule ".templates"]
+	path = .templates
 	url = https://github.com/Nall-chan/ModBus-Templates
