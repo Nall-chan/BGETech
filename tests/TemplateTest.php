@@ -6,7 +6,7 @@ use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Prüft die Vorlagen unter templates/ gegen die Checkliste der Symcon-Dokumentation
+ * Prüft die Vorlagen unter .templates/ gegen die Checkliste der Symcon-Dokumentation
  * (https://www.symcon.de/de/service/dokumentation/modulreferenz/geraete/modbus-rtu-tcp/vorlagen/).
  */
 class TemplateTest extends TestCase
@@ -36,7 +36,7 @@ class TemplateTest extends TestCase
     public static function templates(): array
     {
         $Files = [];
-        foreach (glob(__DIR__ . '/../templates/*.json') as $File) {
+        foreach (glob(__DIR__ . '/../.templates/*.json') as $File) {
             $Files[basename($File)] = [$File];
         }
         return $Files;
@@ -135,13 +135,13 @@ class TemplateTest extends TestCase
     public function testGeneratorOutputIsUpToDate(): void
     {
         $Before = [];
-        foreach (glob(__DIR__ . '/../templates/*.json') as $File) {
-            $Before[basename($File)] = file_get_contents($File);
+        foreach (glob(__DIR__ . '/../.templates/*.json') as $File) {
+            $Before[basename($File)] = str_replace("\r\n", "\n", file_get_contents($File));
         }
-        exec(escapeshellarg(PHP_BINARY) . ' ' . escapeshellarg(__DIR__ . '/../tools/build-templates.php'), $Output, $Result);
+        exec(escapeshellarg(PHP_BINARY) . ' ' . escapeshellarg(__DIR__ . '/../.tools/build-templates.php'), $Output, $Result);
         $this->assertSame(0, $Result, implode("\n", $Output));
         foreach ($Before as $Name => $Content) {
-            $this->assertSame($Content, file_get_contents(__DIR__ . '/../templates/' . $Name), $Name . ' weicht vom Generator ab');
+            $this->assertSame($Content, file_get_contents(__DIR__ . '/../.templates/' . $Name), $Name . ' weicht vom Generator ab');
         }
     }
 }

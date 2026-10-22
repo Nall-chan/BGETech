@@ -3,12 +3,12 @@
 declare(strict_types=1);
 
 /*
- * Erzeugt die Vorlagen für die Symcon-Instanz "ModBus Gerät" (Ordner templates/)
+ * Erzeugt die Vorlagen für die Symcon-Instanz "ModBus Gerät" (Ordner .templates/, Submodul ModBus-Templates)
  * aus den Registertabellen und Übersetzungen der Zähler-Module dieser Library.
  *
  * Aufruf: php .tools/build-templates.php
  *
- * Quellen der zusätzlichen Konfigurationsregister: Datenblätter unter docs/ (siehe templates/README.md).
+ * Quellen der zusätzlichen Konfigurationsregister: Datenblätter unter docs/ (siehe .templates/README.md).
  * Format: https://www.symcon.de/de/service/dokumentation/modulreferenz/geraete/modbus-rtu-tcp/vorlagen/
  */
 
@@ -659,7 +659,7 @@ foreach (devices() as $Module => $Device) {
     foreach ($Variants as $File => $Variant) {
         $Template = build($Module, $Device, $Variant['byteOrder']);
         $Json = json_encode($Template, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRESERVE_ZERO_FRACTION) . "\n";
-        file_put_contents(ROOT . '/templates/' . $File . '.json', $Json);
+        file_put_contents(ROOT . '/.templates/' . $File . '.json', $Json);
         printf("%-18s %3d Adressen, %s\n", $File, count($Template['Addresses']), $Template['Requests']['Type'] ? count($Template['Requests']['DataBlocks']) . ' Blöcke' : 'Einzelabfrage');
     }
 }

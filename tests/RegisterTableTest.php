@@ -18,7 +18,7 @@ class RegisterTableTest extends TestCase
     protected function setUp(): void
     {
         IPS\Kernel::reset();
-        // Nur die benötigten Module laden: der Ordner templates enthält kein Modul.
+        // Nur die benötigten Module laden: der Ordner .templates enthält kein Modul.
         $LibraryID = json_decode(file_get_contents(__DIR__ . '/../library.json'), true)['id'];
         IPS\ModuleLoader::loadSingleModule(__DIR__ . '/../SDM630', $LibraryID);
         IPS\ModuleLoader::loadSingleModule(__DIR__ . '/../DRS210C', $LibraryID);

@@ -29,7 +29,7 @@ betrieben werden.
 
 > [!NOTE]
 > Die Zähler-Module sind ab Version 4.0 im Wartungsmodus: Sie erhalten nur noch Fehlerbehebungen, aber keine neuen Funktionen oder Zähler.  
-> Symcon kann inzwischen selbst mehrere Register in einer Instanz (`ModBus Gerät`) abfragen, auch als Datenblock. Für neue Installationen ist diese Instanz mit einer [Vorlage](templates/) die bessere Wahl. Für alle Zähler dieser Library gibt es eine Vorlage, teils noch ungeprüft.  
+> Symcon kann inzwischen selbst mehrere Register in einer Instanz (`ModBus Gerät`) abfragen, auch als Datenblock. Für neue Installationen ist diese Instanz mit einer [Vorlage](https://github.com/Nall-chan/ModBus-Templates) die bessere Wahl. Für alle Zähler dieser Library gibt es eine Vorlage, teils noch ungeprüft.  
 > Weiterhin gepflegt wird die RS485 Bus Zeitsteuerung. Sie wird für mehrere Zähler an einem RS485-Bus benötigt, auch mit den Symcon-Instanzen.
 
 Folgende Module beinhaltet die B+G E-Tech Library:
@@ -134,7 +134,7 @@ Ist direkt in der Dokumentation der jeweiligen Module beschrieben:
 > [!IMPORTANT]
 >
 > - Benötigt Symcon 9.0 oder höher.
-> - Die Zähler-Module sind im Wartungsmodus und erhalten nur noch Fehlerbehebungen. Für neue Installationen wird die Symcon-Instanz `ModBus Gerät` mit einer [Vorlage](templates/) empfohlen (Übersicht und Prüfstand in der [Vorlagen-README](templates/README.md)).
+> - Die Zähler-Module sind im Wartungsmodus und erhalten nur noch Fehlerbehebungen. Für neue Installationen wird die Symcon-Instanz `ModBus Gerät` mit einer [Vorlage](https://github.com/Nall-chan/ModBus-Templates) empfohlen (Übersicht und Prüfstand in der [Vorlagen-README](https://github.com/Nall-chan/ModBus-Templates/blob/main/README.md)).
 > - Bestehende Instanzen übernehmen beim Update korrigierte Registeradressen. Namen, Reihenfolge und Aktiv-Status der Variablen bleiben erhalten.
 > - SDM 530, SDM 630, Smart X96-5C/I/J: Leistungsfaktor (Register 0x003E) und Leistungsfaktor-Winkel (0x00FE) teilten sich bisher eine Variable. Die bestehende Variable zeigt jetzt den Leistungsfaktor, der Winkel erhält eine neue Variable.
 > - SDM 530, SDM 630: Die Variablen `Blindleistung seit letzten Reset` und `Wirkleistung seit letzten Reset` werden nicht mehr aktualisiert und können gelöscht werden. Ihre Werte stehen jetzt richtig bezeichnet in `Scheinenergie seit letztem Reset` (kVAh) und `Ladungsmenge seit letztem Reset` (Ah).
@@ -142,8 +142,8 @@ Ist direkt in der Dokumentation der jeweiligen Module beschrieben:
 **Neue Module**  
 
 - [RS485 Bus Zeitsteuerung](RS485BusTiming/README.md): Lässt mehrere ModBus Gateways nacheinander und mit einstellbarer Pause auf einen gemeinsamen RS485-Bus zugreifen  
-- [Vorlagen](templates/README.md) für alle Zähler zur Nutzung mit der Symcon-Instanz `ModBus Gerät`, mit Datenblöcken wo möglich sowie Geräte-ID, Baudrate und Parität zum Einstellen  
-- [Vorlagen](templates/README.md) für WS100-19xx, SDM630MCT, SDM54, SDM72CT, SDM18, SDM630-TCP (auch SDM630MCT-ML-TCP), Smart X96-5A, DCM230 und DCM232 (ohne eigenes Zähler-Modul)  
+- [Vorlagen](https://github.com/Nall-chan/ModBus-Templates/blob/main/README.md) für alle Zähler zur Nutzung mit der Symcon-Instanz `ModBus Gerät`, mit Datenblöcken wo möglich sowie Geräte-ID, Baudrate und Parität zum Einstellen  
+- [Vorlagen](https://github.com/Nall-chan/ModBus-Templates/blob/main/README.md) für WS100-19xx, SDM630MCT, SDM54, SDM72CT, SDM18, SDM630-TCP (auch SDM630MCT-ML-TCP), Smart X96-5A, DCM230 und DCM232 (ohne eigenes Zähler-Modul)  
 
 **Neue Statusvariablen**  
 
